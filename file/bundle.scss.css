@@ -3094,6 +3094,7 @@ h3.media-heading {
     font-family: Arial;
     font-weight: bold;
     color:#ff914d;
+    font-size: 11px;
 }
 .main-list .sapo{
     color: gray;
@@ -3408,7 +3409,6 @@ h3.media-heading {
         margin: 0
     }
 }
-
 .media-list.main-list li.media > a {
     width: 100px;
     height: 70px;
@@ -3917,4 +3917,36 @@ h3.ega-product-col-name {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .entry-content{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+@media (min-width: 992px) {
+    .entry-content{
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+}
+.entry-content img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.textstat{
+    color: #808080;
+}
+#main-tai-lieu .media{
+    margin-bottom: 20px;
+}
+#main-tai-lieu .media-heading{
+    min-height: 50px;
+    background-color: #ff914d;
+    margin: 0;
+    padding: 5px;
+}
+#main-tai-lieu .media-heading a{
+    color: white;
 }
