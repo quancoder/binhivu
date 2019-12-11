@@ -1,0 +1,7 @@
+.card .card-body{
+    padding: 5px;
+}
+
+.tox-statusbar{
+    display: none !important;
+}
