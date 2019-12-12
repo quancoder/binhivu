@@ -27,7 +27,7 @@
                             </a>
                             <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
                                 <h3 class="media-heading" style="font-size: 17px" >
-                                    <a href="<?= site_url($news_list[0]['news_title'])?>" style="color: #fb7e31;" class="archive-i">
+                                    <a href="<?= toURLFriendly($news_list[0]['news_title'], 'tt', $news_list[0]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
                                         <?= $news_list[0]['news_title'] ?></a>
                                 </h3>
                                 <p>
@@ -69,15 +69,14 @@
 
                                     <div class="media-body">
                                         <h3 class="media-heading">
-                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                               title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
                                         </h3>
                                         <p>
                                             <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
                                             <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_update_time'])?></span>
                                         </p>
-                                        <p class="sapo">
+                                        <p class="sapo" style="text-align: justify">
                                             (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
                                         </p>
                                     </div>
@@ -93,62 +92,22 @@
                         <div id="myCarousel" class="owl-carousel owl-theme owl-loaded owl-drag">
                             <div class="owl-stage-outer">
                                 <div class="owl-stage" style="transform: translate3d(-1144px, 0px, 0px); transition: all 0s ease 0s; width: 4578px;">
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg" data-src="./file/nguoi-linh.jpg" alt="Vân Nam"/>
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg" data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg" data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg"  data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg"  data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg"  data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                    <div class="owl-item active" style="width: 381.5px;">
-                                        <div class="item">
-                                            <img class="lazyOwl" src="./file/nguoi-linh.jpg" data-src="./file/nguoi-linh.jpg" alt="Vân Nam">
-                                            <h3 class="media-heading">
-                                                <a href="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                            </h3>
-                                        </div>
-                                    </div>
+                                    <?php $i= 1; foreach ($news_list as $new){ ?>
+                                        <?php if($i >=1 and $i <=7){?>
+                                            <div class="owl-item active" style="width: 381.5px;">
+                                                <div class="item">
+                                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
+                                                        <img class="lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
+                                                             alt="<?= $new['news_title']?>" style="width: 100%; height: 150px">
+                                                    </a>
+                                                    <h3 class="media-heading">
+                                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                    <?php $i++;} ?>
                                 </div>
                             </div>
                             <div class="owl-nav disabled">

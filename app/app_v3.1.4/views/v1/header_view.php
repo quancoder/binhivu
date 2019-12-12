@@ -96,7 +96,7 @@
 									</a>
 								</span>
                                 <span class="ega-header-top-item ega-top-cart-sendo hide">
-								<a class="ega-a-cart-icon-top" href="https://binhivu.com/cart" title="cart">
+								<a class="ega-a-cart-icon-top hide" href="https://binhivu.com/cart" title="cart">
 									<span class="glyphicon glyphicon-shopping-cart"> </span>
 									<span class="ega-a-cart-icon-top__number ega-header-top-item">0</span>
 								</a>
@@ -132,7 +132,7 @@
                             </div>
                             <div class="col-xs-4 col-sm-2 text-right ega-search-ico-xs">
 
-                                <a class="ega-a-cart-icon-top ega-top-cart-sendo" href="https://binhivu.com/cart"
+                                <a class="ega-a-cart-icon-top ega-top-cart-sendo hide" href="https://binhivu.com/cart"
                                    title="cart">
 									<span class="glyphicon glyphicon-shopping-cart">
 									</span>
@@ -240,7 +240,7 @@
                             </li>
 
                             <!--submenu-->
-                            <li class="dropdown yamm-fw ega-dropdown-menu li-ega-menu-no-mega pull-right">
+                            <li class="dropdown yamm-fw ega-dropdown-menu li-ega-menu-no-mega pull-right hide">
                                 <a href="https://binhivu.com/" title="Vấn đề khác" data-toggle="dropdown"
                                    class="dropdown-toggle visible-lg" aria-expanded="true">
                                     Vấn đề khác
@@ -268,7 +268,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <ul class="nav navbar-nav visible-xs visible-sm">
+                        <ul class="nav navbar-nav hide">
                             <li>
                                 <a href="https://binhivu.com/account" title="account">
                                     Đăng nhập/Đăng ký
