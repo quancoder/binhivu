@@ -31,7 +31,7 @@ class Funs extends MY_Controller {
         //get data
         $user_id = $this->_session_uid();
 
-	    $list = $this->Funs_model->funs_list_paging($user_id, $status, removeAllTags($search), removeAllTags($tag), $page, $num);
+	    $list = $this->Funs_model->funs_list_paging($user_id, $status, removeAllTags($search), removeAllTags($tag), ($page-1)*$num, $num);
 
         //set value
         $data['status'] = $status;

@@ -3,296 +3,193 @@
     <div class="container" style="background: #fff">
         <div class="row">
             <div class="col-sm-8">
-                <h2 class="home-title">
-                    <a href="https://binhivu.com/tin-tuc" title="TIN TỨC">TIN TỨC</a>
-                </h2>
+                <h1 class="home-title">
+                    <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN TỨC</a>
+                </h1>
                 <div class="row" style="margin-bottom: 20px;">
                     <!--row1 left-->
                     <div class="col-md-7 col-lg-7">
                         <div class="featured-article">
-                            <a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">
-                                <img class="thumb" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     alt="Phát hiện vợ mang thai với người khác, chồng có được quyền ly hôn?">
+                            <a href="<?= site_url('tin-tuc/'.$news_list[0]['news_title'], $langcode)?>">
+                                <img class="thumb" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
+                                     data-src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
+                                     alt="<?= $news_list[0]['news_title']?>">
                             </a>
-                            <div class="block-title" style="margin-top: 10px;">
-                                <h3 class="media-heading"><a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon" class="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
+                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                <h2 class="media-heading">
+                                    <a href="<?= site_url('tin-tuc/'.$news_list[0]['news_title'], $langcode)?>" style="color: #fb7e31;" class="archive-i">
+                                        <?= $news_list[0]['news_title']?>
+                                    </a>
+                                </h2>
                                 <p>
-                                    <span class="author"> binhivu</span> - <span style="color: gray"><i class="glyphicon glyphicon-time"></i> 1 giờ trước</span>
+                                    <a href="<?= site_url('tin-tuc')?>"><span class="category">Tin tức</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[0]['news_update_time'])?></span>
                                 </p>
-                                <p style="font-size: 13px; margin-bottom: 0px">
-                                    (Tin tức)  Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn. Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người...
-                                    <a class="text-more">Xem thêm</a>
+                                <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify">
+                                    (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
                                 </p>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
 
                         <div class="featured-article">
-                            <a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">
-                                <img class="thumb" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     alt="Phát hiện vợ mang thai với người khác, chồng có được quyền ly hôn?">
+                            <a href="<?= site_url('tin-tuc/'.$news_list[1]['news_title'], $langcode)?>">
+                                <img class="thumb" src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
+                                     data-src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
+                                     alt="<?= $news_list[1]['news_title']?>">
                             </a>
                             <div class="block-title" style="margin-top: 10px;">
-                                <h3 class="media-heading">
-                                    <a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
+                                <h2 class="media-heading">
+                                    <a href="<?= site_url('tin-tuc/'.$news_list[1]['news_title'], $langcode)?>" >
+                                        <?= $news_list[1]['news_title']?>
+                                    </a>
+                                </h2>
                                 <p>
-                                    <span class="author"> binhivu</span> - <span style="color: gray"><i class="glyphicon glyphicon-time"></i> 1 giờ trước</span>
+                                    <a href="<?= site_url('tin-tuc')?>"><span class="category">Tin tức</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[1]['news_update_time'])?></span>
                                 </p>
-                                <p>
-                                    Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...
-                                    <a class="pull-right" style="color: #ff914d">Xem thêm <i class="glyphicon glyphicon-menu-right"></i></a>
+                                <p style="font-size: 13px; margin-bottom: 0px">
+                                    (Tin tức)  <?= htmlentities($news_list[1]['news_sapo'])?>
                                 </p>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
-
                     </div>
                     <!--row1 right-->
                     <div class="col-md-5 col-lg-5">
-                        <ul class="media-list main-list">
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
+                        <ul class="media-list main-list" style="text-align: justify">
+                            <?php $i=1?>
+                            <?php foreach ($news_list as $news){?>
+                                <?php if($i >= 3 and $i <=7){?>
+                                    <li class="media" style="padding-bottom: 10px;">
+                                        <a class="pull-left img-thumbnail"
+                                           href="<?= site_url($news['news_title'])?>">
+                                            <img class="media-object lazy" src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>"
+                                                 data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>"
+                                                 alt="<?= $news['news_title']?>">
                                         </a>
-                                    </h3>
-                                    <span class="author"> binhivu</span> - <span style="color: gray"><i class="glyphicon glyphicon-time"></i> 1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
+                                        <div class="media-body">
+                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; text-align: justify">
+                                                <a href="<?= site_url($news['news_title'])?>">
+                                                    <?= $news['news_title']?>
+                                                </a>
+                                            </h3>
+                                            <a href="<?= site_url('tin-tuc')?>"><span class="category">Tin tức</span></a>-
+                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_update_time'])?></span>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+                            <?php $i++;} ?>
+
                             <ul class="news-list">
-                                <li>
-                                    <h3><a href="https://binhivu.com/song-thu-co-hop-phap-hay-khong"
-                                           title="Sống thử có hợp pháp hay không?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3><a href="https://binhivu.com/07-truong-hop-giao-dich-dan-su-vo-hieu"
-                                           title="07 trường hợp giao dịch dân sự vô hiệu">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="https://binhivu.com/tai-san-cua-nguoi-vang-mat-tai-noi-cu-tru-duoc-quan-ly-nhu-the-nao"
-                                           title="Tài sản của người vắng mặt tại nơi cư trú được quản lý như thế nào?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
-                                <li>
-                                    <h3><a href="https://binhivu.com/giay-to-co-gia-la-gi" title="Giấy tờ có giá là gì?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
+                                <?php $i=1?>
+                                <?php foreach ($news_list as $news){?>
+                                    <?php if($i >= 8 and $i <=12){?>
+                                    <li>
+                                        <h3><a href="<?= site_url($news['news_title'])?>"
+                                               title="Sống thử có hợp pháp hay không?"><?= $news['news_title']?></a>
+                                        </h3>
+                                    </li>
+                                    <?php } ?>
+                                <?php $i++;} ?>
                             </ul>
                         </ul>
                     </div>
                 </div>
 
-                <h2 class="home-title">
+                <h1 class="home-title">
                     <a href="https://binhivu.com/tin-tuc" title="TIN TỨC">TRUYỆN NGẮN</a>
-                </h2>
+                </h1>
                 <div class="row" style="margin-bottom: 20px;">
-                    <!--row2 left-->
-                    <div class="col-md-6 col-lg-6">
+                    <!--row1 left-->
+                    <div class="col-md-7 col-lg-7">
                         <div class="featured-article">
-                            <a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">
-                                <img class="thumb" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     alt="Phát hiện vợ mang thai với người khác, chồng có được quyền ly hôn?">
+                            <a href="<?= toURLFriendly($funs_list[0]['funs_title'], 'gt', $funs_list['0']['funs_id'])?>">
+                                <img class="thumb lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                     data-src="<?php echo base_url(); ?>public/images/<?= $funs_list[0]['funs_image']?>"
+                                     alt="<?= $funs_list[0]['funs_title']?>">
                             </a>
-                            <div class="block-title" style="margin-top: 10px;">
-                                <h3 class="media-heading"><a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon" class="">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
+                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                <h2 class="media-heading">
+                                    <a href="<?= toURLFriendly($funs_list[0]['funs_title'], 'gt', $funs_list['0']['funs_id'])?>" style="color: #fb7e31;" class="archive-i">
+                                        <?= $funs_list[0]['funs_title']?>
+                                    </a>
+                                </h2>
                                 <p>
-                                    Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...
-                                    <a class="pull-right" style="color: #ff914d">Xem thêm <i class="glyphicon glyphicon-menu-right"></i></a>
+                                    <a href="<?= site_url('tin-tuc')?>"><span class="category">Truyện ngắn</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs_list[0]['funs_update_time'])?></span>
                                 </p>
+                                <p style="font-size: 13px; margin-bottom: 0px">
+                                    (Truyện ngắn)  <?= htmlentities($funs_list[0]['funs_sapo'])?>
+                                </p>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
 
                         <div class="featured-article">
-                            <a href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">
-                                <img class="thumb" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                     alt="Phát hiện vợ mang thai với người khác, chồng có được quyền ly hôn?">
+                            <a href="<?= toURLFriendly($funs_list[1]['funs_title'], 'gt', $funs_list['1']['funs_id'])?>">
+                                <img class="thumb lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                     data-src="<?php echo base_url(); ?>public/images/<?= $funs_list[1]['funs_image']?>"
+                                     alt="<?= $funs_list[1]['funs_title']?>">
                             </a>
                             <div class="block-title" style="margin-top: 10px;">
-                                <h3 class="media-heading"><a
-                                            href="https://binhivu.com/phat-hien-vo-mang-thai-voi-nguoi-khac-chong-co-duoc-quyen-ly-hon">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
+                                <h2 class="media-heading">
+                                    <a href="<?= toURLFriendly($funs_list[1]['funs_title'], 'gt', $funs_list['1']['funs_id'])?>">
+                                        <?= $funs_list[1]['funs_title']?>
+                                    </a>
+                                </h2>
                                 <p>
-                                    Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...
-                                    <a class="pull-right" style="color: #ff914d">Xem thêm <i class="glyphicon glyphicon-menu-right"></i></a>
+                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Truyện ngắn</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs_list[1]['funs_update_time'])?></span>
                                 </p>
+                                <p style="font-size: 13px; margin-bottom: 0px">
+                                    (Truyện ngắn) <?= htmlentities($funs_list[1]['funs_sapo'])?>
+                                </p>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
-
                     </div>
-                    <!--row2 right-->
-                    <div class="col-md-6 col-lg-6">
+                    <!--row1 right-->
+                    <div class="col-md-5 col-lg-5">
                         <ul class="media-list main-list">
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
+                            <?php $i=1?>
+                            <?php foreach ($funs_list as $funs){?>
+                                <?php if($i >= 3 and $i <=7){?>
+                                    <li class="media" style="padding-bottom: 10px;">
+                                        <a class="pull-left img-thumbnail"
+                                           href="<?= site_url($funs['funs_title'])?>">
+                                            <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                                 data-src="<?php echo base_url()?>public/thumbs/<?= $funs['funs_thumbs']?>"
+                                                 alt="<?= $funs['funs_title']?>">
                                         </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
-                            <li class="media">
-                                <a class="pull-left img-thumbnail"
-                                   href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/tai-khoan-dam-vinh-hung-kich-dong-tren-facebook-dung-luat-rung-dang-len-an">
-                                            Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người
-                                        </a>
-                                    </h3>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </li>
+                                        <div class="media-body">
+                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; text-align: justify">
+                                                <a href="<?= site_url($funs['funs_title'])?>">
+                                                    <?= $funs['funs_title']?>
+                                                </a>
+                                            </h3>
+                                            <a href="<?= site_url('tin-tuc')?>"><span class="category">Truyện ngắn</span></a> -
+                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_update_time'])?></span>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+                                <?php $i++;} ?>
+
                             <ul class="news-list">
-                                <li>
-                                    <h3><a href="https://binhivu.com/song-thu-co-hop-phap-hay-khong"
-                                           title="Sống thử có hợp pháp hay không?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <h3><a href="https://binhivu.com/07-truong-hop-giao-dich-dan-su-vo-hieu"
-                                           title="07 trường hợp giao dịch dân sự vô hiệu">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="https://binhivu.com/tai-san-cua-nguoi-vang-mat-tai-noi-cu-tru-duoc-quan-ly-nhu-the-nao"
-                                           title="Tài sản của người vắng mặt tại nơi cư trú được quản lý như thế nào?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
-                                <li>
-                                    <h3><a href="https://binhivu.com/giay-to-co-gia-la-gi" title="Giấy tờ có giá là gì?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                                </li>
+                                <?php $i=1?>
+                                <?php foreach ($funs_list as $funs){?>
+                                    <?php if($i >= 8 and $i <=12){?>
+                                        <li>
+                                            <h3><a href="<?= site_url($funs['funs_title'])?>"
+                                                   title="<?= $news['news_title']?>"><?= $funs['funs_title']?></a>
+                                            </h3>
+                                        </li>
+                                    <?php } ?>
+                                <?php $i++;} ?>
                             </ul>
                         </ul>
                     </div>
@@ -301,90 +198,49 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <h2 class="line-title clearfix">
-                            <a href="https://binhivu.com/dan-su" title="DÂN SỰ ">TRUYỆN NGẮN XEM NHIỀU NHẤT</a>
+                            <a href="<?= site_url('truyen-ngan')?>" title="Truyện ngắn ">TRUYỆN NGẮN XEM NHIỀU NHẤT</a>
                         </h2>
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
+                        <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                        <?php
+                        $i = 1;
+                        foreach ($funs_top_view as $funs){ ?>
+                            <?php if($i <=5){?>
+                            <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
+                                <a class="pull-left img-thumbnail" href="<?= site_url($funs['funs_title'])?>">
                                     <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
+                                         data-src="<?php echo base_url()?>public/thumbs/<?= $funs['funs_thumbs']?>"
+                                         alt="<?= $funs['funs_title']?>">
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong" title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
+                                        <a href="<?= site_url($funs['funs_title'])?>" style="font-size: 1.6rem">
+                                            <?= $funs['funs_title']?>
+                                        </a>
                                     </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
+                                    <a href="<?= site_url('tin-tuc')?>"><span class="category">Truyện ngắn</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($funs['funs_views'])?></span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_update_time'])?></span>
+                                    <p style="margin-top: 10px; color: #1e1e1e"><?= $funs['funs_sapo']?></p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong" title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong" title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url() . 'images/'; ?>nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong" title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <ul class="news-list">
-                            <li>
-                                <h3><a href="https://binhivu.com/song-thu-co-hop-phap-hay-khong"
-                                       title="Sống thử có hợp pháp hay không?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                </h3>
                             </li>
-                            <li>
-                                <h3><a href="https://binhivu.com/07-truong-hop-giao-dich-dan-su-vo-hieu"
-                                       title="07 trường hợp giao dịch dân sự vô hiệu">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                            </li>
-                            <li>
-                                <h3>
-                                    <a href="https://binhivu.com/tai-san-cua-nguoi-vang-mat-tai-noi-cu-tru-duoc-quan-ly-nhu-the-nao"
-                                       title="Tài sản của người vắng mặt tại nơi cư trú được quản lý như thế nào?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                            </li>
-                            <li>
-                                <h3><a href="https://binhivu.com/giay-to-co-gia-la-gi" title="Giấy tờ có giá là gì?">Chuyện về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                            </li>
+                                <?php } ?>
+                        <?php $i++;} ?>
+                        </ul>
+
+                        <ul class="news-list" style="border: none;">
+                            <?php
+                            $i = 1;
+                            foreach ($funs_top_view as $funs){ ?>
+                                <?php if($i >= 6 and $i <=10){?>
+                                    <li>
+                                        <h3>
+                                            <a href="<?= site_url('truyen-ngan/'.$funs['funs_title'])?>"
+                                               title="<?=$funs['funs_title'] ?>"><?=$funs['funs_title'] ?></a>
+                                        </h3>
+                                    </li>
+                                <?php } ?>
+                            <?php $i++;} ?>
                         </ul>
                     </div>
                 </div>
@@ -392,9 +248,9 @@
 
             <div class="col-sm-4">
                 <div class="departments" style="margin-bottom: 25px;">
-                    <h2 class="home-title">
+                    <h1 class="home-title">
                         <span>Tài liệu</span>
-                    </h2>
+                    </h1>
                     <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel">
                             <a style="display: block" class="panel-heading " role="button" data-toggle="collapse"
@@ -626,9 +482,9 @@
                 </div>
 
                 <div class="departments" style="margin-bottom: 25px;">
-                    <h2 class="home-title">
+                    <h1 class="home-title">
                         <span>Sách</span>
-                    </h2>
+                    </h1>
                     <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel">
                             <a style="display: block" class="panel-heading " role="button" data-toggle="collapse"
@@ -884,64 +740,3 @@
         </div>
     </div>
 </main>
-
-<!--custom-->
-<script>
-    $(document).on("click", "a.dropdown-toggle", function () {
-        window.location = $(this).attr('href');
-    });
-
-    $(document).ready(function () {
-        $("a.ega-menu-right-down-ico").click(function (e) {
-            e.stopImmediatePropagation();
-            e.stopPropagation();
-            $(this).parent().parent().toggleClass('open');
-
-        });
-        $("#ega-btn-menu-hambuger").click(function () {
-
-            if ($(this).attr('aria-expanded') === 'false') {
-                $(this).html('<span class="glyphicon glyphicon-remove" style="font-size: 18px;color: #fff; display: block; height: 15px;"></span>');
-                $(this).attr('aria-expanded', 'true');
-                $($(this).data('target')).slideDown();
-            }
-            else {
-                $(this).attr('aria-expanded', 'false');
-                $(this).html('<span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>');
-                $($(this).data('target')).slideUp();
-            }
-        });
-
-        $("#btn-click-search-xs").click(function () {
-            if ($(this).find(">span").hasClass('glyphicon-search')) {
-                $("#ega-search-xs-form").slideDown();
-                $(this).find(">span").removeClass('glyphicon-search').addClass('glyphicon-remove');
-            }
-            else {
-                $("#ega-search-xs-form").slideUp();
-                $(this).find(">span").removeClass('glyphicon-remove').addClass('glyphicon-search');
-            }
-
-        });
-        $(".show-hide-table").click(function (e) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            $(this).parent().parent().parent().find('.ega-menu-three').toggle();
-        });
-
-        $(".ega-ft-toggle-xs").click(function () {
-            var show = $(this).data('show');
-            if ($(this).find('span.glyphicon-plus').length > 0) {
-                $(this).find('span.glyphicon-plus').removeClass('glyphicon-plus').addClass('glyphicon-minus');
-                $("ul[data-show='" + show + "']").removeClass('hidden-xs').show();
-            }
-            else {
-                $(this).find('span.glyphicon-minus').removeClass('glyphicon-minus').addClass('glyphicon-plus');
-                $("ul[data-show='" + show + "']").hide();
-            }
-        });
-
-        //img lazy loading
-        $('img.lazy').lazy();
-    })
-</script>

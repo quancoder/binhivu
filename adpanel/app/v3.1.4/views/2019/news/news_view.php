@@ -19,7 +19,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card">
                 <div class="card-body" style="padding: 1rem 0.5rem 0 0.5rem">
-                    <form method="get" action="<?= site_url('Funs', $langcode)?>">
+                    <form method="get" action="<?= site_url('news', $langcode)?>">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="form-group">
@@ -70,11 +70,11 @@
                         <tr>
                             <th style="width: 3%">ID</th>
                             <th style="width: 15%" class="text-center">Ảnh</th>
-                            <th>Tiêu đề tin tức</th>
+                            <th>Tiêu đề</th>
                             <th style="width: 10%" class="text-center">Trạng thái</th>
                             <th style="width: 5%" class="text-right">View</th>
-                            <th style="width: 10%" class="text-center">Ngày đăng</th>
-                            <th style="width: 10%" class="text-center">Sửa gần nhất</th>
+                            <th style="width: 10%" class="text-right">Ngày đăng</th>
+                            <th style="width: 10%" class="text-right">Sửa gần nhất</th>
                             <th style="width: 20%;">Từ khóa </th>
                             <th style="width: 10%" class="text-center"></th>
                         </tr>
@@ -108,10 +108,14 @@
                                 </td>
                                 <td class="align-middle text-right">0</td>
                                 <td class="align-middle text-right">
-                                    <?= get_time_ago($new['news_create_time'])?>
+                                    <span><?= get_time_ago($new['news_create_time'])?></span>
+                                    <p style="color: #8c8c8c"><?= date('h:m - d/m/Y', strtotime($new['news_create_time'])) ?></p>
                                 </td>
                                 <td class="align-middle text-right">
                                     <?= strtotime($new['news_update_time']) > 0 ? get_time_ago($new['news_update_time']) : ''?>
+                                    <p style="color: #8c8c8c">
+                                        <?= strtotime($new['news_update_time']) > 0 ?date('h:m - d/m/Y', strtotime($new['news_create_time'])): '' ?>
+                                    </p>
                                 </td>
                                 <td class="align-middle">
                                     <input value="<?php echo $new['news_tags'] ?>" data-role="tagsinput" class="input_tag">

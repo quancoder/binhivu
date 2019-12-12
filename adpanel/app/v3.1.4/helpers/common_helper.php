@@ -488,7 +488,6 @@ function api_key_decrypt($key_encrypt) {
 }
 
 
-
 function get_time_ago( $datetime, $full=false )
 {
     $now = new DateTime;

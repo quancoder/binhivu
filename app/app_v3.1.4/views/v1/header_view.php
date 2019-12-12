@@ -41,9 +41,8 @@
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.ui.1.12.1.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>datepicker.js" ></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>vi.min.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>script.js"></script>
+    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
 </head>
 <body style="margin-bottom: 0px;">
 <div id="main">

@@ -28,12 +28,12 @@ class Funs_model extends CI_Model
     }
 
     //list paging
-    function funs_list_paging($user_id, $status=-1, $search='', $tag='', $page=1, $numrow=20){
+    function funs_list_paging($user_id, $status=-1, $search='', $tag='', $start=1, $numrow=20){
         $data = array();
         $data['list'] = array();
         $data['pCount'] = $data['iCount'] = 0;
         $iconn = $this->db->conn_id;
-        $sql = "CALL funs_list_paging(:user_id, :status, :search, :tag, :page, :numrow);";
+        $sql = "CALL funs_list_paging(:user_id, :status, :search, :tag, :start, :numrow);";
         $stmt = $iconn->prepare($sql);
         if($stmt)
         {
@@ -41,7 +41,7 @@ class Funs_model extends CI_Model
             $stmt->bindParam(':status', $status, PDO::PARAM_INT);
             $stmt->bindParam(':search', $search, PDO::PARAM_STR);
             $stmt->bindParam(':tag', $tag, PDO::PARAM_STR);
-            $stmt->bindParam(':page', $page, PDO::PARAM_INT);
+            $stmt->bindParam(':start', $start, PDO::PARAM_INT);
             $stmt->bindParam(':numrow', $numrow, PDO::PARAM_INT);
             // execute the stored procedure
             if($stmt->execute())

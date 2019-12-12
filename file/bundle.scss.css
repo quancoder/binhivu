@@ -1,4 +1,4 @@
-﻿﻿html, body {
+﻿html, body {
     margin: 0;
     padding: 0
 }
@@ -9,21 +9,6 @@ body {
     font-size: 14px;
     font-family: Google_OpenSans_400, 700 _sans, "HelveticaNeue", "Helvetica Neue", sans-serif;
     font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", sans-serif
-}
-a:link {
-    text-decoration: none;
-}
-
-a:visited {
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-a:active {
-    text-decoration: none;
 }
 
 img {
@@ -2594,13 +2579,7 @@ a.ega-mini-cart-more:hover {
 }
 
 h3.media-heading {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-h2.media-heading {
-    font-size: 2rem;
+    font-size: 14px;
     margin-bottom: 10px;
     margin-top: 10px;
 }
@@ -3097,16 +3076,9 @@ h2.media-heading {
     color: #222;
     font-weight: bold;
 }
-
-.media-heading a:hover, .news-list li a:hover{
-    text-shadow: 1px 1px 3px #e0e0e0;
-}
-.media-heading .archive-i:hover {
-    text-shadow: 1px 1px 3px #631e02;
-}
-
 .featured-article {
     margin-bottom: 30px;
+    border-bottom: 1px solid #e8e6e6;
 }
 .featured-article .block-title{
     margin-bottom: 20px;
@@ -3117,17 +3089,11 @@ h2.media-heading {
     font-style: italic;
     font-size: 13px;
 }
-.category{
+.author{
+    text-transform: uppercase;
     font-family: Arial;
     font-weight: bold;
     color:#ff914d;
-    font-size: 11px;
-}
-.author, .time{
-    font-family: Arial;
-    font-weight: bold;
-    color:gray;
-    font-size: 11px;
 }
 .main-list .sapo{
     color: gray;
@@ -3377,8 +3343,8 @@ h2.media-heading {
     font-size: 16px;
     color: #fff;
     text-transform: uppercase;
-    border-bottom: 5px solid #ff914d;
-    margin-bottom: 20px;
+    border-left: 5px solid #ff914d;
+    margin-bottom: 20px
 }
 
 @media (max-width: 767px) {
@@ -3388,13 +3354,15 @@ h2.media-heading {
 }
 
 .home-title a, .home-title span {
+    width: 100%;
     position: relative;
-    color: #12844e;
+    padding: 0 61px 0 16px;
+    color: #fff;
     display: inline-block;
     height: 42px;
     line-height: 42px;
-    text-decoration: none;
-    font-weight: bold
+    background: #12844e;
+    text-decoration: none
 }
 
 .home-title a:after, .home-title span:after {
@@ -3418,7 +3386,7 @@ h2.media-heading {
 }
 
 .line-title a, .line-title span {
-    color: #12844e;
+    color: #3d3d3d;
     float: left;
     display: block;
     padding-right: 20px;
@@ -3429,10 +3397,10 @@ h2.media-heading {
     background: initial;
     border: none;
     border-bottom: 1px solid #e3e3e3;
+    margin-top: 15px;
     box-shadow: none;
-    padding: 10px 0px;
-    margin-bottom: 0px;
-    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0
 }
 
 @media (max-width: 1024px) {
@@ -3440,6 +3408,7 @@ h2.media-heading {
         margin: 0
     }
 }
+
 .media-list.main-list li.media > a {
     width: 100px;
     height: 70px;
@@ -3450,8 +3419,6 @@ h2.media-heading {
 
 .media-list.main-list li.media > a > img{
     height: 68px;
-    border: 3px solid #eee;
-    width: 100%;
 }
 
 .two-block.well .media > a {
@@ -3476,8 +3443,6 @@ h2.media-heading {
 .news-list {
     padding: 8px 0 0 0;
     margin-bottom: 30px;
-    border-top: 1px solid #eee;
-    text-align: justify;
 }
 
 @media (max-width: 1024px) {
@@ -3531,6 +3496,12 @@ h2.media-heading {
 
 iframe {
     max-width: 100%
+}
+
+@media (max-width: 525px) {
+    iframe {
+        height: 250px
+    }
 }
 
 .rte table {
@@ -3946,36 +3917,4 @@ h3.ega-product-col-name {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    .entry-content{
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-}
-@media (min-width: 992px) {
-    .entry-content{
-        padding-left: 50px !important;
-        padding-right: 50px !important;
-    }
-}
-.entry-content img{
-    width: 100%;
-    margin-bottom: 10px;
-}
-.textstat{
-    color: #808080;
-}
-#main-tai-lieu .media{
-    margin-bottom: 20px;
-}
-#main-tai-lieu .media-heading{
-    min-height: 50px;
-    background-color: #ff914d;
-    margin: 0;
-    padding: 5px;
-}
-#main-tai-lieu .media-heading a{
-    color: white;
 }
