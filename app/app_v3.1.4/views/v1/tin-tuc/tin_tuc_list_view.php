@@ -6,7 +6,7 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" id="zone-news-list">
                 <h2 class="home-title hide">
                     <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN TỨC</a>
                 </h2>
@@ -18,11 +18,11 @@
                         <a href="javascript:void(0)" title="DÂN SỰ ">Tin tức mới</a>
                 </h2>
                 <div class="row" style="margin-bottom: 20px; margin-top: 20px">
-                    <!--row1 left-->
+                    <!--MAIN LEFT-->
                     <div class="col-md-6 col-lg-6">
                         <div class="featured-article">
                             <a href="<?= toURLFriendly($news_list[0]['news_title'], 'tt', $news_list[0]['news_id'])?>">
-                                <img class="thumb" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
+                                <img class="w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
                                      alt="<?= $news_list[0]['news_title'] ?>">
                             </a>
                             <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
@@ -57,179 +57,193 @@
                             <?php $i++;} ?>
                         </ul>
                     </div>
-                    <!--row1 right-->
+                    <!--MAIN RIGHT-->
                     <div class="col-md-6 col-lg-6">
                         <ul class="media-list main-list">
                             <?php $i= 2; foreach ($news_list as $new){ ?>
                                 <?php if($i >=2 and $i <=5){?>
-                                <li class="media" style="width: 48%; float: left; margin-right: 10px; margin-bottom: 10px; margin-top: 0; height: 300px">
-                                    <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
-                                         alt="<?= $new['news_title']?>" style="width: 100%; height: 150px">
+                                    <!-- for moblie -->
+                                    <li class="media visible-xs" style="margin-bottom: 10px; margin-top: 0">
+                                        <img class="media-object h-auto-xs h-auto-sm lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
+                                             alt="<?= $new['news_title']?>" style="width: 100%;">
 
-                                    <div class="media-body">
-                                        <h3 class="media-heading">
-                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                        </h3>
-                                        <p>
-                                            <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
-                                            <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_update_time'])?></span>
-                                        </p>
-                                        <p class="sapo" style="text-align: justify">
-                                            (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
-                                        </p>
-                                    </div>
-                                </li>
+                                        <div class="media-body">
+                                            <h3 class="media-heading">
+                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                            </h3>
+                                            <p>
+                                                <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                                <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_update_time'])?></span>
+                                            </p>
+                                            <p class="sapo" style="text-align: justify">
+                                                (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <!-- for tablet pc -->
+                                    <li class="media hidden-xs w-50 pull-left" style="padding-right: 10px; margin-top: 0 !important; margin-bottom: 10px; height: 305px">
+                                        <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
+                                             alt="<?= $new['news_title']?>" style="width: 100%; height: 150px">
+
+                                        <div class="media-body">
+                                            <h3 class="media-heading">
+                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                            </h3>
+                                            <p>
+                                                <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                                <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_update_time'])?></span>
+                                            </p>
+                                            <p class="sapo" style="text-align: justify">
+                                                (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
+                                            </p>
+                                        </div>
+                                    </li>
                                 <?php } ?>
                             <?php $i++;} ?>
                         </ul>
                         <div class="clearfix"></div>
                     </div>
                 </div>
+
+                <!--LIST LOOP NEWS-->
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div id="myCarousel" class="owl-carousel owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage" style="transform: translate3d(-1144px, 0px, 0px); transition: all 0s ease 0s; width: 4578px;">
-                                    <?php $i= 1; foreach ($news_list as $new){ ?>
-                                        <?php if($i >=1 and $i <=7){?>
-                                            <div class="owl-item active" style="width: 381.5px;">
-                                                <div class="item">
-                                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                                        <img class="lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
-                                                             alt="<?= $new['news_title']?>" style="width: 100%; height: 150px">
-                                                    </a>
-                                                    <h3 class="media-heading">
-                                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                    <?php $i++;} ?>
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            <?php $i= 1; foreach ($news_list as $new){ ?>
+                                <div class="item">
+                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
+                                        <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
+                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>" >
+                                    </a>
+                                    <h3 class="media-heading">
+                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                    </h3>
                                 </div>
-                            </div>
-                            <div class="owl-nav disabled">
-                                <div class="owl-prev">◀</div>
-                                <div class="owl-next">▶</div>
-                            </div>
+                                <?php } ?>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-md-8">
                         <h2 class="line-title clearfix">
-                            <a href="https://binhivu.com/dan-su" title="DÂN SỰ ">TIN TỨC XEM NHIỀU NHẤT</a>
+                            <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TIN TỨC XEM NHIỀU NHẤT</a>
                         </h2>
-                        <div class="two-block well">
-                            <div class="media">
-                                <h3  class="media-heading visible-xs">
-                                    <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong"
-                                       title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả
-                                        không sợ chết, chỉ sợ không cứu được người</a>
-                                </h3>
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="./file/rolling.svg"
-                                         data-src="./file/nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading hidden-xs">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong"
-                                           title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả
-                                            không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện
-                                        lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                    <span style="color: #41455e; font-family: SFD-SemiBold"> binhivu</span> - <span style="color: gray">1 giờ trước</span>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="./file/rolling.svg"
-                                         data-src="./file/nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong"
-                                           title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả
-                                            không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện
-                                        lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="./file/rolling.svg"
-                                         data-src="./file/nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong"
-                                           title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả
-                                            không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện
-                                        lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="two-block well">
-                            <div class="media">
-                                <a class="pull-left" href="https://binhivu.com/hat-nhep-co-bi-phat-khong">
-                                    <img class="media-object lazy" src="./file/rolling.svg"
-                                         data-src="./file/nguoi-linh.jpg"
-                                         alt="Hát nhép có bị phạt không?">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading">
-                                        <a href="https://binhivu.com/hat-nhep-co-bi-phat-khong"
-                                           title="Hát nhép có bị phạt không?"> Chuyện về những người lính cứu hoả
-                                            không sợ chết, chỉ sợ không cứu được người</a>
-                                    </h3>
-                                    <p> Giữa những gian khó của nhiệm vụ nhưng hình ảnh về người lính cứu hỏa hiện
-                                        lên chân chất và quả cảm trong bộ ảnh Người lính của bạn...</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <ul class="news-list">
-                            <li>
-                                <h3><a href="https://binhivu.com/song-thu-co-hop-phap-hay-khong"
-                                       title="Sống thử có hợp pháp hay không?">Chuyện về những người lính cứu hoả
-                                    không sợ chết, chỉ sợ không cứu được người</a>
-                                </h3>
-                            </li>
-                            <li>
-                                <h3><a href="https://binhivu.com/07-truong-hop-giao-dich-dan-su-vo-hieu"
-                                       title="07 trường hợp giao dịch dân sự vô hiệu">Chuyện về những người lính cứu
-                                    hoả không sợ chết, chỉ sợ không cứu được người</a></h3>
-                            </li>
-                            <li>
-                                <h3>
-                                    <a href="https://binhivu.com/tai-san-cua-nguoi-vang-mat-tai-noi-cu-tru-duoc-quan-ly-nhu-the-nao"
-                                       title="Tài sản của người vắng mặt tại nơi cư trú được quản lý như thế nào?">Chuyện
-                                        về những người lính cứu hoả không sợ chết, chỉ sợ không cứu được người</a>
-                                </h3>
-                            </li>
-                            <li>
-                                <h3><a href="https://binhivu.com/giay-to-co-gia-la-gi"
-                                       title="Giấy tờ có giá là gì?">Chuyện về những người lính cứu hoả không sợ
-                                    chết, chỉ sợ không cứu được người</a></h3>
-                            </li>
+                        <!--LIST NEWS MOST VIEWS-->
+                        <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                            <?php
+                            $i = 1;
+                            foreach ($news_top_view as $news){ ?>
+                                <?php if($i <=5){?>
+                                    <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
+                                        <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($news['news_title'], 'gt', $news['news_id'])?>">
+                                            <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                                 data-src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>"
+                                                 alt="<?= $news['news_title']?>" style="width: ">
+                                        </a>
+                                        <div class="media-body w-100-xs">
+                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
+                                                <a href="<?= toURLFriendly($news['news_title'], 'gt', $news['news_id'])?>" style="font-size: 1.6rem">
+                                                    <?= $news['news_title']?>
+                                                </a>
+                                            </h3>
+                                            <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                            <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                            <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($news['news_views'])?></span> -
+                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_update_time'])?></span>
+                                            <p style="margin-top: 10px; color: #1e1e1e"><?= $news['news_sapo']?></p>
+                                        </div>
+                                    </li>
+                                <?php } ?>
+                            <?php $i++;} ?>
+                        </ul>
+                        <!-- SMALL LIST LINK-->
+                        <ul class="news-list" style="border: none;">
+                            <?php
+                            $i = 1;
+                            foreach ($news_top_view as $news){?>
+                                <?php if($i >= 6 and $i <=10){?>
+                                    <li>
+                                        <h3>
+                                            <a href="<?= toURLFriendly($news['news_title'], 'gt', $news['news_id'])?>"
+                                               title="<?=$news['news_title'] ?>"><?=$news['news_title'] ?></a>
+                                        </h3>
+                                    </li>
+                                <?php } ?>
+                            <?php $i++;} ?>
                         </ul>
                     </div>
+                    <div class="col-md-4">
+                        <div class="departments" style="margin-bottom: 25px;">
+                            <h2 class="line-title clearfix">
+                                <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>
+                            </h2>
+                            <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
+                                <?php $i = 1;foreach ($news_list as $news){?>
+                                    <div class="panel">
+                                        <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
+                                            <h4 class="panel-title">
+                                                <?= substr($news['news_title'], 0, 40)?>
+                                            </h4>
+                                        </a>
+                                        <div id="<?= 'document-'.$news['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
+                                            <div class="panel-body">
+                                                <div class="item-content clearfix">
+                                                    <a class="thumb-image" href="" title="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                    </a>
+                                                    <p>
+                                                        <?= substr($news['news_sapo'], 0, 200)?>...
+                                                    </p>
+                                                </div>
+                                                <div class="item-footer clearfix">
+                                                    <a class="btn-more" href="https://binhivu.com/dan-su" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php $i++;} ?>
+                            </div>
+                        </div>
+
+                        <div class="departments" style="margin-bottom: 25px;">
+                            <h2 class="line-title clearfix">
+                                <a href="javascript:void(0)" title="TÀI LIỆU">SÁCH HAY</a>
+                            </h2>
+                            <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
+                                <?php $i = 1;foreach ($news_list as $news){?>
+                                    <div class="panel">
+                                        <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
+                                            <h4 class="panel-title">
+                                                <?= substr($news['news_title'], 0, 40)?>
+                                            </h4>
+                                        </a>
+                                        <div id="<?= 'book-'.$news['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
+                                            <div class="panel-body">
+                                                <div class="item-content clearfix">
+                                                    <a class="thumb-image" href="" title="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                    </a>
+                                                    <p>
+                                                        <?= substr($news['news_sapo'], 0, 200)?>...
+                                                    </p>
+                                                </div>
+                                                <div class="item-footer clearfix">
+                                                    <a class="btn-more" href="https://binhivu.com/dan-su" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php $i++;} ?>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -238,26 +252,29 @@
 
 <script>
     $(document).ready(function () {
-        $('#myCarousel').owlCarousel({
-            items: 2,
-            loop: true,
-            nav: false,
-            dots: true,
-            responsiveClass:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                991: {
-                    items: 4
-                }
-            },
+        $('.owl-carousel').owlCarousel({
+            lazyLoad:true,
+            margin:10,
             autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true
+            autoplaySpeed:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:4,
+                    nav:true,
+                    loop:false
+                }
+            }
         });
+
+        $('.owl-nav').hide();
     })
 </script>

@@ -18,7 +18,7 @@ class Home extends MY_Controller {
     	$header['title'] = 'Trang chủ';
 
         $news_list = $this->News_model->news_list_paging(-1, 1, '', '', 0, 12);
-        $funs_list = $this->Funs_model->funs_list_paging(-1, 1, '', '', 0, 12);
+        $funs_list = $this->Funs_model->funs_list_paging(-1, -1, '', '', 0, 12);
         $funs_top_view = $this->Funs_model->funs_list_top_view();
         $data['news_list'] = $news_list['list'];
         $data['funs_list'] = $funs_list['list'];

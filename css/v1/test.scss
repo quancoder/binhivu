@@ -1,0 +1,76 @@
+@each $device, $pixel in ((xs, 767px), (sm, 992px), (md, 1200px), (lg, 10000px)) {
+    @media (max-width: $pixel) {
+        @for $i from 5 through 100 {
+            @if $i%5 == 0 {
+                //width
+                .w-#{$i}-#{$device} {
+                    width: 0%+$i !important;
+                }
+
+                //padding
+                .pt-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .pl-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .pr-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .pb-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+
+                //margin
+                .mt-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .ml-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .mr-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+                .mb-#{$i}-#{$device} {
+                    width: 0px+$i !important;
+                }
+            }
+        }
+    }
+}
+
+@for $i from 5 through 100 {
+
+    @if $i%5 == 0 {
+        .w-#{$i} {
+            width: 0%+$i !important;
+        }
+
+        .pt-#{$i} {
+            width: 0px+$i !important;
+        }
+        .pl-#{$i} {
+            width: 0px+$i !important;
+        }
+        .pr-#{$i} {
+            width: 0px+$i !important;
+        }
+        .pb-#{$i} {
+            width: 0px+$i !important;
+        }
+
+        .mt-#{$i} {
+            width: 0px+$i !important;
+        }
+        .ml-#{$i} {
+            width: 0px+$i !important;
+        }
+        .mr-#{$i} {
+            width: 0px+$i !important;
+        }
+        .mb-#{$i} {
+            width: 0px+$i !important;
+        }
+
+    }
+}

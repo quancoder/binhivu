@@ -69,4 +69,29 @@ class News_model extends CI_Model
 
         return $data;
     }
+
+    function news_list_top_view($top=10){
+        $data = array();
+        $iconn = $this->db->conn_id;
+        $sql = "CALL news_list_top_view(:top);";
+        $stmt = $iconn->prepare($sql);
+        if($stmt)
+        {
+            $stmt->bindParam(':top', $top, PDO::PARAM_INT);
+            // execute the stored procedure
+            if($stmt->execute())
+            {
+                if($stmt->rowCount() > 0)
+                {
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+                    {
+                        $data[] = $row;
+                    }
+                }
+                $stmt->closeCursor();
+            }
+        }
+
+        return $data;
+    }
 }

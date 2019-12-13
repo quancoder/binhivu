@@ -70,7 +70,6 @@ class Funs_model extends CI_Model
         return $data;
     }
 
-    //list paging
     function funs_list_top_view(){
         $data = array();
         $iconn = $this->db->conn_id;

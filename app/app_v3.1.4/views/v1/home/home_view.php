@@ -7,120 +7,111 @@
     <div class="container" style="background: #fff">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="home-title">
-                    <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN TỨC</a>
-                </h1>
-                <div class="row" style="margin-bottom: 20px;">
-                    <!--row1 left-->
-                    <div class="col-md-8">
-                        <div class="featured-article">
-                            <a href="<?= toURLFriendly(site_url($news_list[0]['news_title']),'tt', $news_list[0]['news_id'])?>">
-                                <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
-                                     data-src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
-                                     alt="<?= $news_list[0]['news_title']?>">
-                            </a>
-                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
-                                <h2 class="media-heading">
-                                    <a href="<?= toURLFriendly(site_url($news_list[0]['news_title']),'tt', $news_list[0]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
-                                        <?= $news_list[0]['news_title']?>
-                                    </a>
-                                </h2>
-                                <p>
-                                    <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[0]['news_update_time'])?></span>
-                                </p>
-                                <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
-                                    (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
-                                </p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-
-                        <div class="featured-article">
-                            <a href="<?= toURLFriendly(site_url($news_list[1]['news_title']),'tt', $news_list[1]['news_id'])?>">
-                                <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
-                                     data-src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
-                                     alt="<?= $news_list[1]['news_title']?>">
-                            </a>
-                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
-                                <h2 class="media-heading">
-                                    <a href="<?= toURLFriendly(site_url($news_list[1]['news_title']),'tt', $news_list[1]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
-                                        <?= $news_list[0]['news_title']?>
-                                    </a>
-                                </h2>
-                                <p>
-                                    <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[1]['news_update_time'])?></span>
-                                </p>
-                                <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
-                                    (Tin tức)  <?= htmlentities($news_list[1]['news_sapo'])?>
-                                </p>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--row1 right-->
-                    <div class="col-md-4">
-                        <div class="media-list main-list" style="text-align: justify">
-                            <?php $i=1?>
-                            <?php foreach ($news_list as $news){?>
-                                <?php if($i >= 3 and $i <=6){?>
-                                    <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
-                                        <div class="media-body">
-                                            <a class="" href="<?= toURLFriendly(site_url($news['news_title']),'tt', $news['news_id'])?>">
-                                                <img class="media-object lazy w-100" src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>"
-                                                     data-src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>" alt="<?= $news['news_title']?>">
-                                            </a>
-                                            <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
-                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_update_time'])?></span>
-                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; text-align: justify">
-                                                <a href="<?= toURLFriendly(site_url($news['news_title']),'tt', $news['news_id'])?>" style="font-size: 1.6rem">
-                                                    <?= $news['news_title']?>
-                                                </a>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                            <?php $i++;} ?>
-                        </div>
-                    </div>
-
-                    <div class="col-md-12">
-                        <div id="myCarousel" class="owl-carousel owl-theme owl-loaded owl-drag">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage" style="transform: translate3d(-1144px, 0px, 0px); transition: all 0s ease 0s; width: 4578px;">
-                                    <?php $i= 1; foreach ($news_list as $new){ ?>
-                                        <?php if($i >=1 and $i <=12){?>
-                                            <div class="owl-item active" style="width: 381.5px;">
-                                                <div class="item">
-                                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                                        <img class="lazy" src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
-                                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>"
-                                                             alt="<?= $new['news_title']?>" style="width: 100%; height: 150px">
-                                                    </a>
-                                                    <h3 class="media-heading">
-                                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        <?php } ?>
-                                    <?php $i++;} ?>
+                <div id="zone-news">
+                    <h1 class="home-title">
+                        <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN TỨC</a>
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="featured-article">
+                                <a href="<?= toURLFriendly(site_url($news_list[0]['news_title']),'tt', $news_list[0]['news_id'])?>">
+                                    <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
+                                         data-src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
+                                         alt="<?= $news_list[0]['news_title']?>">
+                                </a>
+                                <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                    <h2 class="media-heading">
+                                        <a href="<?= toURLFriendly(site_url($news_list[0]['news_title']),'tt', $news_list[0]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
+                                            <?= $news_list[0]['news_title']?>
+                                        </a>
+                                    </h2>
+                                    <p>
+                                        <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                        <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                        <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[0]['news_update_time'])?></span>
+                                    </p>
+                                    <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
+                                        (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
+                                    </p>
+                                    <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <div class="owl-nav disabled">
-                                <div class="owl-prev">◀</div>
-                                <div class="owl-next">▶</div>
+
+                            <div class="featured-article">
+                                <a href="<?= toURLFriendly(site_url($news_list[1]['news_title']),'tt', $news_list[1]['news_id'])?>">
+                                    <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
+                                         data-src="<?php echo base_url(); ?>public/images/<?= $news_list[1]['news_image']?>"
+                                         alt="<?= $news_list[1]['news_title']?>">
+                                </a>
+                                <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                    <h2 class="media-heading">
+                                        <a href="<?= toURLFriendly(site_url($news_list[1]['news_title']),'tt', $news_list[1]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
+                                            <?= $news_list[1]['news_title']?>
+                                        </a>
+                                    </h2>
+                                    <p>
+                                        <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                        <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                        <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[1]['news_update_time'])?></span>
+                                    </p>
+                                    <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
+                                        (Tin tức)  <?= htmlentities($news_list[1]['news_sapo'])?>
+                                    </p>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--row1 right-->
+                        <div class="col-md-4" id="list-news-right">
+                            <div class="media-list main-list" style="text-align: justify">
+                                <?php $i=1?>
+                                <?php foreach ($news_list as $news){?>
+                                    <?php if($i >= 3 and $i <=6){?>
+                                        <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
+                                            <div class="media-body">
+                                                <a class="" href="<?= toURLFriendly(site_url($news['news_title']),'tt', $news['news_id'])?>">
+                                                    <img class="media-object lazy w-100" src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>"
+                                                         data-src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>" alt="<?= $news['news_title']?>">
+                                                </a>
+                                                <a href="<?= site_url('tin-tuc.html')?>"><span class="category">Tin tức</span></a> -
+                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_update_time'])?></span>
+                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
+                                                    <a href="<?= toURLFriendly(site_url($news['news_title']),'tt', $news['news_id'])?>" style="font-size: 1.6rem">
+                                                        <?= $news['news_title']?>
+                                                    </a>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                <?php $i++;} ?>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <!--LIST LOOP NEWS-->
+                            <div class="owl-carousel owl-theme" id="list-loop-news">
+                                <?php $tmp = array_reverse($news_list);
+                                foreach ($tmp as $new){ ?>
+                                    <div class="item">
+                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
+                                            <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
+                                                 data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>" >
+                                        </a>
+                                        <h3 class="media-heading">
+                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                        </h3>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <h1 class="home-title">
-                    <a href="<?= site_url('giai-tri.html')?>" title="TIN TỨC">TRUYỆN NGẮN</a>
-                </h1>
-                <div class="row" style="margin-bottom: 20px;">
+                <div id="zone-thu-gian">
+                    <h1 class="home-title">
+                        <a href="<?= site_url('goc-thu-gian.html')?>" title="TIN TỨC">GÓC THƯ GIÃN</a>
+                    </h1>
+                    <div class="row" style="margin-bottom: 20px;">
                     <!--row1 left-->
                     <div class="col-md-7 col-lg-7">
                         <div class="featured-article">
@@ -136,12 +127,12 @@
                                     </a>
                                 </h2>
                                 <p>
-                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Truyện ngắn</span></a> -
+                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Góc thư giãn</span></a> -
                                     <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs_list[0]['funs_update_time'])?></span>
                                 </p>
                                 <p style="font-size: 13px; margin-bottom: 0px">
-                                    (Truyện ngắn)  <?= htmlentities($funs_list[0]['funs_sapo'])?>
+                                    (Góc thư giãn)  <?= htmlentities($funs_list[0]['funs_sapo'])?>
                                 </p>
                                 <div class="clearfix"></div>
                             </div>
@@ -160,36 +151,36 @@
                                     </a>
                                 </h2>
                                 <p>
-                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Truyện ngắn</span></a> -
+                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Góc thư giãn</span></a> -
                                     <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs_list[1]['funs_update_time'])?></span>
                                 </p>
                                 <p style="font-size: 13px; margin-bottom: 0px">
-                                    (Truyện ngắn) <?= htmlentities($funs_list[1]['funs_sapo'])?>
+                                    (Góc thư giãn) <?= htmlentities($funs_list[1]['funs_sapo'])?>
                                 </p>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
                     </div>
                     <!--row1 right-->
-                    <div class="col-md-5 col-lg-5">
+                    <div class="col-md-5 col-lg-5"  id="list-thu-gian-right">
                         <ul class="media-list main-list">
                             <?php $i=1?>
                             <?php foreach ($funs_list as $funs){?>
                                 <?php if($i >= 3 and $i <=7){?>
                                     <li class="media" style="padding-bottom: 10px;">
-                                        <a class="pull-left img-thumbnail" href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>">
-                                            <img class="media-object lazy" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                 data-src="<?php echo base_url()?>public/thumbs/<?= $funs['funs_thumbs']?>"
+                                        <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>">
+                                            <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                                 data-src="<?php echo base_url()?>public/images/<?= $funs['funs_thumbs']?>"
                                                  alt="<?= $funs['funs_title']?>">
                                         </a>
                                         <div class="media-body">
-                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; text-align: justify">
+                                            <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
                                                 <a href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>">
                                                     <?= $funs['funs_title']?>
                                                 </a>
                                             </h3>
-                                            <a href="<?= site_url('giai-tri.html')?>"><span class="category">Truyện ngắn</span></a> -
+                                            <a href="<?= site_url('giai-tri.html')?>"><span class="category">Góc thư giãn</span></a> -
                                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_update_time'])?></span>
                                         </div>
                                     </li>
@@ -211,60 +202,59 @@
                         </ul>
                     </div>
                 </div>
+                </div>
 
-                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <h2 class="line-title clearfix">
-                            <a href="<?= site_url('truyen-ngan')?>" title="Truyện ngắn ">TRUYỆN NGẮN XEM NHIỀU NHẤT</a>
-                        </h2>
-                        <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                <div id="zone-thu-gian-most-view">
+                    <h2 class="line-title clearfix">
+                        <a href="javascript:void(0)" title="Góc thư giãn ">Góc thư giãn XEM NHIỀU NHẤT</a>
+                    </h2>
+                    <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                    <?php
+                    $i = 1;
+                    foreach ($funs_top_view as $funs){ ?>
+                        <?php if($i <=5){?>
+                        <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
+                            <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>">
+                                <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                     data-src="<?php echo base_url()?>public/images/<?= $funs['funs_thumbs']?>"
+                                     alt="<?= $funs['funs_title']?>" style="width: ">
+                            </a>
+                            <div class="media-body w-100-xs">
+                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
+                                    <a href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>" style="font-size: 1.6rem">
+                                        <?= $funs['funs_title']?>
+                                    </a>
+                                </h3>
+                                <a href="<?= site_url('giai-tri.html')?>"><span class="category">Góc thư giãn</span></a> -
+                                <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($funs['funs_views'])?></span> -
+                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_update_time'])?></span>
+                                <p style="margin-top: 10px; color: #1e1e1e"><?= $funs['funs_sapo']?></p>
+                            </div>
+                        </li>
+                            <?php } ?>
+                    <?php $i++;} ?>
+                    </ul>
+
+                    <ul class="news-list" style="border: none;">
                         <?php
                         $i = 1;
                         foreach ($funs_top_view as $funs){ ?>
-                            <?php if($i <=5){?>
-                            <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
-                                <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>">
-                                    <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?php echo base_url()?>public/images/<?= $funs['funs_thumbs']?>"
-                                         alt="<?= $funs['funs_title']?>" style="width: ">
-                                </a>
-                                <div class="media-body w-100-xs">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                        <a href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>" style="font-size: 1.6rem">
-                                            <?= $funs['funs_title']?>
-                                        </a>
+                            <?php if($i >= 6 and $i <=10){?>
+                                <li>
+                                    <h3>
+                                        <a href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>"
+                                           title="<?=$funs['funs_title'] ?>"><?=$funs['funs_title'] ?></a>
                                     </h3>
-                                    <a href="<?= site_url('giai-tri.html')?>"><span class="category">Truyện ngắn</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($funs['funs_views'])?></span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_update_time'])?></span>
-                                    <p style="margin-top: 10px; color: #1e1e1e"><?= $funs['funs_sapo']?></p>
-                                </div>
-                            </li>
-                                <?php } ?>
+                                </li>
+                            <?php } ?>
                         <?php $i++;} ?>
-                        </ul>
-
-                        <ul class="news-list" style="border: none;">
-                            <?php
-                            $i = 1;
-                            foreach ($funs_top_view as $funs){ ?>
-                                <?php if($i >= 6 and $i <=10){?>
-                                    <li>
-                                        <h3>
-                                            <a href="<?= toURLFriendly($funs['funs_title'], 'gt', $funs['funs_id'])?>"
-                                               title="<?=$funs['funs_title'] ?>"><?=$funs['funs_title'] ?></a>
-                                        </h3>
-                                    </li>
-                                <?php } ?>
-                            <?php $i++;} ?>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="departments" style="margin-bottom: 25px;">
+                <div id="zone-document" class="departments">
                     <h1 class="home-title">
                         <span>Tài liệu</span>
                     </h1>
@@ -296,14 +286,14 @@
                     </div>
                 </div>
 
-                <div class="departments" style="margin-bottom: 25px;">
+                <div id="accordion-book" class="departments" style="margin-bottom: 25px;">
                     <h1 class="home-title">
                         <span>Sách</span>
                     </h1>
                     <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($news_list as $news){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading" role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
                                         <?= substr($news['news_title'], 0, 40)?>
                                     </h4>
@@ -355,26 +345,29 @@
 </main>
 <script>
     $(document).ready(function () {
-        $('#myCarousel').owlCarousel({
-            items: 3,
-            loop: true,
-            nav: false,
-            dots: true,
-            responsiveClass:true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                768: {
-                    items: 2
-                },
-                991: {
-                    items: 4
-                }
-            },
+        $('.owl-carousel').owlCarousel({
+            lazyLoad:true,
+            margin:10,
             autoplay:true,
-            autoplayTimeout:3000,
-            autoplayHoverPause:true
+            autoplaySpeed:3000,
+            autoplayHoverPause:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:false
+                },
+                1000:{
+                    items:4,
+                    nav:true,
+                    loop:false
+                }
+            }
         });
+
+        $('.owl-nav').hide();
     })
 </script>

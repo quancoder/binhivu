@@ -48,4 +48,4 @@ $(document).ready(function () {
 
     //img lazy loading
     $('img.lazy').lazy();
-})
+});

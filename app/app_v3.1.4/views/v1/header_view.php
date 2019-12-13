@@ -34,14 +34,14 @@
     <link rel="icon" href="<?php echo base_url() . 'images/'; ?>logo-min.PNG" type="image/x-icon">
     <link href="<?php echo base_url() . 'css/' . $template_f; ?>boostrap.3.3.7.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url() . 'css/' . $template_f; ?>bundle.scss.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() . 'css/' . $template_f; ?>device.screen.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() . 'css/' . $template_f; ?>media.screen.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url() . 'css/' . $template_f; ?>demo.css" rel="stylesheet" type="text/css">
 
     <!--script-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.ui.1.12.1.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>script.js"></script>
     <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
 </head>
 <body style="margin-bottom: 0px;">
