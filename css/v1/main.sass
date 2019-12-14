@@ -1,48 +1,5 @@
-@for $i from 5 through 100
-    @if $i%5 == 0
-        .w-#{$i}
-            width: 0%+$i !important
-        .pt-#{$i}
-            width: 0px+$i !important
-        .pl-#{$i}
-            width: 0px+$i !important
-        .pr-#{$i}
-            width: 0px+$i !important
-        .pb-#{$i}
-            width: 0px+$i !important
-        .mt-#{$i}
-            width: 0px+$i !important
-        .ml-#{$i}
-            width: 0px+$i !important
-        .mr-#{$i}
-            width: 0px+$i !important
-        .mb-#{$i}
-            width: 0px+$i !important
 
 
-@each $device, $pixel in ((xs, 767px), (sm, 992px), (md, 1200px), (lg, 10000px))
-    @media (max-width: $pixel)
-        //width margin padding
-        @for $i from 5 through 100
-            @if $i%5 == 0
-                .w-#{$i}-#{$device}
-                    width: 0%+$i !important
-                .pt-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .pl-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .pr-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .pb-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .mt-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .ml-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .mr-#{$i}-#{$device}
-                    width: 0px+$i !important
-                .mb-#{$i}-#{$device}
-                    width: 0px+$i !important
 @mixin home-title
     @media (max-width: 767px)
         .home-title
@@ -75,6 +32,7 @@
     font-weight: bold
     color: #ff914d
     font-size: 11px
+
 @mixin time-author
     font-family: Arial
     font-weight: bold
@@ -208,7 +166,6 @@
             margin-bottom: 12px !important
             .panel-heading[aria-expanded="true"]
                 background-color: #f1f1f1
-                padding: 15px
             .panel-heading
                 h4
                     color: #222
@@ -262,5 +219,6 @@
                             color: #FFF
                             border-color: #12844e
                             text-decoration: none
+
 #appointment
-    @include  home-title
+    @include home-title

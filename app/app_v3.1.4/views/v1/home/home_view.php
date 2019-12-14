@@ -1,8 +1,4 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-<!-- Owl Stylesheets -->
-<script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
-<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
 <main>
     <div class="container" style="background: #fff">
         <div class="row">

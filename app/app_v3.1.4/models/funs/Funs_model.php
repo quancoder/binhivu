@@ -50,6 +50,8 @@ class Funs_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        $title = htmlentities($row['funs_title']);
+                        $row['funs_title'] = $title;
                         $data['list'][] = $row;
                     }
                 }
@@ -84,6 +86,8 @@ class Funs_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        $title = htmlentities($row['funs_title']);
+                        $row['funs_title'] = $title;
                         $data[] = $row;
                     }
                 }

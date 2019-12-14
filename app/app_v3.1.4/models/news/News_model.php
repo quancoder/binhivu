@@ -50,6 +50,8 @@ class News_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        $title = htmlentities($row['news_title']);
+                        $row['news_title'] = $title;
                         $data['list'][] = $row;
                     }
                 }
@@ -85,6 +87,8 @@ class News_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        $title = htmlentities($row['news_title']);
+                        $row['news_title'] = $title;
                         $data[] = $row;
                     }
                 }

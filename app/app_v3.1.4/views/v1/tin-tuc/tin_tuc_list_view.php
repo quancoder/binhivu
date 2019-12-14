@@ -1,12 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-<!-- Owl Stylesheets -->
-<script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
-<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-sm-12" id="zone-news-list">
+            <div class="col-sm-12">
                 <h2 class="home-title hide">
                     <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN TỨC</a>
                 </h2>
@@ -14,11 +10,11 @@
                 <div style="margin: 10px 0px">
                     <a href="<?= site_url()?>">Trang Chủ</a> ➝ Tin tức
                 </div>
-                <h2 class="line-title clearfix">
-                        <a href="javascript:void(0)" title="DÂN SỰ ">Tin tức mới</a>
+                <h2 class="line-title">
+                        <a href="javascript:void(0)" title="Tin tức mới">Tin tức mới</a>
                 </h2>
                 <div class="row" style="margin-bottom: 20px; margin-top: 20px">
-                    <!--MAIN LEFT-->
+                    <!--1 NEW NOI BAT-->
                     <div class="col-md-6 col-lg-6">
                         <div class="featured-article">
                             <a href="<?= toURLFriendly($news_list[0]['news_title'], 'tt', $news_list[0]['news_id'])?>">
@@ -57,7 +53,7 @@
                             <?php $i++;} ?>
                         </ul>
                     </div>
-                    <!--MAIN RIGHT-->
+                    <!--4 NEW MOI-->
                     <div class="col-md-6 col-lg-6">
                         <ul class="media-list main-list">
                             <?php $i= 2; foreach ($news_list as $new){ ?>

@@ -29,20 +29,26 @@
     <meta name="twitter:site" content="binhivu">
     <meta name="twitter:creator" content="binhivu">
 
+    <!--   favicon -->
+    <link rel="icon" href="<?php echo base_url() . 'images/'; ?>logo-min.png" type="image/x-icon">
+
     <!--css-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>bpr.min.css" media="all">
-    <link rel="icon" href="<?php echo base_url() . 'images/'; ?>logo-min.PNG" type="image/x-icon">
-    <link href="<?php echo base_url() . 'css/' . $template_f; ?>boostrap.3.3.7.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() . 'css/' . $template_f; ?>bundle.scss.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() . 'css/' . $template_f; ?>media.screen.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url() . 'css/' . $template_f; ?>demo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>boostrap.3.3.7.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>bundle.scss.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>bpr.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'css/' . $template_f; ?>reset.css">
+    <link rel="stylesheet" type="text/css" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css">
 
     <!--script-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.ui.1.12.1.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
-    <script type="text/javascript" async="" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.ui.1.12.1.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
+    <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
+
 </head>
 <body style="margin-bottom: 0px;">
 <div id="main">
@@ -56,7 +62,7 @@
                             <h1 class="h1-no-margin-padding">
                                 <span style="display: none">BinhiVu</span>
                                 <a href="https://binhivu.com/" title="binhivu">
-                                    <img alt="binhivu" src="<?php echo base_url() . 'images/'; ?>logo2.PNG" class="ega-logo">
+                                    <img alt="binhivu" src="<?php echo base_url() . 'images/'; ?>logo2.png" class="ega-logo">
                                 </a>
                             </h1>
                         </div>
