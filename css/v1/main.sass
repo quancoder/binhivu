@@ -1,164 +1,49 @@
+@import "main_import"
 
+//INIT
+@include home-title
+@include line-title
+@include category-time-author
 
-@mixin home-title
-    @media (max-width: 767px)
-        .home-title
-            margin-top: 10px
-    .home-title
-        height: 42px
-        font-size: 16px
-        color: #fff
-        text-transform: uppercase
-        border-bottom: 5px solid #ff914d
-        margin-bottom: 20px
-        a, span
-            position: relative
-            color: #12844e
-            display: inline-block
-            height: 42px
-            line-height: 42px
-            text-decoration: none
-            font-weight: bold
-            &:after
-                position: absolute
-                content: ''
-                width: 0
-                height: 0
-                left: 100%
-                top: 0
-
-@mixin category-name
-    font-family: Arial
-    font-weight: bold
-    color: #ff914d
-    font-size: 11px
-
-@mixin time-author
-    font-family: Arial
-    font-weight: bold
-    color: gray
-    font-size: 11px
-
-@mixin media-heading($fontSize)
-    font-size: $fontSize
-    margin-bottom: 10px
-    margin-top: 10px
-    text-align: justify
-    a
-        color: #222
-        font-weight: bold
-        &:hover
-            text-shadow: 1px 1px 3px #e0e0e0
-
-@mixin featured-article
-    margin-bottom: 20px
+.media-body
     h3.media-heading
-        line-height: initial
-    .block-title
-        margin-bottom: 20px
-        h2.media-heading
-            @include media-heading(2rem)
-        .media-heading a:hover, .news-list li a:hover
-            text-shadow: 1px 1px 3px #e0e0e0
-        .media-heading .archive-i:hover
-            text-shadow: 1px 1px 3px #631e02
-        .author, .time
-            @include time-author
+        @include media-heading(1.6rem)
 
-@mixin line-title
-    font-size: 14px
-    color: #3d3d3d
-    font-weight: 700
-    text-transform: uppercase
-    border-bottom: 5px solid #ff914d
-    height: 12px
-    a, span
-        color: #12844e
-        float: left
-        display: block
-        padding-right: 20px
-        background: #fff
 
-@mixin news-list
-    padding: 8px 0 0 0
-    margin-bottom: 30px
-    border-top: 1px solid #eee
-    text-align: justify
-    li
-        margin-top: 10px
-        list-style-type: none
-        h3
-            position: relative
-            margin: 0
-            display: inline-block
-            padding-left: 20px
-            line-height: 1.5
-            &:before
-                position: absolute
-                top: 2px
-                left: 0
-                font-family: 'Glyphicons Halflings'
-                content: "\e250"
-                font-size: 10px
-                color: #ff914d
-        a
-            display: block
-            font-size: 1.5rem
-            color: #222
-            &:hover
-                text-shadow: 1px 1px 3px #e0e0e0
+.carousel-custom
+    h3.media-heading
+        @include media-heading(1.6rem)
 
+
+.zone-most-view
+    li.media
+        .media-body
+@include featured-article
+
+.news-list
+    @include news-list
+
+.archive
+    @include archive
+
+//CUSTOM FOR ID ELEMENT
 #zone-news
-    @include  home-title
-    @include featured-article
+    margin-bottom: 20px
     #list-news-right
         .media-list
             .media
                 padding-bottom: 10px
                 border-bottom: 2px solid #eee
-                .media-body
-                    a .category
-                        @include category-name
-                    span.time
-                        @include time-author
-                    h3.media-heading
-                        @include media-heading(1.6rem)
-    #list-loop-news
-        h3.media-heading
-            @include media-heading(1.6rem)
+
 #zone-thu-gian
-    @include  home-title
-    @include featured-article
+    margin-bottom: 20px
     #list-thu-gian-right
         .media-list
             li.media
-                .media-body
-                    .media-heading
-                        @include media-heading(1.6rem)
-                    a span.category
-                        @include category-name
-                    span.time
-                        @include time-author
-            .news-list
-                @include news-list
 
-#zone-thu-gian-most-view
-    h2.line-title
-        @include line-title
-    li.media
-        .media-body
-            .media-heading
-                @include media-heading(1.6rem)
-            a span.category
-                @include category-name
-            span.time, span.author
-                @include time-author
-    .news-list
-        @include news-list
 
-#zone-document, #accordion-book
+#accordion-document, #accordion-book
     margin-bottom: 25px
-    @include  home-title
     .accordion
         border: 1px solid #f1f1f1
         border-bottom: 0
@@ -166,21 +51,18 @@
             margin-bottom: 12px !important
             .panel-heading[aria-expanded="true"]
                 background-color: #f1f1f1
-            .panel-heading
-                h4
-                    color: #222
-                    font-weight: bold
-            .panel-heading[aria-expanded="true"]
-                h4:after
-                    content: "\2212" !important
-            .panel-heading
-                h4:after
+            .panel-heading h4
+                color: #222
+                font-weight: bold
+                &:after
                     float: right
                     font-size: 14px
                     color: #666
                     font-family: 'Glyphicons Halflings'
                     content: "\2b" !important
                     margin-top: 0
+            .panel-heading[aria-expanded="true"] h4:after
+                content: "\2212" !important
 
             @media (max-width: 767px)
                 .panel-body
@@ -215,10 +97,18 @@
                         -moz-transition: color 0.2s ease 0s, background 0.2s ease 0s, border 0.2s ease 0s
                         margin-left: 10px
                         &:hover
-                            background-color: #12844e
+                            background-color: #ff914d
                             color: #FFF
-                            border-color: #12844e
                             text-decoration: none
 
 #appointment
     @include home-title
+.featured-articles-min
+    overflow: hidden
+    .block-title
+        padding: 8px
+        background-color: rgba(0, 0, 0, 0.8)
+        color: white
+        height: 100%
+        h2.media-heading
+            font-size: 1.5rem

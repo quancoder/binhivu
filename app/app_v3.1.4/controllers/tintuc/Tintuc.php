@@ -32,7 +32,30 @@ class Tintuc extends MY_Controller{
     	$this->_loadFooter();
     }
 
-    function detail($p, $p2){
+    function detail($p1, $p2){
+        $data= array();
+        $info = $this->News_model->news_info($p2);
 
+        if(empty($info)){
+            redirect(site_url('tin-tuc.html'));
+            die;
+        }
+        $seo = toURLFriendly($info['news_title'], 'tt', $info['news_id']);
+        if(current_url() != $seo)
+        {
+            redirect($seo);
+            die;
+        }
+
+        $news_top = $this->News_model->news_list_top_view(10);
+        $funs_top = $this->Funs_model->funs_list_top_view(10);
+
+        $data['info'] = $info;
+        $data['news_top'] = $news_top;
+        $data['funs_top'] = $funs_top;
+        $header['title'] = $info['news_title'];
+        $this->_loadHeader($header);
+        $this->load->view($this->_template_f . 'tin-tuc/tin_tuc_chi_tiet_view', $data);
+        $this->_loadFooter();
     }
 }

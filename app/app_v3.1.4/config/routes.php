@@ -58,5 +58,5 @@ $route['tin-tuc.html'] = 'tintuc/tintuc/index';
 $route['([a-zA-Z0-9-_]+)-tt([0-9]+).html'] = 'tintuc/tintuc/detail/$1/$2';
 
 //giai tri
-$route['giai-tri.html'] = 'giaitri/giaitri/index';
-$route['([a-zA-Z0-9-_]+)-gt([0-9]+)'] = 'giaitri/giaitri/detail/$1/$2';
+$route['goc-thu-gian.html'] = 'gocthugian/gocthugian/index';
+$route['([a-zA-Z0-9-_]+)-gtg([0-9]+).html'] = 'gocthugian/gocthugian/detail/$1/$2';

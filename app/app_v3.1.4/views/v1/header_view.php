@@ -3,7 +3,7 @@
 <html lang="vi" class="">
 <head>
     <title>
-        Trang chủ
+        BinhiVu
     </title>
     <!-- meta -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

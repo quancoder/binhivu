@@ -72,13 +72,14 @@ class Funs_model extends CI_Model
         return $data;
     }
 
-    function funs_list_top_view(){
+    function funs_list_top_view($top=10){
         $data = array();
         $iconn = $this->db->conn_id;
-        $sql = "CALL funs_list_top_view();";
+        $sql = "CALL funs_list_top_view(:top);";
         $stmt = $iconn->prepare($sql);
         if($stmt)
         {
+            $stmt->bindParam(':top', $top, PDO::PARAM_INT);
             // execute the stored procedure
             if($stmt->execute())
             {

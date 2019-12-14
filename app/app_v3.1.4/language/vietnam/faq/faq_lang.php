@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 $lang['faq_lang'] = array();
-$lang['faq_lang']['Tintuc'] = 'Trang chủ';
+$lang['faq_lang']['Gocthugian'] = 'Trang chủ';
 $lang['faq_lang']['faq'] = 'Câu hỏi thường gặp';
 $lang['faq_lang']['topic'] = 'Chủ đề';
 $lang['faq_lang']['category'] = 'Chuyên mục';

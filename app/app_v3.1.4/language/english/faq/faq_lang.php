@@ -1,7 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 $lang['faq_lang'] = array();
-$lang['faq_lang']['Tintuc'] = 'Homepage';
+$lang['faq_lang']['Gocthugian'] = 'Homepage';
 $lang['faq_lang']['faq'] = 'FAQ';
 $lang['faq_lang']['faqs'] = 'FAQ';
 $lang['faq_lang']['search'] = 'Search';

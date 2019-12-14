@@ -873,52 +873,42 @@ function get_time_ago( $datetime, $full=false )
     return $string ? implode(', ', $string) . ' trước' : 'vừa xong';
 }
 
-function toURLFriendly($text, $mask, $id, $ext='.html')
+function toURLFriendly($text, $mask, $id, $ext=".html")
 {
-    $tmp = slugify($text);
-    $tmp = $tmp.'-'.$mask.($id).'.html';
+    $text = $text ."-". $mask . $id;
 
-    return site_url($tmp);
-}
+    $text = Myvietstring::getTitle($text, $ext);
 
-function slugify($string, $slug = '-', $extra = null) {
-    if (strpos($string = htmlentities($string, ENT_QUOTES, 'UTF-8'), '&') !== false) {
-        $string = html_entity_decode(preg_replace('~&([a-z]{1,2})(?:acute|caron|cedil|circ|grave|lig|orn|ring|slash|tilde|uml);~i', '$1', $string), ENT_QUOTES, 'UTF-8');
-    }
-
-    if (preg_match('~[^[:ascii:]]~', $string) > 0) {
-        $latin = array(
-            'a' => '~[àáảãạăằắẳẵặâầấẩẫậÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬą]~iu',
-            'ae' => '~[ǽǣ]~iu',
-            'b' => '~[ɓ]~iu',
-            'c' => '~[ćċĉč]~iu',
-            'd' => '~[ďḍđɗð]~iu',
-            'e' => '~[èéẻẽẹêềếểễệÈÉẺẼẸÊỀẾỂỄỆęǝəɛ]~iu',
-            'g' => '~[ġĝǧğģɣ]~iu',
-            'h' => '~[ĥḥħ]~iu',
-            'i' => '~[ìíỉĩịÌÍỈĨỊıǐĭīįİ]~iu',
-            'ij' => '~[ĳ]~iu',
-            'j' => '~[ĵ]~iu',
-            'k' => '~[ķƙĸ]~iu',
-            'l' => '~[ĺļłľŀ]~iu',
-            'n' => '~[ŉń̈ňņŋ]~iu',
-            'o' => '~[òóỏõọôồốổỗộơờớởỡợÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢǒŏōőǫǿ]~iu',
-            'r' => '~[ŕřŗ]~iu',
-            's' => '~[ſśŝşșṣ]~iu',
-            't' => '~[ťţṭŧ]~iu',
-            'u' => '~[ùúủũụưừứửữựÙÚỦŨỤƯỪỨỬỮỰǔŭūűůų]~iu',
-            'w' => '~[ẃẁŵẅƿ]~iu',
-            'y' => '~[ỳýỷỹỵYỲÝỶỸỴŷȳƴ]~iu',
-            'z' => '~[źżžẓ]~iu',
-        );
-
-        $string = preg_replace($latin, array_keys($latin), $string);
-    }
-
-    return strtolower(trim(preg_replace('~[^0-9a-z' . preg_quote($extra, '~') . ']++~i', $slug, $string), $slug));
+    return site_url($text);
 }
 
 function srcImgPublic($name)
 {
     return base_url()." public/images/ ". $name;
+}
+
+function trim_text($text, $iword)
+{
+    //xoa khoang trang
+    $arr = explode(" ", $text);
+    foreach ($arr as $key =>$value)
+    {
+        if($value == "")
+        {
+            unset($arr[$key]);
+        }
+    }
+
+    //tim phan tu phu hop
+    $trimed = '';
+    $i = 1;
+    foreach ($arr as $value)
+    {
+        if($i <= $iword)
+        {
+            $trimed .= $value.' ';
+        }
+        $i++;
+    }
+    return trim($trimed.'...');
 }

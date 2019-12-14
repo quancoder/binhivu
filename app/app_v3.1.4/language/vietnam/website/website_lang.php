@@ -1,20 +1,20 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$lang['Tintuc'] = array();
+$lang['Gocthugian'] = array();
 
-$lang['Tintuc']['lbl_all'] = 'Tất cả website';
-$lang['Tintuc']['lbl_createad'] = 'Tạo website';
-$lang['Tintuc']['lbl_search'] = 'Tìm kiếm website';
+$lang['Gocthugian']['lbl_all'] = 'Tất cả website';
+$lang['Gocthugian']['lbl_createad'] = 'Tạo website';
+$lang['Gocthugian']['lbl_search'] = 'Tìm kiếm website';
 //table
-$lang['Tintuc']['#'] = 'STT';
-$lang['Tintuc']['lbl_domain'] = 'Domain';
-$lang['Tintuc']['lbl_tracking_code'] = 'Tracking Code';
-$lang['Tintuc']['lbl_tracking_script'] = 'Tracking Script';
-$lang['Tintuc']['lbl_status'] = 'Trạng thái';
-$lang['Tintuc']['lbl_create_time'] = 'Ngày tạo';
+$lang['Gocthugian']['#'] = 'STT';
+$lang['Gocthugian']['lbl_domain'] = 'Domain';
+$lang['Gocthugian']['lbl_tracking_code'] = 'Tracking Code';
+$lang['Gocthugian']['lbl_tracking_script'] = 'Tracking Script';
+$lang['Gocthugian']['lbl_status'] = 'Trạng thái';
+$lang['Gocthugian']['lbl_create_time'] = 'Ngày tạo';
 
 
 //
-$lang['Tintuc']['lbl_new_createad'] = 'Tạo mới website';
-$lang['Tintuc']['lbl_enter_domain'] = 'Nhập Domain';
-$lang['Tintuc']['lbl_enter_domain_error'] = 'Nhập chính xác tên miền của bạn';
+$lang['Gocthugian']['lbl_new_createad'] = 'Tạo mới website';
+$lang['Gocthugian']['lbl_enter_domain'] = 'Nhập Domain';
+$lang['Gocthugian']['lbl_enter_domain_error'] = 'Nhập chính xác tên miền của bạn';

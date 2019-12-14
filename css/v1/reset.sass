@@ -3,42 +3,54 @@
         .w-#{$i}
             width: 0%+$i !important
         .pt-#{$i}
-            width: 0px+$i !important
+            padding-top: 0px+$i !important
         .pl-#{$i}
-            width: 0px+$i !important
+            padding-left: 0px+$i !important
         .pr-#{$i}
-            width: 0px+$i !important
+            padding-right: 0px+$i !important
         .pb-#{$i}
-            width: 0px+$i !important
+            padding-bottom: 0px+$i !important
         .mt-#{$i}
-            width: 0px+$i !important
+            margin-top: 0px+$i !important
         .ml-#{$i}
-            width: 0px+$i !important
+            margin-left: 0px+$i !important
         .mr-#{$i}
-            width: 0px+$i !important
+            margin-right: 0px+$i !important
         .mb-#{$i}
-            width: 0px+$i !important
+            margin-bottom: 0px+$i !important
 
 @each $device, $pixel in ((xs, 767px), (sm, 992px), (md, 1200px), (lg, 10000px))
     @media (max-width: $pixel)
+        @if $device == 'xs'
+            .h-xs-auto
+                height: auto !important
         //width margin padding
         @for $i from 5 through 100
             @if $i%5 == 0
                 .w-#{$i}-#{$device}
                     width: 0%+$i !important
                 .pt-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    padding-top: 0px+$i !important
                 .pl-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    padding-left: 0px+$i !important
                 .pr-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    padding-right: 0px+$i !important
                 .pb-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    padding-bottom: 0px+$i !important
                 .mt-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    margin-top: 0px+$i !important
                 .ml-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    margin-left: 0px+$i !important
                 .mr-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    margin-right: 0px+$i !important
                 .mb-#{$i}-#{$device}
-                    width: 0px+$i !important
+                    margin-bottom: 0px+$i !important
+
+@for $i from 5 through 700
+    @if $i%5 == 0
+        .h-#{$i}
+            height: 0px+$i
+        .min-h-#{$i}
+            min-height: 0px+$i
+        .max-h-#{$i}
+            max-height: 0px+$i
