@@ -81,11 +81,11 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="funs_status_1" value="1" class="btn btn-primary float-left"><i class="fa fa-pencil"></i> Đăng lên trang chủ</button>
+                        <button type="submit" name="funs_status_1" value="ok" class="btn btn-primary float-left"><i class="fa fa-pencil"></i> Đăng lên trang chủ</button>
 
                         <div class="float-right">
                             <button type="reset" class="btn btn-default"><i class="fa fa-pencil" ></i> Nhập lại</button>
-                            <button type="submit" name="funs_status_4" value="4" class="btn btn-default"><i class="fa fa-pencil"></i> Lưu nháp</button>
+                            <button type="submit" name="funs_status_4" value="ok" class="btn btn-default"><i class="fa fa-pencil"></i> Lưu nháp</button>
                         </div>
                     </div>
                 </div>
@@ -117,19 +117,18 @@
 
     tinymce.init({
         selector: '#funs-content',
-        height: 700,
         menubar: true,
         width: '100%',
         theme: 'silver',
         language: 'vi',
         plugins: [
-            "advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
+            "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
         toolbar1: 'insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title: "Quản lý file ",
+        filemanager_title: "Quản lý tài nguyên ",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

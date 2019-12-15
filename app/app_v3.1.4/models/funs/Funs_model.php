@@ -20,6 +20,7 @@ class Funs_model extends CI_Model
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     $data = $stmt->fetch(PDO::FETCH_ASSOC);
+                    $data['funs_path'] = site_url($data['funs_image']);
                 }
                 $stmt->closeCursor();
             }
@@ -52,6 +53,7 @@ class Funs_model extends CI_Model
                     {
                         $title = htmlentities($row['funs_title']);
                         $row['funs_title'] = $title;
+                        $row['funs_path'] = site_url($row['funs_image']);
                         $data['list'][] = $row;
                     }
                 }
@@ -89,6 +91,7 @@ class Funs_model extends CI_Model
                     {
                         $title = htmlentities($row['funs_title']);
                         $row['funs_title'] = $title;
+                        $row['funs_path'] = site_url($row['funs_image']);
                         $data[] = $row;
                     }
                 }

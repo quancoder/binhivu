@@ -11,13 +11,27 @@
 
 
 .carousel-custom
-    h3.media-heading
-        @include media-heading(1.6rem)
+    h3.carousel-heading
+        font-size: 1.5rem
+        margin: 0
+        text-align: justify
+        background: #ebebeb
+        height: 100px
+        padding: 7px
+        a
+            color: #222
+            font-weight: bold
+            &:hover
+                color: #555
+    .owl-dots .owl-dot span
+        background: #f06e0f
 
 
 .zone-most-view
     li.media
         .media-body
+            //nothing
+
 @include featured-article
 
 .news-list

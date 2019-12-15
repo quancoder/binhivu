@@ -6,12 +6,12 @@ class Authenticate_model extends CI_Model
 	{
 		parent::__construct();
 	}
-    function get_user_by_username($username)
+    function user_info_by_username($username)
     {
         $rel = array();
         $iconn = $this->db->conn_id;
 
-        $sql = "CALL get_user_by_username(:username);";
+        $sql = "CALL user_info_by_username(:username);";
         $stmt = $iconn->prepare($sql);
         if($stmt)
         {

@@ -123,7 +123,7 @@
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title: "Quản lý file ",
+        filemanager_title: "Quản lý tài nguyên ",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

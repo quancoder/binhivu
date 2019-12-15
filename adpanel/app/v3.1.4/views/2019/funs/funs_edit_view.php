@@ -9,8 +9,11 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="<?=site_url('Funs')?>">Tin tức</a></li>
+                    <li class="breadcrumb-item"><a href="<?=site_url('Funs')?>">Góc thư giãn</a></li>
                     <li class="breadcrumb-item active">Sửa bài viết</li>
+                    <li class="ml-3 float-right">
+                        <a href="<?= site_url('funs/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Đăng tin mới</a>
+                    </li>
                 </ol>
             </div>
         </div>
@@ -20,6 +23,15 @@
     <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $isupdate == TRUE ? 'block' : 'none'?>">
         <strong>Thành công!</strong>
         Bạn đã sửa thành công bài viết. <a href="<?=site_url('Funs', $langcode)?>">Quay lại danh sách.</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: <?= !empty($error)  ? 'block' : 'none'?>">
+        <strong>Thất bại!</strong>
+        <a href="<?=site_url('funs', $langcode)?>">Quay lại danh sách.</a>
+        <p>Đang có lỗi:</p>
+        <?php var_dump($error)?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -47,13 +59,13 @@
                         </div>
                         <label class="col-form-label" for="funs_image"><i class="fa fa-pencil"></i> Chọn ảnh</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="funs_image" name="funs_image" value="<?= HTTP_PROTOCOL . '://' . $_SERVER['HTTP_HOST'] .'/public/images/'.$info['funs_image']?>" required/>
+                            <input type="text" class="form-control" id="funs_image" name="funs_image" value="<?= ROOT_DOMAIN.$info['funs_image']?>" required/>
                             <div class="input-group-prepend">
                                 <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=1&field_id=funs_image" class="btn btn-secondary iframe-btn">Chọn ảnh</a>
                             </div>
                         </div>
                         <div style="margin: 10px 0; ">
-                            <img id="image_preview"  alt="ảnh bài viết" src="/public/images/<?=$info['funs_image']?>"
+                            <img id="image_preview"  alt="ảnh bài viết" src="<?=$info['funs_image']?>"
                                  style="width:100%; background-color: white; text-align: center;    border: 4px solid #eee; border-radius: 8px;"/>
                         </div>
 
@@ -90,7 +102,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="submit" value="1" class="btn btn-primary"><i class="fa fa-pencil"></i> Hoàn thành</button>
+                        <button type="submit" name="submit" value="1" class="btn btn-primary"><i class="fa fa-pencil"></i> Cập nhật thay đổi</button>
                     </div>
                 </div>
             </div>
@@ -120,19 +132,18 @@
 
     tinymce.init({
         selector: '#funs-content',
-        height: 900,
         menubar: true,
         width: '100%',
         theme: 'silver',
         language: 'vi',
         plugins: [
-            "advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
+            "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
         toolbar1: 'insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title: "Quản lý file ",
+        filemanager_title: "Quản lý tài nguyên ",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

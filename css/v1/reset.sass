@@ -1,4 +1,4 @@
-@for $i from 5 through 100
+@for $i from 0 through 100
     @if $i%5 == 0
         .w-#{$i}
             width: 0%+$i !important
@@ -25,7 +25,7 @@
             .h-xs-auto
                 height: auto !important
         //width margin padding
-        @for $i from 5 through 100
+        @for $i from 0 through 100
             @if $i%5 == 0
                 .w-#{$i}-#{$device}
                     width: 0%+$i !important
@@ -46,7 +46,7 @@
                 .mb-#{$i}-#{$device}
                     margin-bottom: 0px+$i !important
 
-@for $i from 5 through 700
+@for $i from 0 through 700
     @if $i%5 == 0
         .h-#{$i}
             height: 0px+$i

@@ -27,7 +27,7 @@ $config['base_url']	= HTTP_PROTOCOL . '://' . $_SERVER['HTTP_HOST'] . '/adpanel/
 DEFINE('URI_PATH', '');
 //define for check if use sso login
 DEFINE('CROSS_LOGIN', TRUE);
-DEFINE('ROOT_DOMAIN', HTTP_PROTOCOL . '://' . $_SERVER['HTTP_HOST'] . '/');
+DEFINE('ROOT_DOMAIN', HTTP_PROTOCOL . '://' . $_SERVER['HTTP_HOST']);
 /*
 |--------------------------------------------------------------------------
 | Index File

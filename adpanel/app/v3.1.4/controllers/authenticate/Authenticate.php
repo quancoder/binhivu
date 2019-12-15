@@ -32,7 +32,7 @@ class Authenticate extends MY_Controller
 
             $password = $this->input->post('txtPass', true);
 
-            $uInfo = $this->Authenticate_model->get_user_by_username($username);
+            $uInfo = $this->Authenticate_model->user_info_by_username($username);
             $passVerify = false;
             if (!empty($uInfo) && $uInfo['username'] != '' && $uInfo['user_id'] > 0 && $username != '') {
                 $passVerify = PasswordHash::hash_verify($uInfo['username'], $uInfo['password'], $password);
@@ -89,7 +89,7 @@ class Authenticate extends MY_Controller
             $username = $this->_session_uname();
             $userid = $this->_session_uid();
 
-            $uInfo = $this->Authenticate_model->get_user_by_username($username);
+            $uInfo = $this->Authenticate_model->user_info_by_username($username);
             $hashOldPass = PasswordHash::hash($uInfo['username'], $old_pw);
             $hashNewPass = PasswordHash::hash($uInfo['username'], $new_pw);
             $hash_verify = PasswordHash::hash_verify($uInfo['username'], $uInfo['password'], $old_pw);

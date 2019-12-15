@@ -19,7 +19,7 @@
                         <div class="featured-article">
                             <?php $fun = $funs_list[0];?>
                             <a href="<?= toURLFriendly($fun['funs_title'],"gtg", $fun['funs_id'])?>">
-                                <img class="w-100" src="<?php echo base_url(); ?>public/images/<?= $funs_list[0]['funs_image']?>"
+                                <img class="w-100" src="<?=$fun['funs_path']?>"
                                      alt="<?= $funs_list[0]['funs_title'] ?>">
                             </a>
                             <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
@@ -59,7 +59,7 @@
                             <?php if($i >=2 and $i <=5){?>
                                 <div class="featured-articles featured-articles-min pull-left w-45 w-100-xs mb-10 mr-10 h-350 min-h-350" >
                                     <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
-                                        <img class="w-100 h-150 h-xs-auto" src="<?php echo base_url(); ?>public/images/<?= $fun['funs_image']?>"
+                                        <img class="w-100 h-150 h-xs-auto" src="<?=$fun['funs_path']?>"
                                              alt="<?= $fun['funs_title'] ?>">
                                     </a>
                                     <div class="block-title">
@@ -92,9 +92,9 @@
                                 <div class="item">
                                     <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>">
                                         <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$fun['funs_title']?>"
-                                             data-src="<?php echo base_url()?>public/images/<?= $fun['funs_thumbs']?>" >
+                                             data-src="<?=$fun['funs_path']?>" >
                                     </a>
-                                    <h3 class="media-heading">
+                                    <h3 class="carousel-heading">
                                         <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>"><?= $fun['funs_title']?></a>
                                     </h3>
                                 </div>
@@ -119,7 +119,7 @@
                                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
                                             <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
                                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                     data-src="<?php echo base_url()?>public/images/<?= $funs['funs_thumbs']?>"
+                                                     data-src="<?=$fun['funs_path']?>"
                                                      alt="<?= $funs['funs_title']?>" style="width: ">
                                             </a>
                                             <div class="media-body w-100-xs">
@@ -172,7 +172,7 @@
                                             <div class="panel-body">
                                                 <div class="item-content clearfix">
                                                     <a class="thumb-image" href="" title="">
-                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $funs['funs_thumbs']?>" alt="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$fun['funs_path']?>" alt="">
                                                     </a>
                                                     <p>
                                                         <?= substr($funs['funs_sapo'], 0, 200)?>...
@@ -204,7 +204,7 @@
                                             <div class="panel-body">
                                                 <div class="item-content clearfix">
                                                     <a class="thumb-image" href="" title="">
-                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $funs['funs_thumbs']?>" alt="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$fun['funs_path']?>" alt="">
                                                     </a>
                                                     <p>
                                                         <?= substr($funs['funs_sapo'], 0, 200)?>...
@@ -229,29 +229,5 @@
 
 <script>
     $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            lazyLoad:true,
-            margin:10,
-            autoplay:true,
-            autoplaySpeed:3000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                600:{
-                    items:3,
-                    nav:false
-                },
-                1000:{
-                    items:4,
-                    nav:true,
-                    loop:false
-                }
-            }
-        });
-
-        $('.owl-nav').hide();
     })
 </script>

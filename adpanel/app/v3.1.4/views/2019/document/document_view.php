@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Tin tức</h1>
+                <h1>Tài liệu</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item active">Tin tức</li>
+                    <li class="breadcrumb-item active">Tài liệu</li>
                 </ol>
             </div>
         </div>
@@ -19,7 +19,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card">
                 <div class="card-body" style="padding: 1rem 0.5rem 0 0.5rem">
-                    <form method="get" action="<?= site_url('Document', $langcode)?>">
+                    <form method="get" action="<?= site_url('document', $langcode)?>">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                                 <div class="form-group">
@@ -56,7 +56,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
                                 <div class="form-group float-right">
-                                    <a href="<?= site_url('news/add', $langcode) ?>" class="btn btn-danger"><i class="fa fa-edit"></i> Đăng tin mới</a>
+                                    <a href="<?= site_url('document/add', $langcode) ?>" class="btn btn-danger"><i class="fa fa-edit"></i> Đăng tài liệu</a>
                                 </div>
                             </div>
                         </form>
@@ -69,61 +69,61 @@
                         <thead>
                         <tr>
                             <th style="width: 3%">ID</th>
-                            <th style="width: 15%" class="text-center">Ảnh</th>
-                            <th>Tiêu đề</th>
-                            <th style="width: 10%" class="text-center">Trạng thái</th>
+                            <th style="width: 10%" class="text-center">Ảnh</th>
+                            <th>Tên tài liệu</th>
+                            <th style="width: 5%" class="text-center">Status</th>
+                            <th style="width: 10%" class="text-right">Giá</th>
                             <th style="width: 5%" class="text-right">View</th>
-                            <th style="width: 10%" class="text-right">Ngày đăng</th>
-                            <th style="width: 10%" class="text-right">Sửa gần nhất</th>
+                            <th style="width: 5%" class="text-right">Download</th>
+                            <th style="width: 10%" class="text-right">Ngày tạo</th>
                             <th style="width: 20%;">Từ khóa </th>
-                            <th style="width: 10%" class="text-center"></th>
+                            <th style="width: 5%" class="text-center">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($list as $id => $new) { ?>
+                        <?php foreach ($list as $id => $item) { ?>
                             <tr>
                                 <td class="align-middle"><?php echo $id ?></td>
                                 <td class="align-middle text-center" >
-                                    <a href="<?= $new['news_thumbs']?>" class="iframe-view-image">
-                                        <img src="<?=$new['news_thumbs']?>" class="img-fluid" />
+                                    <a href="<?= $item['doc_image']?>" class="iframe-view-image">
+                                        <img src="<?=$item['doc_image']?>" class="img-fluid" />
                                     </a>
                                 </td>
-                                <td class="align-middle"><?php echo $new['news_title'] ?></td>
+                                <td class="align-middle"><?php echo $item['doc_name'] ?></td>
                                 <td class="align-middle text-center">
-                                    <?php if($new['news_status'] ==1){?>
+                                    <?php if($item['doc_status'] ==1){?>
                                         <span class="badge badge-primary">Hiển thị</span>
-                                    <?php }else if($new['news_status'] ==2){?>
+                                    <?php }else if($item['doc_status'] ==2){?>
                                         <span class="badge  badge-warning">Tạm dừng</span>
-                                    <?php }else if($new['news_status'] ==3){?>
+                                    <?php }else if($item['doc_status'] ==3){?>
                                         <span class="badge badge-secondary">Lưu trữ</span>
-                                    <?php }else if($new['news_status'] ==4){?>
+                                    <?php }else if($item['doc_status'] ==4){?>
                                         <span class="badge badge-info">Tin nháp</span>
                                     <?php }?>
                                     <select class="form-control" onclick="" style="display: none">
-                                        <option value="1" <?= $new['news_status']==1 ? 'selected' : ''?> >Đang chạy</option>
-                                        <option value="2" <?= $new['news_status']==2 ? 'selected' : ''?> >Tạm dùng</option>
-                                        <option value="3" <?= $new['news_status']==3 ? 'selected' : ''?> >Lưu trữ</option>
-                                        <option value="4" <?= $new['news_status']==4 ? 'selected' : ''?> >Thùng rác</option>
+                                        <option value="1" <?= $item['doc_status']==1 ? 'selected' : ''?> >Đang chạy</option>
+                                        <option value="2" <?= $item['doc_status']==2 ? 'selected' : ''?> >Tạm dùng</option>
+                                        <option value="3" <?= $item['doc_status']==3 ? 'selected' : ''?> >Lưu trữ</option>
+                                        <option value="4" <?= $item['doc_status']==4 ? 'selected' : ''?> >Thùng rác</option>
                                     </select>
                                 </td>
-                                <td class="align-middle text-right">0</td>
                                 <td class="align-middle text-right">
-                                    <span><?= get_time_ago($new['news_create_time'])?></span>
-                                    <p style="color: #8c8c8c"><?= date('h:m - d/m/Y', strtotime($new['news_create_time'])) ?></p>
+                                    <?= number_format($item['doc_price'])?> VNĐ<br>
+                                    <?= $item['doc_free']==1 ? '<span class="badge badge-primary">Free</span>' : ''?>
                                 </td>
+                                <td class="align-middle text-right"><?= $item['doc_view'] ?></td>
+                                <td class="align-middle text-right"><?= $item['doc_download'] ?></td>
                                 <td class="align-middle text-right">
-                                    <?= strtotime($new['news_update_time']) > 0 ? get_time_ago($new['news_update_time']) : ''?>
-                                    <p style="color: #8c8c8c">
-                                        <?= strtotime($new['news_update_time']) > 0 ?date('h:m - d/m/Y', strtotime($new['news_create_time'])): '' ?>
-                                    </p>
+                                    <span><?= get_time_ago($item['doc_create_date'])?></span>
+                                    <p style="color: #8c8c8c"><?= date('h:m - d/m/Y', strtotime($item['doc_create_date'])) ?></p>
                                 </td>
                                 <td class="align-middle">
-                                    <input value="<?php echo $new['news_tags'] ?>" data-role="tagsinput" class="input_tag">
+                                    <input value="<?php echo $item['doc_tag'] ?>" data-role="tagsinput" class="input_tag">
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="btn-group btn-group-sm">
-                                        <a href="<?= base_url('news/edit/'.$id)?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                                        <a href="<?= base_url('news/trash/'.$id)?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                        <a href="<?= base_url('document/edit/'.$id)?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                                        <a href="<?= base_url('document/trash/'.$id)?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -151,10 +151,11 @@
         'easingIn'          : 'easeOutBack',
         'easingOut'         : 'easeInBack',
     });
-
+    $('#content img').addClass('img-fluid');
     $('.input_tag').tagsinput({
     });
     $('#table_news .bootstrap-tagsinput').find("span > span").remove();
     $('#table_news .bootstrap-tagsinput').find("input").remove();
+    $('#table_news .bootstrap-tagsinput').css('min-height', '38px');
 </script>
 

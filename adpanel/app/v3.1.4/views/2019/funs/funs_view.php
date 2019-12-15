@@ -84,8 +84,8 @@
                             <tr>
                                 <td class="align-middle"><?php echo $id ?></td>
                                 <td class="align-middle text-center" >
-                                    <a href="/public/images/<?= $fun['funs_thumbs']?>" class="iframe-view-image">
-                                        <img src="/public/thumbs/<?= $fun['funs_thumbs']?>" width="100" class="img-fluid" />
+                                    <a href="<?= $fun['funs_thumbs']?>" class="iframe-view-image">
+                                        <img src="<?= $fun['funs_thumbs']?>" width="100" class="img-fluid" />
                                     </a>
                                 </td>
                                 <td class="align-middle"><?php echo $fun['funs_title'] ?></td>
@@ -146,27 +146,6 @@
         'centerOnScroll'    : true,
         'easingIn'          : 'easeOutBack',
         'easingOut'         : 'easeInBack',
-    });
-    $('#content img').addClass('img-fluid');
-    tinymce.init({
-        selector: 'textarea.mceEditor',
-        height: 400,
-        menubar: true,
-        width: '100%',
-        theme: 'silver',
-        language: 'vi',
-        plugins: [
-            "advlist autolink link image media filemanager code responsivefilemanager"
-        ],
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
-        image_advtab: true,
-        relative_urls: false,
-        external_filemanager_path:"<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title:"Quản lý file " ,
-        external_plugins: {
-            "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
-            "filemanager" : "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"
-        }
     });
 
     $('.input_tag').tagsinput({

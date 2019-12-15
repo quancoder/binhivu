@@ -89,34 +89,36 @@ class Funs extends MY_Controller {
         $this->_loadFooter();
     }
 
-    private function _add_process($data){
-        $funs_title = trim($this->input->post('funs_title', true));
-        $funs_sapo = trim($this->input->post('funs_sapo', true));
-        $funs_tag = trim($this->input->post('funs_tags', true));
-        $funs_image = trim($this->input->post('funs_image', true));
-        $funs_content = trim($this->input->post('funs_content', true));
-        $funs_status_1 = trim($this->input->post('funs_status_1', true));
-        $funs_status_4 = trim($this->input->post('funs_status_4', true));
-        $user_id = $this->_session_uid();
+    private function _add_process($data)
+    {
+        $funs_title = $this->input->post('funs_title', true);
+        $funs_sapo = $this->input->post('funs_sapo', true);
+        $funs_tag = $this->input->post('funs_tags', true);
+        $funs_image = $this->input->post('funs_image', true);
+        $funs_content = $this->input->post('funs_content', true);
+        $funs_status_1 = $this->input->post('funs_status_1', true);//funs_status_1 = public
+        $funs_status_4 = $this->input->post('funs_status_4', true);//funs_status_4 = trash
 
         $funs_title == '' ? $data['error']['funs_title'] = TRUE : $data['funs_title'] = $funs_title;
         $funs_sapo == '' ? $data['error']['funs_sapo'] = TRUE :  $data['funs_sapo'] = $funs_sapo;
-        $funs_tag == '' ? $data['error']['funs_tags'] = TRUE :  $data['funs_tags'] = strtolower($funs_tag);
-        $funs_image == '' ? $data['error']['funs_image'] = TRUE : $data['funs_image'] = $funs_image;
+        $funs_tag == '' ? $data['error']['funs_tags'] = TRUE :  $data['funs_tags'] = $funs_tag = strtolower($funs_tag);
+        $funs_image == '' || !is_file_in_public_dir ($funs_image, ROOT_DOMAIN.'public/images')? $data['error']['funs_image'] = TRUE : $data['funs_image'] = $funs_image;
         $funs_content == '' ? $data['error']['funs_content'] = TRUE : $data['funs_content'] = $funs_content;
 
-        if(($funs_status_1 + $funs_status_4)==1){
+        if($funs_status_1 == "ok" && $funs_status_4 == "" ){
             $funs_status = 1;
-        }else  if(($funs_status_1 + $funs_status_4)==4){
-            $funs_status = 1;
+        }else if($funs_status_1 == "" && $funs_status_4 == "ok"){
+            $funs_status = 4;
         }else{
+            $funs_status = '';
             $data['error']['funs_status'] = TRUE;
         }
 
         if (empty($data['error'])) {
-            $funid = $this->Funs_model->funs_insert($funs_title, $funs_sapo, $funs_content, basename($funs_image), basename($funs_image), $user_id, (int)$funs_status, strtolower($funs_tag));
-            if ($funid > 0){
-                $data['funs_id'] = $funid;
+            $user_id = $this->_session_uid();
+            $newid = $this->Funs_model->funs_insert($funs_title, $funs_sapo, $funs_content, get_path_file($funs_image), get_path_file($funs_image), $user_id, (int)$funs_status, $funs_tag);
+            if ($newid > 0){
+                $data['funs_id'] = $newid;
             }else{
                 $data['error']['execute'] = TRUE;
             }
@@ -124,23 +126,25 @@ class Funs extends MY_Controller {
         return $data;
     }
 
-    private function _edit_process($data, $funs_id){
-        $funs_title = trim($this->input->post('funs_title', true));
-        $funs_sapo = trim($this->input->post('funs_sapo', true));
-        $funs_tag = trim($this->input->post('funs_tags', true));
-        $funs_image = trim($this->input->post('funs_image', true));
-        $funs_content = trim($this->input->post('funs_content', true));
-        $funs_status = trim($this->input->post('funs_status', true));
+    private function _edit_process($data, $funs_id)
+    {
+        $funs_title = $this->input->post('funs_title', true);
+        $funs_sapo = $this->input->post('funs_sapo', true);
+        $funs_tag = $this->input->post('funs_tags', true);
+        $funs_image = $this->input->post('funs_image', true);
+        $funs_content = $this->input->post('funs_content', true);
+        $funs_status = $this->input->post('funs_status', true);
 
         $funs_title == '' ? $data['error']['funs_title'] = TRUE : $data['info']['funs_title'] = $funs_title;
         $funs_sapo == '' ? $data['error']['funs_sapo'] = TRUE :  $data['info']['funs_sapo'] = $funs_sapo;
-        $funs_tag == '' ? $data['error']['funs_tags'] = TRUE :  $data['info']['funs_tags'] = strtolower($funs_tag);
-        $funs_image == '' ? $data['error']['funs_image'] = TRUE : $data['info']['funs_image'] = basename($funs_image);
+        $funs_tag == '' ? $data['error']['funs_tags'] = TRUE :  $data['info']['funs_tags'] = $funs_tag = strtolower($funs_tag);
+        $funs_image == '' || !is_file_in_public_dir ($funs_image, ROOT_DOMAIN.'/public/images')? $data['error']['funs_image'] = TRUE : $data['info']['funs_image'] = $funs_image;
         $funs_content == '' ? $data['error']['funs_content'] = TRUE : $data['info']['funs_content'] = $funs_content;
         $funs_status != in_array($funs_status, array('1','2', '3', '4')) ? $data['error']['funs_status'] = TRUE : $data['info']['funs_status'] = $funs_status;
 
         if (empty($data['error'])) {
-            $isUpdate = $this->Funs_model->funs_update($funs_id, $funs_title, $funs_sapo, ($funs_content), basename($funs_image), basename($funs_image),strtolower($funs_tag), $funs_status);
+
+            $isUpdate = $this->Funs_model->funs_update($funs_id, $funs_title, $funs_sapo, ($funs_content), get_path_file($funs_image), get_path_file($funs_image),strtolower($funs_tag), $funs_status);
             if ($isUpdate == TRUE){
                 $data['isupdate'] = TRUE;
             }else{

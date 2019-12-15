@@ -12,8 +12,8 @@
                             <div class="featured-article mb-20">
                                 <?php $new = $news_list[0]?>
                                 <a href="<?= toURLFriendly($new['news_title'],'tt', $new['news_id'])?>">
-                                    <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $new['news_image']?>"
-                                         data-src="<?php echo base_url(); ?>public/images/<?= $new['news_image']?>"
+                                    <img class="img-responsive w-100" src="<?=$new['news_path']?>"
+                                         data-src="<?=$new['news_path']?>"
                                          alt="<?= $new['news_title']?>">
                                 </a>
                                 <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
@@ -28,7 +28,7 @@
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                     </p>
                                     <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
-                                        (Tin tức)  <?= htmlentities($news_list[0]['news_sapo'])?>
+                                        (Tin tức)  <?= ($news_list[0]['news_sapo'])?>
                                     </p>
                                 </div>
                             </div>
@@ -36,9 +36,7 @@
                             <div class="featured-article">
                                 <?php $new = $news_list[1]?>
                                 <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>">
-                                    <img class="img-responsive w-100" src="<?php echo base_url(); ?>public/images/<?= $new['news_image']?>"
-                                         data-src="<?php echo base_url(); ?>public/images/<?= $new['news_image']?>"
-                                         alt="<?= $new['news_title']?>">
+                                    <img class="img-responsive w-100" src="<?=$new['news_path']?>" data-src="<?=$new['news_path']?>" alt="<?= $new['news_title']?>">
                                 </a>
                                 <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
                                     <h2 class="media-heading">
@@ -52,28 +50,28 @@
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                     </p>
                                     <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
-                                        (Tin tức)  <?= htmlentities($new['news_sapo'])?>
+                                        (Tin tức)  <?= ($new['news_sapo'])?>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <!--row1 right-->
-                        <div class="col-md-4" id="list-news-right">
+                        <div class="col-md-4 mt-20-xs" id="list-news-right">
                             <div class="media-list main-list" style="text-align: justify">
                                 <?php $i=1?>
-                                <?php foreach ($news_list as $news){?>
+                                <?php foreach ($news_list as $new){?>
                                     <?php if($i >= 3 and $i <=6){?>
                                         <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
                                             <div class="media-body">
-                                                <a class="" href="<?= toURLFriendly(($news['news_title']),'tt', $news['news_id'])?>">
-                                                    <img class="media-object lazy w-100" src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>"
-                                                         data-src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>" alt="<?= $news['news_title']?>">
+                                                <a class="" href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>">
+                                                    <img class="media-object lazy w-100" src="<?=$new['news_path']?>"
+                                                         data-src="<?=$new['news_path']?>" alt="<?= $new['news_title']?>">
                                                 </a>
                                                 <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
-                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_create_time'])?></span>
+                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly(($news['news_title']),'tt', $news['news_id'])?>" style="font-size: 1.6rem">
-                                                        <?= $news['news_title']?>
+                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1.6rem">
+                                                        <?= $new['news_title']?>
                                                     </a>
                                                 </h3>
                                             </div>
@@ -91,9 +89,9 @@
                                     <div class="item">
                                         <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
                                             <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
-                                                 data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>" >
+                                                 data-src="<?=$new['news_path']?>" >
                                         </a>
-                                        <h3 class="media-heading">
+                                        <h3 class="carousel-heading">
                                             <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
                                         </h3>
                                     </div>
@@ -114,7 +112,7 @@
                             <?php $fun = $funs_list[0]?>
                             <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $funs_list['0']['funs_id'])?>">
                                 <img class="thumb lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="<?php echo base_url(); ?>public/images/<?= $fun['funs_image']?>"
+                                     data-src="<?=$fun['funs_path']?>"
                                      alt="<?= $fun['funs_title']?>">
                             </a>
                             <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
@@ -129,17 +127,17 @@
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                 </p>
                                 <p style="font-size: 13px; margin-bottom: 0px">
-                                    (Góc thư giãn)  <?= htmlentities($fun['funs_sapo'])?>
+                                    (Góc thư giãn)  <?= ($fun['funs_sapo'])?>
                                 </p>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
 
-                        <div class="featured-article">
+                        <div class="featured-article mt-10">
                             <?php $fun = $funs_list[1]?>
                             <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $funs_list['1']['funs_id'])?>">
                                 <img class="thumb lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="<?php echo base_url(); ?>public/images/<?= $fun['funs_image']?>"
+                                     data-src="<?=$fun['funs_path']?>"
                                      alt="<?= $fun['funs_title']?>">
                             </a>
                             <div class="block-title" style="margin-top: 10px;">
@@ -154,7 +152,7 @@
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                 </p>
                                 <p style="font-size: 13px; margin-bottom: 0px">
-                                    (Góc thư giãn) <?= htmlentities($fun['funs_sapo'])?>
+                                    (Góc thư giãn) <?= ($fun['funs_sapo'])?>
                                 </p>
                                 <div class="clearfix"></div>
                             </div>
@@ -164,22 +162,22 @@
                     <div class="col-md-5 col-lg-5"  id="list-thu-gian-right">
                         <ul class="media-list main-list">
                             <?php $i=1?>
-                            <?php foreach ($funs_list as $funs){?>
+                            <?php foreach ($funs_list as $fun){?>
                                 <?php if($i >= 3 and $i <=7){?>
                                     <li class="media" style="padding-bottom: 10px;">
-                                        <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
+                                        <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
                                             <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                 data-src="<?php echo base_url()?>public/images/<?= $funs['funs_thumbs']?>"
-                                                 alt="<?= $funs['funs_title']?>">
+                                                 data-src="<?=$fun['funs_path']?>"
+                                                 alt="<?= $fun['funs_title']?>">
                                         </a>
                                         <div class="media-body">
                                             <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
-                                                <a href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
-                                                    <?= $funs['funs_title']?>
+                                                <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
+                                                    <?= $fun['funs_title']?>
                                                 </a>
                                             </h3>
                                             <a href="<?= site_url('goc-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
-                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_create_time'])?></span>
+                                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                         </div>
                                     </li>
                                 <?php } ?>
@@ -187,11 +185,11 @@
 
                             <ul class="news-list">
                                 <?php $i=1?>
-                                <?php foreach ($funs_list as $funs){?>
+                                <?php foreach ($funs_list as $fun){?>
                                     <?php if($i >= 8 and $i <=12){?>
                                         <li>
-                                            <h3><a href="<?= site_url($funs['funs_title'])?>"
-                                                   title="<?= $news['news_title']?>"><?= $funs['funs_title']?></a>
+                                            <h3><a href="<?= site_url($fun['funs_title'])?>"
+                                                   title="<?= $fun['funs_title']?>"><?= $fun['funs_title']?></a>
                                             </h3>
                                         </li>
                                     <?php } ?>
@@ -214,7 +212,7 @@
                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
                             <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="<?php echo base_url()?>public/images/<?= $fun['funs_thumbs']?>"
+                                     data-src="<?=$fun['funs_path']?>"
                                      alt="<?= $fun['funs_title']?>" style="width: ">
                             </a>
                             <div class="media-body w-100-xs">
@@ -257,21 +255,21 @@
                         <span>Tài liệu</span>
                     </h1>
                     <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
-                        <?php $i = 1;foreach ($news_list as $news){?>
+                        <?php $i = 1;foreach ($news_list as $new){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$new['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <?= substr($news['news_title'], 0, 40)?>
+                                        <?= substr($new['news_title'], 0, 40)?>
                                     </h4>
                                 </a>
-                                <div id="<?= 'document-'.$news['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
+                                <div id="<?= 'document-'.$new['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
-                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$fun['funs_path']?>" alt="">
                                             </a>
                                             <p>
-                                                <?= substr($news['news_sapo'], 0, 200)?>...
+                                                <?= substr($new['news_sapo'], 0, 200)?>...
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
@@ -289,21 +287,21 @@
                         <span>Sách</span>
                     </h1>
                     <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
-                        <?php $i = 1;foreach ($news_list as $news){?>
+                        <?php $i = 1;foreach ($news_list as $new){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$news['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$new['news_id'] ?>" aria-expanded="<?= $i==1?'true':'false'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <?= substr($news['news_title'], 0, 40)?>
+                                        <?= substr($new['news_title'], 0, 40)?>
                                     </h4>
                                 </a>
-                                <div id="<?= 'book-'.$news['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
+                                <div id="<?= 'book-'.$new['news_id'] ?>" class="panel-collapse collapse <?= $i==1?'in':''?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
-                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$new['news_path']?>" alt="">
                                             </a>
                                             <p>
-                                                <?= substr($news['news_sapo'], 0, 200)?>...
+                                                <?= substr($new['news_sapo'], 0, 200)?>...
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
@@ -341,31 +339,3 @@
         </div>
     </div>
 </main>
-<script>
-    $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            lazyLoad:true,
-            margin:10,
-            autoplay:true,
-            autoplaySpeed:3000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                600:{
-                    items:3,
-                    nav:false
-                },
-                1000:{
-                    items:4,
-                    nav:true,
-                    loop:false
-                }
-            }
-        });
-
-        $('.owl-nav').hide();
-    })
-</script>

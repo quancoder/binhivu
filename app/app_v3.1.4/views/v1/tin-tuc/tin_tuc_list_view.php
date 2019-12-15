@@ -17,25 +17,25 @@
                     <!--1 NEW NOI BAT-->
                     <div class="col-md-6 col-lg-6">
                         <div class="featured-article">
-                            <?php $news = $news_list[0]; ?>
-                            <a href="<?= toURLFriendly($news_list[0]['news_title'], 'tt', $news_list[0]['news_id'])?>">
-                                <img class="w-100" src="<?php echo base_url(); ?>public/images/<?= $news_list[0]['news_image']?>"
-                                     alt="<?= $news_list[0]['news_title'] ?>">
+                            <?php $new = $news_list[0]; ?>
+                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                                <img class="w-100" src="<?= $new['news_path'] ?>"
+                                     alt="<?= $new['news_title'] ?>">
                             </a>
                             <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
                                 <h2 class="media-heading">
-                                    <a href="<?= toURLFriendly($news_list[0]['news_title'], 'tt', $news_list[0]['news_id'])?>" style="color: #fb7e31;" class="archive-i">
-                                        <?= $news_list[0]['news_title'] ?></a>
+                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" style="color: #fb7e31;" class="archive-i">
+                                        <?= $new['news_title'] ?></a>
                                 </h2>
                                 <p>
                                     <a href="<?= site_url('tin-tuc.html')?>">
                                         <span class="category-name">Tin tức</span></a> -
                                     <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news_list[0]['news_create_time'])?></span>
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                 </p>
 
                                 <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify;color: #cccccc">
-                                    (Tin tức)  <?= $news_list[0]['news_sapo']?>
+                                    (Tin tức)  <?= $new['news_sapo']?>
                                 </p>
                             </div>
                         </div>
@@ -59,8 +59,7 @@
                             <?php if($i >=2 and $i <=5){?>
                                 <div class="featured-articles featured-articles-min pull-left w-45 w-100-xs mb-10 mr-10 h-350 min-h-350" >
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
-                                        <img class="w-100 h-150 h-xs-auto" src="<?php echo base_url(); ?>public/images/<?= $new['news_image']?>"
-                                             alt="<?= $new['news_title'] ?>">
+                                        <img class="w-100 h-150 h-xs-auto" src="<?= $new['news_path'] ?>" alt="<?= $new['news_title'] ?>">
                                     </a>
                                     <div class="block-title">
                                         <h2 class="media-heading" >
@@ -92,9 +91,9 @@
                                 <div class="item">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
                                         <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
-                                             data-src="<?php echo base_url()?>public/images/<?= $new['news_thumbs']?>" >
+                                             data-src="<?= $new['news_path'] ?>" >
                                     </a>
-                                    <h3 class="media-heading">
+                                    <h3 class="carousel-heading">
                                         <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
                                     </h3>
                                 </div>
@@ -119,8 +118,7 @@
                                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
                                             <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($news['news_title'], 'gt', $news['news_id'])?>">
                                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                     data-src="<?php echo base_url()?>public/images/<?= $news['news_thumbs']?>"
-                                                     alt="<?= $news['news_title']?>" style="width: ">
+                                                     data-src="<?= $new['news_path'] ?>" alt="<?= $news['news_title']?>" style="width: ">
                                             </a>
                                             <div class="media-body w-100-xs">
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
@@ -172,7 +170,8 @@
                                             <div class="panel-body">
                                                 <div class="item-content clearfix">
                                                     <a class="thumb-image" href="" title="">
-                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy"
+                                                             data-src="<?= $new['news_path'] ?>" alt="">
                                                     </a>
                                                     <p>
                                                         <?= substr($news['news_sapo'], 0, 200)?>...
@@ -204,7 +203,8 @@
                                             <div class="panel-body">
                                                 <div class="item-content clearfix">
                                                     <a class="thumb-image" href="" title="">
-                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?php echo base_url()?>public/thumbs/<?= $news['news_thumbs']?>" alt="">
+                                                        <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy"
+                                                             data-src=" <?= $new['news_path'] ?>" alt="">
                                                     </a>
                                                     <p>
                                                         <?= substr($news['news_sapo'], 0, 200)?>...
@@ -229,29 +229,5 @@
 
 <script>
     $(document).ready(function () {
-        $('.owl-carousel').owlCarousel({
-            lazyLoad:true,
-            margin:10,
-            autoplay:true,
-            autoplaySpeed:3000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1,
-                    nav:true
-                },
-                600:{
-                    items:3,
-                    nav:false
-                },
-                1000:{
-                    items:4,
-                    nav:true,
-                    loop:false
-                }
-            }
-        });
-
-        $('.owl-nav').hide();
     })
 </script>
