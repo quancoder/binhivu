@@ -45,7 +45,7 @@
                                 <?php $i++; } ?>
 
                             </ul>
-                            <div class="content-archive entry-content pt-20 pl-100 pl-5-xs pr-5-xs">
+                            <div class="content-archive entry-content pt-20 pl-100 pr-100 pl-5-xs pr-5-xs">
                                 <?php echo ($info['news_content']) ?>
                             </div>
                         </div>
