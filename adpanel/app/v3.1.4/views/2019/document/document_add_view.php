@@ -78,14 +78,16 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="doc_path_file" name="doc_path_file" value="<?= $doc_path_file?>" required/>
                             <div class="input-group-prepend">
-                                <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=2&field_id=doc_path_file" class="btn btn-secondary iframe-btn">Chọn file</a>
+                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                   data-src="<?= FILEMANAGER_PATH.'type=2&field_id=doc_path_file&fldr=document/file' ?>"> Chọn file </button>
                             </div>
                         </div>
                         <label class="col-form-label"><i class="fa fa-image"></i> Ảnh</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="doc_image" name="doc_image" value="<?= $doc_image?>" required/>
                             <div class="input-group-prepend">
-                                <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=1&field_id=doc_image" class="btn btn-secondary iframe-btn">Chọn ảnh</a>
+                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                   data-src="<?= FILEMANAGER_PATH.'type=1&field_id=doc_image&fldr=document/images' ?>"> Chọn ảnh </button>
                             </div>
                         </div>
                         <div style="margin: 10px 0; ">
@@ -123,19 +125,6 @@
 </div>
 
 <script type="text/javascript">
-    $('.iframe-btn').fancybox({
-        'width'		: 900,
-        'height'	: 600,
-        'type'		: 'iframe',
-        'autoScale'    	: false,
-        'autoDimensions'    : true,
-        'transitionIn'      : 'elastic',
-        'transitionOut'     : 'elastic',
-        'overlayShow'       : true,
-        'centerOnScroll'    : true,
-        'easingIn'          : 'easeOutBack',
-        'easingOut'         : 'easeInBack',
-    });
     function responsive_filemanager_callback(field_id){
         var url=jQuery('#'+field_id).val();
         $("#image_preview").attr('src', url).show();

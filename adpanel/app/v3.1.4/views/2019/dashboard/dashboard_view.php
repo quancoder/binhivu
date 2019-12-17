@@ -35,13 +35,10 @@
                     </div>
 
                     <div class="card-body">
-                        <textarea class="mceEditor" placeholder="Câu trả lời" rows="6" style="width: 100%;" id="tinymce1">
-                            <img src="/public/images/300x250.JPG" alt="" width="800" height="381" />
-                        </textarea>
+                        <input id="file" type="text">
+                        <button class="quanlt-open-modal-filemanager" type="button" data-src="<?= base_url() ?>plugins/filemanager/dialog.php?type=2&field_id=file"> Open </button>
                     </div>
-                    <div class="card-footer">
-                        Tinymce - Filemanager
-                    </div>
+
                 </div>
                 <div id="content">
                 </div>
@@ -49,34 +46,6 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
-    $('#content img').addClass('img-fluid');
-    tinymce.init({
-        selector: 'textarea.mceEditor',
-        height: 400,
-        menubar: true,
-        width: '100%',
-        theme: 'silver',
-        language: 'vi',
-//        plugins: [
-//            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-//            'searchreplace wordcount visualblocks visualchars code fullscreen',
-//            'insertdatetime media nonbreaking save table contextmenu directionality',
-//            'emoticons template paste textcolor colorpicker textpattern imagetools'
-//        ],
-        plugins: [
-            "advlist autolink link image media filemanager code responsivefilemanager"
-        ],
-        toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons',
-        image_advtab: true,
-        relative_urls: false,
-        external_filemanager_path:"<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title:"Quản lý tài nguyên " ,
-        external_plugins: {
-            "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
-            "filemanager" : "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"
-        }
-    });
 </script>
 

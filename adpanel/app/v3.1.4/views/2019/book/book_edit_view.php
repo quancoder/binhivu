@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="b_name"><i class="fa fa-pencil"></i> Tên sách</label>
-                                    <textarea id="b_name" name="b_name"  class="form-control" placeholder="Tên sách:" required><?= $info['b_name']?></textarea>
+                                    <textarea id="b_name" name="b_name"  class="form-control" placeholder="Tên sách:" required rows="6"><?= $info['b_name']?></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -70,13 +70,6 @@
                                     <input type="number" id="b_price" name="b_price" step="any" class="form-control" value="<?= $info['b_price'] ?>"/>
                                 </div>
 
-                                <div class="input-group">
-                                    <label class="col-form-label" for="b_free" style="margin-right: 15px">Cho phép tải miễn phí</label>
-                                    <label class="checkbox-custom" >
-                                        <input id="b_free"  name="b_free" type="checkbox" <?=$info['b_free'] == 1 ? 'checked' : '' ?> >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -90,6 +83,15 @@
                                 <div class="form-group">
                                     <label class="col-form-label" for="b_nxb"><i class="fa fa-pencil"></i> NXB</label>
                                     <input type="text" id="b_nxb" name="b_nxb" step="any" class="form-control" value="<?= $info['b_nxb'] ?>"/>
+                                </div>
+
+                                <label class="col-form-label" for="b_free" style="margin-right: 15px">Cho phép tải miễn phí</label>
+                                <div class="input-group">
+                                    <label class="col-form-label" for="b_free" style="margin-right: 15px">&nbsp;</label>
+                                    <label class="checkbox-custom" >
+                                        <input id="b_free"  name="b_free" type="checkbox" <?=$info['b_free'] == 1 ? 'checked' : '' ?> >
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -106,18 +108,21 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="col-form-label"><i class="fa fa-image"></i> Upload sách</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="b_path_file" name="b_path_file" value="<?= ROOT_DOMAIN. $info['b_path_file'] ?>" required/>
-                                    <div class="input-group-prepend">
-                                        <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=2&field_id=b_path_file" class="btn btn-secondary iframe-btn">Chọn file</a>
-                                    </div>
-                                </div>
                                 <label class="col-form-label"><i class="fa fa-image"></i> Ảnh</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="b_image" name="b_image" value="<?= ROOT_DOMAIN. $info['b_image'] ?>" required/>
                                     <div class="input-group-prepend">
-                                        <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=1&field_id=b_image" class="btn btn-secondary iframe-btn">Chọn ảnh</a>
+                                        <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                                data-src="<?= FILEMANAGER_PATH.'type=1&field_id=b_image&fldr=sach/file' ?>"> Chọn ảnh </button>
+                                    </div>
+                                </div>
+
+                                <label class="col-form-label"><i class="fa fa-image"></i> Upload file sách</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="b_path_file" name="b_path_file" value="<?= ROOT_DOMAIN. $info['b_path_file'] ?>" required/>
+                                    <div class="input-group-prepend">
+                                        <a class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                           data-src="<?= FILEMANAGER_PATH.'type=2&field_id=b_path_file&fldr=sach/images' ?>"> Chọn file</a>
                                     </div>
                                 </div>
                             </div>

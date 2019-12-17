@@ -62,7 +62,8 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="news_image" name="news_image" value="<?= ROOT_DOMAIN .$info['news_image']?>" required/>
                             <div class="input-group-prepend">
-                                <a href="<?= base_url() ?>plugins/filemanager/dialog.php?type=1&field_id=news_image" class="btn btn-secondary iframe-btn">Chọn ảnh</a>
+                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                        data-src="<?= FILEMANAGER_PATH.'type=1&field_id=news_image &fldr=tin-tuc' ?>"> Chọn ảnh </button>
                             </div>
                         </div>
                         <div style="margin: 10px 0; ">

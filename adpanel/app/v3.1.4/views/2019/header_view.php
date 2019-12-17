@@ -19,25 +19,41 @@
     <link type="image/x-icon" href="<?php echo base_url(); ?>images/logo-min.png" rel="shortcut icon"/>
     <link rel="stylesheet" href="<?php echo base_url() . "skins" . $template_f; ?>custom.css">
 
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="<?php echo base_url(); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="<?php echo base_url(); ?>dist/js/adminlte.min.js"></script>
-
-    <!--    fancybox-->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" media="screen" />
+    <!-- REQUIRED SCRIPTS LIB-->
+    <script type="text/javascript" src="<?php echo base_url(); ?>plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>dist/js/adminlte.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <!--    tinymce-->
-    <script src="<?php echo base_url(); ?>plugins/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>plugins/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>plugins/tag-input/tagsinput.js"></script>
 
-    <!--Tag input-->
-    <script src="<?php echo base_url() ?>plugins/tag-input/tagsinput.js" type="text/javascript" ></script>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/tag-input/tagsinput.css">
+    <!-- REQUIRED STYLE LIB -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>plugins/tag-input/tagsinput.css">
+
+    <!-- REQUIRED SCRIPTS CUSTOM -->
+    <script src="<?php echo base_url(); ?>js/2019/all.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
+<!--quanlt model file manager-->
+<div class="modal fade quanlt-modal-filemanager" aria-hidden="true">
+    <div class="modal-dialog modal-xl" style="height: 80%">
+        <div class="modal-content" style="height: 100%">
+            <div class="overlay justify-content-center align-items-center">
+                <i class="fas fa-2x fa-sync fa-spin"></i>
+            </div>
+            <div class="modal-header">
+                <h4 class="modal-title">Tài nguyên website</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe class="quanlt-iframe-filemanager" frameborder="0"  style="width: 100%; height: 100%"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">

@@ -56,11 +56,11 @@
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-1 col-xl-2">
                                 <div class="form-group">
                                     <select class="form-control" id="status" name="status">
-                                        <option value="-1" <?php echo $status == '-1' ? 'selected' : '' ?> >Tất cả tin tức</option>
-                                        <option value="1" <?php echo $status == 1 ? 'selected' : '' ?> >Hiển thị ra trang chủ</option>
+                                        <option value="-1" <?php echo $status == '-1' ? 'selected' : '' ?> >Tất cả loại sách</option>
+                                        <option value="1" <?php echo $status == 1 ? 'selected' : '' ?> >Đang ngoài trang chủ</option>
                                         <option value="2" <?php echo $status == 2 ? 'selected' : '' ?> >Dừng hiển thị</option>
-                                        <option value="3" <?php echo $status == 3 ? 'selected' : '' ?> >Lưu vào thùng rác</option>
-                                        <option value="4" <?php echo $status == 4 ? 'selected' : '' ?> >Lưu vào nháp</option>
+                                        <option value="3" <?php echo $status == 3 ? 'selected' : '' ?> >Đang ở thùng rác</option>
+                                        <option value="4" <?php echo $status == 4 ? 'selected' : '' ?> >Đang soạn thảo</option>
                                     </select>
                                 </div>
                             </div>
@@ -86,12 +86,11 @@
                             <th style="width: 5%" class="text-center">Ảnh</th>
                             <th>Tên Sách</th>
                             <th style="width: 5%" class="text-center"></th>
-                            <th style="width: 7%" class="text-right">Giá</th>
+                            <th style="width: 10%" class="text-right">Giá</th>
                             <th style="width: 5%" class="text-right">Xem</th>
                             <th style="width: 5%" class="text-right">Tải</th>
-                            <th style="width: 10%" class="text-right">Ngày tạo</th>
-                            <th style="width: 10%" class="">Tác giả</th>
-                            <th style="width: 10%" class="">NXB</th>
+                            <th style="width: 10%" class="">Ngày tạo</th>
+                            <th style="width: 10%" class="">TG/NXB</th>
                             <th style="width: 20%;">Từ khóa </th>
                             <th style="width: 5%" class="text-center">Action</th>
                         </tr>
@@ -105,7 +104,7 @@
                                         <img src="<?=$item['b_image']?>" class="img-fluid" />
                                     </a>
                                 </td>
-                                <td class="align-middle"><?php echo $item['b_name'] ?></td>
+                                <td class="align-middle font-weight-bold"><?php echo $item['b_name'] ?></td>
                                 <td class="align-middle text-center">
                                     <?php if($item['b_status'] ==1){?>
                                         <span class="badge badge-primary">Hiển thị</span>
@@ -123,12 +122,14 @@
                                 </td>
                                 <td class="align-middle text-right"><?= $item['b_view'] ?></td>
                                 <td class="align-middle text-right"><?= $item['b_download'] ?></td>
-                                <td class="align-middle text-right">
+                                <td class="align-middle">
                                     <span><?= get_time_ago($item['b_create_date'])?></span>
                                     <p style="color: #8c8c8c"><?= date('h:m - d/m/Y', strtotime($item['b_create_date'])) ?></p>
                                 </td>
-                                <td class="align-middle"><?= $item['b_author'] ?></td>
-                                <td class="align-middle"><?= $item['b_nxb'] ?></td>
+                                <td class="align-middle">
+                                    <?= $item['b_author'] ?><br>
+                                    <p style="color: #8c8c8c"><?= $item['b_nxb'] ?></p>
+                                </td>
                                 <td class="align-middle">
                                     <input value="<?php echo $item['b_tag'] ?>" data-role="tagsinput" class="input_tag">
                                 </td>

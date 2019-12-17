@@ -137,30 +137,69 @@ class Book extends MY_Controller {
         return $data;
     }
 
-    private function _edit_process($data, $news_id)
+    private function _edit_process($data, $b_id)
     {
-        $doc_name = $this->input->post('doc_name');
-        $doc_des = $this->input->post('doc_des');
-        $doc_tag = $this->input->post('doc_tag');
-        $doc_price = $this->input->post('doc_price');
-        $doc_free = $this->input->post('doc_free');
-        $doc_path_file = $this->input->post('doc_path_file');
-        $doc_image = $this->input->post('doc_image');
-        $doc_content = $this->input->post('doc_content', false);
-        $doc_status = $this->input->post('doc_status');
+        $b_name = $this->input->post('b_name');
+        $b_des = $this->input->post('b_des');
+        $b_content = $this->input->post('b_content');
+        $b_image = $this->input->post('b_image');
+        $b_path_file = $this->input->post('b_path_file');
+        $b_total_book = 1;
+        $b_tag= $this->input->post('b_tag');
+        $b_free= $this->input->post('b_free', false);
+        $b_price = $this->input->post('b_price', false);
+        $b_author= $this->input->post('b_author');
+        $b_nxb= $this->input->post('b_nxb');
+        $b_status = $this->input->post('b_status');
 
-        $doc_name == '' ? $data['error']['doc_name'] = TRUE : $data['info']['doc_name'] = $doc_name;
-        $doc_des == '' ? $data['error']['doc_des'] = TRUE :  $data['info']['doc_des'] = $doc_des;
-        $data['info']['doc_tag'] = $doc_tag;
-        !is_numeric($doc_price) || $doc_price < 0  ? $data['error']['doc_price'] = TRUE :  $data['info']['doc_price'] = $doc_price;
-        !in_array($doc_free, array(null, 'on'))  ? $data['error']['doc_free'] = TRUE :  $data['info']['doc_free'] = $doc_free = $doc_free =='on' ? 1 : 0;
-        !is_file_in_public_dir ($doc_path_file, ROOT_DOMAIN.'/public/images')? $data['error']['doc_path_file'] = TRUE : $data['info']['doc_path_file'] = $doc_path_file = get_path_file($doc_path_file);
-        !is_file_in_public_dir ($doc_image, ROOT_DOMAIN.'/public/images')? $data['error']['doc_image'] = TRUE : $data['info']['doc_image'] = $doc_image = get_path_file($doc_image);
-        $doc_content == '' ? $data['error']['doc_content'] = TRUE : $data['info']['doc_content'] = $doc_content;
-        $doc_status != in_array($doc_status, array('1','2', '3', '4')) ? $data['error']['doc_status'] = TRUE : $data['info']['doc_status'] = $doc_status;
+
+        $b_name == '' ? $data['error']['b_name'] = TRUE : $data['info']['b_name'] = $b_name;
+        $b_des == '' ? $data['error']['b_des'] = TRUE :  $data['info']['b_des'] = $b_des;
+        $b_content == '' ? $data['error']['b_content'] = TRUE : $data['info']['b_content'] = $b_content;
+        /****/
+        if(is_file_in_public_dir ($b_image, ROOT_DOMAIN.'/public/images')){
+            $data['info']['b_image'] = $b_image = get_path_file($b_image);
+        }
+        else
+        {
+            $data['error']['b_image'] = TRUE;
+        }
+        /****/
+        if(is_file_in_public_dir($b_path_file, ROOT_DOMAIN.'/public/images'))
+        {
+            $data['info']['b_path_file'] = $b_path_file = get_path_file($b_path_file);
+        }
+        else
+        {
+            $data['error']['b_path_file'] = TRUE;
+        }
+        /****/
+        $data['info']['b_tag'] = $b_tag;
+        /****/
+        if(!in_array($b_free, array(null, 'on')) ) {
+            $data['error']['b_free'] = TRUE;
+        }else {
+            $b_free = $b_free == 'on' ? 1 : 0;
+            $data['info']['b_free'] = $b_free;
+        }
+        /****/
+        if(!is_numeric($b_price) || $b_price < 0){
+            $data['error']['b_price'] = TRUE ;
+        }else{
+            $data['info']['b_price'] = $b_price;
+        }
+        /****/
+        $data['info']['b_author'] = $b_author;
+        $data['info']['b_nxb'] = $b_nxb;
+        /****/
+
+        $b_status != in_array($b_status, array('1','2', '3', '4')) ?
+            $data['error']['b_status'] = TRUE :
+            $data['info']['b_status'] = $b_status;
 
         if (empty($data['error'])) {
-            $isUpdate = $this->Book_model->book_update($news_id, $doc_name, $doc_des, $doc_content, strtolower($doc_tag), $doc_price, $doc_free,$doc_path_file, $doc_image, $doc_status);
+            var_dump($b_id, $b_name, $b_des, $b_content, $b_image, $b_path_file, $b_total_book, $b_tag, $b_free, $b_price,$b_author, $b_nxb, $b_status);die;
+            $isUpdate = $this->Book_model->book_update($b_id, $b_name, $b_des, $b_content, $b_image, $b_path_file, $b_total_book, $b_tag, $b_free, $b_price,$b_author, $b_nxb, $b_status);
             if ($isUpdate == TRUE){
                 $data['success'] = TRUE;
             }else{

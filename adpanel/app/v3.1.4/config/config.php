@@ -28,6 +28,9 @@ DEFINE('URI_PATH', '');
 //define for check if use sso login
 DEFINE('CROSS_LOGIN', TRUE);
 DEFINE('ROOT_DOMAIN', HTTP_PROTOCOL . '://' . $_SERVER['HTTP_HOST']);
+
+//FILEMANAGER
+define('FILEMANAGER_PATH', $config['base_url'].'plugins/filemanager/dialog.php?sort_by=date&descending=1&');
 /*
 |--------------------------------------------------------------------------
 | Index File
