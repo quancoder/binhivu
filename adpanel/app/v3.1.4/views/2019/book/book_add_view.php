@@ -3,16 +3,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Thay đổi thông tin sách</h1>
+                <h1>Thêm sách mới</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
                     <li class="breadcrumb-item"><a href="<?=site_url('Book')?>">Sách</a></li>
-                    <li class="breadcrumb-item active">Thay đổi thông tin sách</li>
-                    <li class="ml-3 float-right">
-                        <a href="<?= site_url('book/add', $langcode) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Thêm sách</a>
-                    </li>
+                    <li class="breadcrumb-item active">Thêm sách mới</li>
                 </ol>
             </div>
         </div>
@@ -37,7 +34,7 @@
     </div>
 
 
-    <form method="post" action="<?= site_url('book/edit/'.$info['b_id'], $langcode)?>" id="form">
+    <form method="post" action="<?= site_url('book/add', $langcode)?>" id="form">
         <div class="row">
             <div class="col-md-6">
                 <div class="card card-primary">
@@ -50,15 +47,6 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <label class="col-form-label" for="b_status"><i class="fa fa-pencil"></i> Chuyển trạng thái</label>
-                                <div class="form-group">
-                                    <select class="form-control" name="b_status">
-                                        <option value="1" <?= $info['b_status']==1 ? 'selected': ''?>>Hiển thị ra trang chủ</option>
-                                        <option value="2" <?= $info['b_status']==2 ? 'selected': ''?>>Dừng hiển thị</option>
-                                        <option value="3" <?= $info['b_status']==3 ? 'selected': ''?>>Lưu trữ thùng rác</option>
-                                        <option value="4" <?= $info['b_status']==4 ? 'selected': ''?>>Lưu vào nháp</option>
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="b_price"><i class="fa fa-pencil"></i> Giá sách</label>
                                     <input type="number" id="b_price" name="b_price" step="any" class="form-control" value="<?= $info['b_price'] ?>"/>
@@ -150,7 +138,11 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="submit" value="ok" class="btn btn-danger"><i class="fa fa-pencil"></i> Lưu thay đổi</button>
+                        <button type="submit" name="b_status_1" value="ok" class="btn btn-danger"><i class="fa fa-pencil"></i> Lưu thông tin sách</button>
+                        <div class="float-right">
+                            <button type="reset" class="btn btn-default"><i class="fa fa-pencil" ></i> Nhập lại</button>
+                            <button type="submit" name="b_status_4" value="ok" class="btn btn-default"><i class="fa fa-pencil"></i> Lưu nháp</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,7 +152,6 @@
 </div>
 
 <script type="text/javascript">
-
     $('.iframe-btn').fancybox({
         'width'		: 900,
         'height'	: 600,
@@ -205,7 +196,6 @@
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
         filemanager_title: "Quản lý tài nguyên ",
-        filemanager_subfolder: "sach/images",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

@@ -473,11 +473,12 @@ function exists_url_file($url)
     return $status;
 }
 
-function is_file_in_public_dir($dirFile, $dirPublic)
+function is_file_in_public_folder($pathFile, $urlPublic = FILEMANAGER_PUBLIC_FOLDER)
 {
-    if (exists_url_file($dirFile))
+    $root_file = "{$_SERVER['DOCUMENT_ROOT']}{$pathFile}";
+    if (file_exists($root_file))
     {
-        if (strpos($dirFile, $dirPublic) !== false) {
+        if (strpos($root_file, $urlPublic) !== false) {
             return true;
         }
         else

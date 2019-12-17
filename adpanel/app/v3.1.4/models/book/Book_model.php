@@ -107,11 +107,11 @@ class Book_model extends CI_Model
     //edit content
 
     //insert
-    function book_update($id, $name, $des, $content, $image, $path_file, $total_book, $tag, $free, $price,$author, $nxb, $status, $user)
+    function book_update($id, $name, $des, $content, $image, $path_file, $total_book, $tag, $free, $price,$author, $nxb, $status)
     {
         $isUpdate = FALSE;
         $iconn = $this->db->conn_id;
-        $sql = "CALL book_update(:id, :name, :des, :content, :image, :path_file, :total_book, :tag, :free, :price,:author, :nxb, :status, :user);";
+        $sql = "CALL book_update(:id, :name, :des, :content, :image, :path_file, :total_book, :tag, :free, :price,:author, :nxb, :status);";
         $stmt = $iconn->prepare($sql);
         if ($stmt) {
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -127,7 +127,6 @@ class Book_model extends CI_Model
             $stmt->bindParam(':author', $author, PDO::PARAM_STR);
             $stmt->bindParam(':nxb', $nxb, PDO::PARAM_STR);
             $stmt->bindParam(':status', $status, PDO::PARAM_INT);
-            $stmt->bindParam(':user', $user, PDO::PARAM_INT);
             if ($stmt->execute()) {
                 $isUpdate = TRUE;
             }

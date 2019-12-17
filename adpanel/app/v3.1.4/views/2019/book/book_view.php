@@ -9,6 +9,9 @@
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Sách</li>
+                    <li class="ml-3 float-right">
+                        <a href="<?= site_url('book/add', $langcode) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Thêm sách</a>
+                    </li>
                 </ol>
             </div>
         </div>
@@ -22,14 +25,16 @@
                     <form method="get" action="<?= site_url('Book', $langcode)?>">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label" for="search"><i class="fa fa-pencil"></i> Nhập tên sách</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input id="search" name="search" class="form-control w-25" type="search"  value="<?php echo $search; ?>" placeholder="Tìm theo tiêu đề..."  />
+                                        <input id="search" name="search" class="form-control w-25" type="search"  value="<?php echo $search; ?>" placeholder="Tìm theo tên sách..."  />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label" for="tag"><i class="fa fa-pencil"></i> Nhập từ khóa </label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input id="tag" name="tag" type="text" placeholder="Tìm kiếm theo từ khóa..." class="form-control" data-role="tagsinput" value="<?php echo $tag?>"  style="display: none"/>
@@ -38,6 +43,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label" for="author"><i class="fa fa-pencil"></i> Nhập tên tác giả</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input id="author" name="author" type="text" placeholder="Tìm kiếm tác giả..." class="form-control" data-role="tagsinput" value="<?php echo $author?>"  style="display: none"/>
@@ -46,6 +52,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label" for="nxb"><i class="fa fa-pencil"></i> Nhập tên NXB</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input id="nxb" name="nxb" type="text" placeholder="Tìm kiếm theo NXB..." class="form-control" data-role="tagsinput" value="<?php echo $nxb?>"  style="display: none"/>
@@ -54,6 +61,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-1 col-xl-2">
+                                <label class="col-form-label" for="status"><i class="fa fa-pencil"></i> Chọn trạng thái</label>
                                 <div class="form-group">
                                     <select class="form-control" id="status" name="status">
                                         <option value="-1" <?php echo $status == '-1' ? 'selected' : '' ?> >Tất cả loại sách</option>
@@ -66,11 +74,10 @@
                             </div>
 
                             <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
-                                <div class="form-group float-left">
+
+                                <label class="col-form-label" for="search"><i class="fa fa-pencil"></i>&nbsp;</label>
+                                <div class="form-group">
                                     <button type="submit"  class="btn btn-info"><i class="fa fa-search"></i>Tìm kiếm</button>
-                                </div>
-                                <div class="form-group float-right">
-                                    <a href="<?= site_url('book/add', $langcode) ?>" class="btn btn-danger"><i class="fa fa-edit"></i> Đăng Sách</a>
                                 </div>
                             </div>
                         </form>

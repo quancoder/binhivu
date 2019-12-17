@@ -955,7 +955,7 @@ $files = $sorted;
                 }
 
             ?>
-                <li data-name="<?php echo $file ?>" class="<?php if($file=='..') echo 'back'; else echo 'dir';?> <?php if(!$config['multiple_selection']){ ?>no-selector<?php } ?>" <?php if(($filter!='' && stripos($file,$filter)===false)) echo ' style="display:none;"';?>><?php
+                <li data-name="<?php echo $file ?>" class="<?php if($file=='..') echo 'back'; else echo 'dir';?> <?php if(!$config['multiple_selection']){ ?>no-selector<?php } ?>" <?php if(($filter!='' && stripos($file,$filter)===false || $subdir != '')) echo ' style="display:none;"';?>><?php
                 $file_prevent_rename = false;
                 $file_prevent_delete = false;
                 if (isset($filePermissions[$file])) {

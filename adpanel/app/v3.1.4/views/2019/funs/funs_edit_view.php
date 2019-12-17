@@ -39,7 +39,7 @@
     <form method="post" action="<?= site_url('funs/edit/'.$info['funs_id'], $langcode)?>" id="form">
         <div class="row">
             <div class="col-md-4">
-                <div class="card card-primary card-outline">
+                <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Thông tin cơ bản</h3>
                         <div class="card-tools">
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <div class="card card-primary card-outline">
+                <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Nội dung bài viết</h3>
                         <div class="card-tools">
