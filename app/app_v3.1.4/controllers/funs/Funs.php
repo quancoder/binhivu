@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-class Gocthugian extends MY_Controller{
+class Funs extends MY_Controller{
 
     function __construct() {
         parent::__construct();
@@ -32,7 +32,7 @@ class Gocthugian extends MY_Controller{
         $data['doc_top_view'] = $doc_top_view;
         $data['book_top_view'] = $book_top_view;
         $this->_loadHeader($header);
-        $this->load->view($this->_template_f . 'goc-thu-gian/goc_thu_gian_list_view', $data);
+        $this->load->view($this->_template_f . 'funs/funs_list_view', $data);
         $this->_loadFooter();
     }
 
@@ -54,7 +54,7 @@ class Gocthugian extends MY_Controller{
         $data['book_top_view'] = $book_top_view;
         $data['funs_list'] = $funs_list['list'];
         $this->_loadHeader($header);
-        $this->load->view($this->_template_f . 'goc-thu-gian/search_view', $data);
+        $this->load->view($this->_template_f . 'funs/search_view', $data);
         $this->_loadFooter();
     }
 
@@ -94,7 +94,7 @@ class Gocthugian extends MY_Controller{
         $data['book_top_view'] = $book_top_view;
         $header['title'] = $info['funs_title'];
         $this->_loadHeader($header);
-        $this->load->view($this->_template_f . 'goc-thu-gian/goc_thu_gian_chi_tiet_view', $data);
+        $this->load->view($this->_template_f . 'funs/funs_detail_view', $data);
         $this->_loadFooter();
     }
 }

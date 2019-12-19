@@ -1,5 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-class Tintuc extends MY_Controller{
+class Document extends MY_Controller{
 
     function __construct() {
         parent::__construct();
@@ -9,6 +9,7 @@ class Tintuc extends MY_Controller{
         $this->load->model('funs/Funs_model');
         $this->load->model('document/Document_model');
         $this->load->model('book/Book_model');
+        $this->load->model('document/Document_model');
     }
     
     function index()
@@ -16,23 +17,17 @@ class Tintuc extends MY_Controller{
         $data = array();
     	// load header
     	$header = array();
-    	$header['title'] = 'Tin tức';
+    	$header['title'] = 'Tài liệu';
 
         $status  = 1;
         $start = 0;
         $limit = 12;
         $search_tt = $this->input->get('search');
-        $news_list = $this->News_model->news_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
-        $news_top_view = $this->News_model->news_list_top_view(TOP_VIEW);
-        $doc_top_view = $this->Document_model->document_list_top_view();
-        $book_top_view = $this->Book_model->book_list_top_view();
-        
-        $data['news_list'] = $news_list['list'];
-        $data['news_top_view'] = $news_top_view;
-        $data['doc_top_view'] = $doc_top_view;
-        $data['book_top_view'] = $book_top_view;
+        $doc_list = $this->Document_model->document_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
+
+        $data['doc_list'] = $doc_list['list'];
     	$this->_loadHeader($header);
-    	$this->load->view($this->_template_f . 'tin-tuc/tin_tuc_list_view', $data);
+    	$this->load->view($this->_template_f . 'document/document_list_view', $data);
     	$this->_loadFooter();
     }
 

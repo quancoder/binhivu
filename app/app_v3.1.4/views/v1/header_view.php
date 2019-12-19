@@ -178,7 +178,7 @@
                         <ul class="nav navbar-nav w-100">
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="" title="Trang chủ" class=" visible-lg active" aria-expanded="true">
+                                <a href="<?= site_url()?>" title="Trang chủ" class=" visible-lg active" aria-expanded="true">
                                     Trang chủ
                                 </a>
                                 <div class="visible-ega-table-xs">
