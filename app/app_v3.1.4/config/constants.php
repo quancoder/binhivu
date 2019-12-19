@@ -73,3 +73,6 @@ defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREA
 |       http://tldp.org/LDP/abs/html/exitcodes.html
 |
 */
+
+define('ALL_USER',  '-1');
+define('TOP_VIEW',  '10');

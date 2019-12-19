@@ -73,11 +73,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
-
-                                <label class="col-form-label" for="search"><i class="fa fa-pencil"></i>&nbsp;</label>
+                            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
+                                <label class="col-form-label hidden-xs" for="search"><i class="fa fa-pencil"></i>&nbsp;</label>
                                 <div class="form-group">
-                                    <button type="submit"  class="btn btn-info"><i class="fa fa-search"></i>Tìm kiếm</button>
+                                    <button type="submit"  class="btn btn-info w-100"><i class="fa fa-search"></i>Tìm kiếm</button>
                                 </div>
                             </div>
                         </form>

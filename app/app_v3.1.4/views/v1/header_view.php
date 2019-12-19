@@ -47,6 +47,7 @@
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.ui.1.12.1.js"></script>
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
     <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
@@ -65,7 +66,7 @@
                         <div class="ega-item-top-bar logo-wrap">
                             <h1 class="h1-no-margin-padding">
                                 <span style="display: none">BinhiVu</span>
-                                <a href="https://binhivu.com/" title="binhivu">
+                                <a href="<?= site_url()?>" title="binhivu">
                                     <img alt="binhivu" src="<?php echo base_url() . 'images/'; ?>logo2.png" class="ega-logo">
                                 </a>
                             </h1>
@@ -73,11 +74,9 @@
                     </div>
                     <div class="col-xs-4">
                         <div class="ega-item-top-bar">
-
-                            <form class="ega-form-search-top" role="search" method="get" action="https://binhivu.com/search">
+                            <form class="ega-form-search-top" role="search" method="get" action="<?=site_url('tim-kiem-tin-tuc.html')?>">
                                 <div class="ega-div-top-search">
-                                    <input autocomplete="off" name="query" type="search"
-                                           placeholder="Nhập từ khóa tìm kiếm...">
+                                    <input autocomplete="off" name="search" type="search" placeholder="Nhập tên bài viết...">
                                     <input type="hidden" name="type" value="article">
                                     <button type="submit">
                                         <span class="glyphicon glyphicon-search"></span>
@@ -91,13 +90,13 @@
                         <div class="ega-item-top-bar">
                             <div class="ega-top-message">
 								<span class="">
-								Tổng đài:
+								Liên hệ:
 							</span>
-                                <a class="ega-phone" href="tel:123.456.789">
-                                    123.456.789
+                                <a class="ega-phone" href="tel:0926111368">
+                                    0926111368
                                 </a>
-                                <span class="ega-fz-12 ega-header-top-item"> ( 8:00 - 18:00 ) </span>
-                                <span class="hidden-xs ega-header-top-item">
+                                <span class="ega-fz-12 ega-header-top-item hide"> ( 8:00 - 18:00 ) </span>
+                                <span class="hidden-xs ega-header-top-item hide">
 									<a title="Đăng ký/Đăng nhập" href="https://binhivu.com/account"
                                        style="font-size: 12px; z-index: 10000; position: relative;"
                                        class="ega-a-account-header">
@@ -106,11 +105,11 @@
 									</a>
 								</span>
                                 <span class="ega-header-top-item ega-top-cart-sendo hide">
-								<a class="ega-a-cart-icon-top hide" href="https://binhivu.com/cart" title="cart">
-									<span class="glyphicon glyphicon-shopping-cart"> </span>
-									<span class="ega-a-cart-icon-top__number ega-header-top-item">0</span>
-								</a>
-							</span>
+                                    <a class="ega-a-cart-icon-top hide" href="https://binhivu.com/cart" title="cart">
+                                        <span class="glyphicon glyphicon-shopping-cart"> </span>
+                                        <span class="ega-a-cart-icon-top__number ega-header-top-item">0</span>
+                                    </a>
+							    </span>
                             </div>
                         </div>
                     </div>
@@ -135,7 +134,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-8 text-center">
                                 <div class="logo-wrap">
-                                    <a href="https://binhivu.com/">
+                                    <a href="<?=site_url()?>">
                                         <img alt="binhivu" src="<?php echo base_url() . 'images/'; ?>logo2.png" class="ega-logo center-block">
                                     </a>
                                 </div>
@@ -160,10 +159,10 @@
                                 <div class="col-xs-12">
 
                                     <form id="ega-search-xs-form" style="display: none" class="ega-form-search-top"
-                                          role="search" method="get" action="https://binhivu.com/search">
+                                          role="search" method="get" action="<?=site_url('tim-kiem-tin-tuc.html')?>">
                                         <div class="ega-div-top-search">
                                             <input autocomplete="off" name="query" type="search"
-                                                   placeholder="Nhập từ khóa tìm kiếm...">
+                                                   placeholder="Nhập tên bài viết...">
                                             <input type="hidden" name="type" value="article">
                                             <button type="submit"><span class="glyphicon glyphicon-search"></span>
                                             </button>
@@ -179,11 +178,11 @@
                         <ul class="nav navbar-nav w-100">
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Trang chủ" class=" visible-lg" aria-expanded="true">
+                                <a href="" title="Trang chủ" class=" visible-lg active" aria-expanded="true">
                                     Trang chủ
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Giới thiệu">
+                                    <a href="<?=site_url('lien-he.html')?>" title="Giới thiệu">
                                         Trang chủ
                                     </a>
                                 </div>
@@ -191,11 +190,11 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Tin tức" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('tin-tuc.html')?>" title="Tin tức" class="visible-lg " aria-expanded="true">
                                     Tin tức
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Tin tức">
+                                    <a href="<?=site_url('tin-tuc.html')?>" title="Tin tức">
                                         Tin tức
                                     </a>
                                 </div>
@@ -203,11 +202,11 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Tài liệu" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('tai-lieu.html')?>" title="Tài liệu" class=" visible-lg" aria-expanded="true">
                                     Tài liệu
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Tài liệu">
+                                    <a href="<?=site_url('tai-lieu.html')?>" title="Tài liệu">
                                         Tài liệu
                                     </a>
                                 </div>
@@ -215,11 +214,11 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Sách" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('sach.html')?>" title="Sách" class=" visible-lg" aria-expanded="true">
                                     Sách
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Sách">
+                                    <a href="<?=site_url('sach.html')?>" title="Sách">
                                         Sách
                                     </a>
                                 </div>
@@ -227,11 +226,11 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Góc thư giãn" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn" class=" visible-lg" aria-expanded="true">
                                     Góc thư giãn
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Góc thư giãn">
+                                    <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn">
                                         Góc thư giãn
                                     </a>
                                 </div>
@@ -239,11 +238,11 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="https://binhivu.com/" title="Liên hệ" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('lien-he.html')?>" title="Liên hệ" class=" visible-lg" aria-expanded="true">
                                     Liên hệ
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="https://binhivu.com/" title="Liên hệ">
+                                    <a href="<?=site_url('lien-he.html')?>" title="Liên hệ">
                                         Liên hệ
                                     </a>
                                 </div>

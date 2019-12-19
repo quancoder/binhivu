@@ -95,4 +95,20 @@ class Funs_model extends CI_Model
         return $data;
     }
 
+    function funs_up_view($id)
+    {
+        $isUpdate = FALSE;
+        $iconn = $this->db->conn_id;
+        $sql = "CALL funs_up_view(:id);";
+        $stmt = $iconn->prepare($sql);
+        if ($stmt) {
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                $isUpdate = TRUE;
+            }
+            $stmt->closeCursor();
+        }
+        return $isUpdate;
+    }
+
 }

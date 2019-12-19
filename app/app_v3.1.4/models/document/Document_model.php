@@ -95,4 +95,19 @@ class Document_model extends CI_Model
         return $data;
     }
 
+    function document_up_view($id)
+    {
+        $isUpdate = FALSE;
+        $iconn = $this->db->conn_id;
+        $sql = "CALL document_up_view(:id);";
+        $stmt = $iconn->prepare($sql);
+        if ($stmt) {
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                $isUpdate = TRUE;
+            }
+            $stmt->closeCursor();
+        }
+        return $isUpdate;
+    }
 }

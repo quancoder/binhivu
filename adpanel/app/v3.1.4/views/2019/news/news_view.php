@@ -9,6 +9,9 @@
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Tin tức</li>
+                    <li class="ml-3 float-right">
+                        <a href="<?= site_url('news/add', $langcode) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Thêm tin mới</a>
+                    </li>
                 </ol>
             </div>
         </div>
@@ -19,9 +22,10 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card">
                 <div class="card-body" style="padding: 1rem 0.5rem 0 0.5rem">
-                    <form method="get" action="<?= site_url('Document', $langcode)?>">
+                    <form method="get" action="<?= site_url('news', $langcode)?>">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <label class="col-form-label" for="search"> Nhập tiêu đề</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input id="search" name="search" class="form-control" type="search"  value="<?php echo $search; ?>" placeholder="Tìm theo tiêu đề..."  />
@@ -30,6 +34,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <label class="col-form-label" for="tag"> Nhập từ khóa</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input id="tag" name="tag" type="text" placeholder="Tìm kiếm theo từ khóa..." class="form-control" data-role="tagsinput" value="<?php echo $tag?>"  style="display: none"/>
@@ -38,6 +43,7 @@
                             </div>
 
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label" for="status">Chọn trạng thái</label>
                                 <div class="form-group">
                                     <select class="form-control" id="status" name="status">
                                         <option value="-1" <?php echo $status == '-1' ? 'selected' : '' ?> >Tất cả tin tức</option>
@@ -49,14 +55,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
+                                <label class="col-form-label">&nbsp;</label>
                                 <div class="form-group">
-                                    <button type="submit"  class="btn btn-info"><i class="fa fa-search"></i>Tìm kiếm</button>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 col-xl-2">
-                                <div class="form-group float-right">
-                                    <a href="<?= site_url('news/add', $langcode) ?>" class="btn btn-danger"><i class="fa fa-edit"></i> Đăng tin mới</a>
+                                    <button type="submit"  class="btn btn-info w-100"><i class="fa fa-search"></i>Tìm kiếm</button>
                                 </div>
                             </div>
                         </form>
@@ -69,14 +71,14 @@
                         <thead>
                         <tr>
                             <th style="width: 3%">ID</th>
-                            <th style="width: 15%" class="text-center">Ảnh</th>
+                            <th style="width: 10%" class="text-center">Ảnh</th>
                             <th>Tiêu đề</th>
                             <th style="width: 10%" class="text-center">Trạng thái</th>
-                            <th style="width: 5%" class="text-right">View</th>
+                            <th style="width: 5%" class="text-right">Xem</th>
                             <th style="width: 10%" class="text-right">Ngày đăng</th>
                             <th style="width: 10%" class="text-right">Sửa gần nhất</th>
                             <th style="width: 20%;">Từ khóa </th>
-                            <th style="width: 10%" class="text-center"></th>
+                            <th style="width: 5%" class="text-center"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -88,7 +90,7 @@
                                         <img src="<?=$new['news_thumbs']?>" class="img-fluid" />
                                     </a>
                                 </td>
-                                <td class="align-middle"><?php echo $new['news_title'] ?></td>
+                                <td class="align-middle font-weight-bold"><?php echo $new['news_title'] ?></td>
                                 <td class="align-middle text-center">
                                     <?php if($new['news_status'] ==1){?>
                                         <span class="badge badge-primary">Hiển thị</span>
@@ -135,8 +137,6 @@
         </div>
     </div>
 </div>
-<!-- END container-fluid -->
-<!-- END content -->
 <script type="text/javascript">
     $('.iframe-view-image').fancybox({
         'width'		: 900,

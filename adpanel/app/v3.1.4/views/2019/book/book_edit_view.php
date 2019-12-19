@@ -49,7 +49,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-xs-12 col-md-6">
                                 <label class="col-form-label" for="b_status"><i class="fa fa-pencil"></i> Chuyển trạng thái</label>
                                 <div class="form-group">
                                     <select class="form-control" name="b_status">
@@ -72,7 +72,7 @@
                                     <input type="text" id="b_nxb" name="b_nxb" step="any" class="form-control" value="<?= $info['b_nxb'] ?>"/>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
                                     <label class="col-form-label" for="b_name"><i class="fa fa-pencil"></i> Tên sách</label>
                                     <textarea id="b_name" name="b_name"  class="form-control" placeholder="Tên sách:" required rows="4"><?= $info['b_name']?></textarea>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-xs-12 col-md-6">
                                 <label class="col-form-label"><i class="fa fa-image"></i> Ảnh</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="b_image" name="b_image" value="<?= $info['b_image'] ?>" required />
@@ -105,7 +105,9 @@
                                                 data-src='<?= FILEMANAGER_PATH.'extensions=["jpg","png"]&field_id=b_image&fldr=sach/images' ?>'> Chọn ảnh </button>
                                     </div>
                                 </div>
-
+                                <img id="image_preview" class="bg-white w-100 mt-2" src="<?=$info['b_image'] ?>" style="border: 2px solid #cccccc; display: <?= $info['b_image'] == '' ? 'none' : 'block'?>"/>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
                                 <label class="col-form-label"><i class="fa fa-image"></i> Upload file sách</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="b_path_file" name="b_path_file" value="<?= $info['b_path_file'] ?>" required />
@@ -123,9 +125,6 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <img id="image_preview" src="<?= $info['b_image'] ?>" style="width:50%; background-color: white; display: <?= $info['b_image'] == '' ? 'none' : 'block'?>"/>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,11 +140,10 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label class="col-form-label" for="b_des"><i class="fa fa-pencil"></i> Tóm tắt nội dụng</label>
+                            <label class="col-form-label" for="b_des"><i class="fa fa-pencil"></i> Mô tả</label>
                             <textarea id="b_des" name="b_des"  class="form-control" placeholder="Mô tả:" required rows="4"><?= $info['b_des'] ?></textarea>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="b_content"><i class="fa fa-pencil"></i> Mô tả sách</label>
                             <textarea id="b_content" name="b_content" class="form-control" ><?= $info['b_content'] ?></textarea>
                         </div>
                     </div>
@@ -161,19 +159,6 @@
 
 <script type="text/javascript">
 
-    $('.iframe-btn').fancybox({
-        'width'		: 900,
-        'height'	: 600,
-        'type'		: 'iframe',
-        'autoScale'    	: false,
-        'autoDimensions'    : true,
-        'transitionIn'      : 'elastic',
-        'transitionOut'     : 'elastic',
-        'overlayShow'       : true,
-        'centerOnScroll'    : true,
-        'easingIn'          : 'easeOutBack',
-        'easingOut'         : 'easeInBack',
-    });
     function responsive_filemanager_callback(field_id){
         if(field_id == 'b_image')
         {

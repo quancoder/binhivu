@@ -17,18 +17,18 @@ class Book extends MY_Controller {
 	    $data = array();
 
         //get value
-        $status = trim($this->input->get('status'));
-        $search = trim($this->input->get('search'));
-        $tag = trim($this->input->get('tag'));
-        $author = trim($this->input->get('author'));
-        $nxb = trim($this->input->get('nxb'));
-        $page = trim($this->input->get('page'));
-        $num = trim($this->input->get('num'));
+        $status     = trim($this->input->get('status'));
+        $search     = trim($this->input->get('search'));
+        $tag        = trim($this->input->get('tag'));
+        $author     = trim($this->input->get('author'));
+        $nxb        = trim($this->input->get('nxb'));
+        $page       = trim($this->input->get('page'));
+        $num        = trim($this->input->get('num'));
 
         //validate value
-        $status = in_array($status, array('-1','1','2','3','4')) ? $status : '-1';
-        $page = is_numeric($page) && $page > 0  ? $page : 1;
-        $num = is_numeric($num) && $num > 0  ? $num : 30;
+        $status     = in_array($status, array('-1','1','2','3','4')) ? $status : '-1';
+        $page       = is_numeric($page) && $page > 0  ? $page : 1;
+        $num        = is_numeric($num) && $num > 0  ? $num : 30;
 
         //get data
         $user_id = $this->_session_uid();
@@ -64,8 +64,8 @@ class Book extends MY_Controller {
         $data['info']['b_price']        = 0;
         $data['info']['b_author']       = '';
         $data['info']['b_nxb']          = '';
-        $data['success'] = null;
-        $data['error']= array();
+        $data['success']                = null;
+        $data['error']                  = array();
 
         if(isset($_POST['b_name'])){
             $data = $this->_add_process($data);

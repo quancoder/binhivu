@@ -93,7 +93,9 @@
                                                 data-src='<?= FILEMANAGER_PATH.'extensions=["jpg","png"]&field_id=b_image&fldr=sach/images' ?>'> Chọn ảnh </button>
                                     </div>
                                 </div>
-
+                                <img id="image_preview" class="bg-white w-100 mt-2" src="<?=$info['b_image'] ?>" style="border: 2px solid #cccccc; display: <?= $info['b_image'] == '' ? 'none' : 'block'?>"/>
+                            </div>
+                            <div class="col-md-6">
                                 <label class="col-form-label"><i class="fa fa-image"></i> Upload file sách</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="b_path_file" name="b_path_file" value="<?= $info['b_path_file'] ?>" required />
@@ -110,9 +112,6 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <img id="image_preview" src="<?= $info['b_image'] ?>" style="width:50%; background-color: white; display: <?= $info['b_image'] == '' ? 'none' : 'block'?>"/>
                             </div>
                         </div>
                     </div>
@@ -152,19 +151,6 @@
 </div>
 
 <script type="text/javascript">
-    $('.iframe-btn').fancybox({
-        'width'		: 900,
-        'height'	: 600,
-        'type'		: 'iframe',
-        'autoScale'    	: false,
-        'autoDimensions'    : true,
-        'transitionIn'      : 'elastic',
-        'transitionOut'     : 'elastic',
-        'overlayShow'       : true,
-        'centerOnScroll'    : true,
-        'easingIn'          : 'easeOutBack',
-        'easingOut'         : 'easeInBack',
-    });
     function responsive_filemanager_callback(field_id){
         if(field_id == 'b_image')
         {
@@ -196,6 +182,7 @@
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
         filemanager_title: "Quản lý tài nguyên ",
+        filemanager_subfolder: "sach/images",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

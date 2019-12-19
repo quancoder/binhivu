@@ -56,7 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 //tin tuc
 $route['tin-tuc.html'] = 'tintuc/tintuc/index';
 $route['([a-zA-Z0-9-_]+)-tt([0-9]+).html'] = 'tintuc/tintuc/detail/$1/$2';
+$route['tim-kiem-tin-tuc.html'] = 'tintuc/tintuc/search';
 
 //giai tri
 $route['goc-thu-gian.html'] = 'gocthugian/gocthugian/index';
 $route['([a-zA-Z0-9-_]+)-gtg([0-9]+).html'] = 'gocthugian/gocthugian/detail/$1/$2';
+$route['tim-kiem-thu-gian.html'] = 'gocthugian/gocthugian/search';

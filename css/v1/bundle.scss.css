@@ -258,7 +258,6 @@ img {
 
 .ega-menu-top ul.nav.navbar-nav > li > a {
     color: #fff;
-    margin-top: 2px;
     padding-top: 7px;
     padding-bottom: 7px;
     border-radius: 4px 4px 0px 0px;
@@ -267,19 +266,20 @@ img {
 }
 
 .ega-menu-top ul.nav.navbar-nav > li > a:hover {
-    /*color: #12844e;*/
-    /*background-color: #fff*/
+    border-bottom: 3px solid #ff914d;
+    color: #ff914d;
+}
+.ega-menu-top ul.nav.navbar-nav > li > a.active {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #ff914d;
     border-bottom: 3px solid #ff914d
 }
 
 .ega-menu-top ul.nav.navbar-nav > li > a:hover > b.caret {
     border-top: 0;
     border-bottom: 4px dashed
-}
-
-.ega-menu-top ul.nav.navbar-nav > li > a:active, .ega-menu-top ul.nav.navbar-nav > li > a:focus {
-    color: #12844e;
-    background-color: #fff
 }
 
 @media (min-width: 992px) {

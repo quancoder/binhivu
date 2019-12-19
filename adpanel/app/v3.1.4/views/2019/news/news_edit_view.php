@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item"><a href="<?=site_url('news')?>">Tin tức</a></li>
                     <li class="breadcrumb-item active">Sửa bài viết</li>
                     <li class="ml-3 float-right">
-                        <a href="<?= site_url('news/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Đăng tin mới</a>
+                        <a href="<?= site_url('news/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Thêm tin mới</a>
                     </li>
                 </ol>
             </div>
@@ -20,9 +20,17 @@
     </div><!-- /.container-fluid -->
 </section>
 <div class="container-fluid">
-    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $isupdate == TRUE ? 'block' : 'none'?>">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $success == TRUE ? 'block' : 'none'?>">
         <strong>Thành công!</strong>
         Bạn đã sửa thành công bài viết. <a href="<?=site_url('news', $langcode)?>">Quay lại danh sách.</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: <?= !empty($error) > 0 ? 'block' : 'none'?>">
+        <strong>Thất bại!</strong>
+        <a href="<?=site_url('document', $langcode)?>">Quay lại danh sách.</a>
+        <?php var_dump($error)?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -39,7 +47,7 @@
     </div>
     <form method="post" action="<?= site_url('news/edit/'.$info['news_id'], $langcode)?>" id="form">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Thông tin cơ bản</h3>
@@ -58,18 +66,6 @@
                                 <option value="4" <?= $info['news_status']==4 ? 'selected': ''?>>Lưu vào nháp</option>
                             </select>
                         </div>
-                        <label class="col-form-label" for="news_image"><i class="fa fa-pencil"></i> Chọn ảnh</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="news_image" name="news_image" value="<?= ROOT_DOMAIN .$info['news_image']?>" required/>
-                            <div class="input-group-prepend">
-                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
-                                        data-src="<?= FILEMANAGER_PATH.'type=1&field_id=news_image &fldr=tin-tuc' ?>"> Chọn ảnh </button>
-                            </div>
-                        </div>
-                        <div style="margin: 10px 0; ">
-                            <img id="image_preview"  alt="ảnh bài viết" src="<?=$info['news_image']?>"
-                                 style="width:100%; background-color: white; text-align: center;    border: 4px solid #eee; border-radius: 8px;"/>
-                        </div>
 
                         <label class="col-form-label" for="news_title"><i class="fa fa-pencil"></i> Tiêu đề</label>
                         <div class="form-group">
@@ -85,10 +81,23 @@
                         <div class="form-group">
                             <input id="news_tags" name="news_tags" data-role="tagsinput"  value="<?= $info['news_tags']?>" required />
                         </div>
+
+                        <label class="col-form-label" for="news_image"><i class="fa fa-pencil"></i> Chọn ảnh</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="news_image" name="news_image" value="<?= $info['news_image']?>" required/>
+                            <div class="input-group-prepend">
+                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                        data-src='<?= FILEMANAGER_PATH.'extensions=["jpg","png"]&field_id=news_image&fldr=tin-tuc' ?>'> Chọn ảnh </button>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 0; ">
+                            <img id="image_preview"  alt="ảnh bài viết" src="<?=$info['news_image']?>"
+                                 style="width:100%; background-color: white; text-align: center; border: 4px solid #eee; border-radius: 8px;"/>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Nội dung bài viết</h3>
@@ -112,22 +121,13 @@
     </form>
 </div>
 <script type="text/javascript">
-    $('.iframe-btn').fancybox({
-        'width'		: 900,
-        'height'	: 700,
-        'type'		: 'iframe',
-        'autoScale'    	: false,
-        'autoDimensions'    : true,
-        'transitionIn'      : 'elastic',
-        'transitionOut'     : 'elastic',
-        'overlayShow'       : true,
-        'centerOnScroll'    : true,
-        'easingIn'          : 'easeOutBack',
-        'easingOut'         : 'easeInBack',
-    });
     function responsive_filemanager_callback(field_id){
-        var url=jQuery('#'+field_id).val();
-        $("#image_preview").attr('src', url).show();
+        var url = jQuery('#'+field_id).val();
+        url = url.replace(/^.*\/\/[^\/]+/, '');
+        if(field_id == 'news_image'){
+            jQuery('#'+field_id).val(url);
+            $("#image_preview").attr('src', url).show();
+        }
     }
 
     $('#content img').addClass('img-fluid');
@@ -146,6 +146,7 @@
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
         filemanager_title: "Quản lý tài nguyên",
+        filemanager_subfolder: "tin-tuc",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

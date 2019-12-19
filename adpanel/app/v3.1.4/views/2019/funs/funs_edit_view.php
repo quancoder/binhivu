@@ -4,15 +4,15 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Sửa tin tức</h1>
+                <h1 class="">Sửa bài viết </h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="<?=site_url('Funs')?>">Góc thư giãn</a></li>
+                    <li class="breadcrumb-item"><a href="<?=site_url('funs')?>">Tin tức</a></li>
                     <li class="breadcrumb-item active">Sửa bài viết</li>
                     <li class="ml-3 float-right">
-                        <a href="<?= site_url('funs/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Đăng tin mới</a>
+                        <a href="<?= site_url('funs/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Thêm bài viết</a>
                     </li>
                 </ol>
             </div>
@@ -20,13 +20,14 @@
     </div><!-- /.container-fluid -->
 </section>
 <div class="container-fluid">
-    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $isupdate == TRUE ? 'block' : 'none'?>">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $success == TRUE ? 'block' : 'none'?>">
         <strong>Thành công!</strong>
-        Bạn đã sửa thành công bài viết. <a href="<?=site_url('Funs', $langcode)?>">Quay lại danh sách.</a>
+        Bạn đã sửa thành công bài viết. <a href="<?=site_url('funs', $langcode)?>">Quay lại danh sách.</a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
     </div>
+
     <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: <?= !empty($error)  ? 'block' : 'none'?>">
         <strong>Thất bại!</strong>
         <a href="<?=site_url('funs', $langcode)?>">Quay lại danh sách.</a>
@@ -57,18 +58,6 @@
                                 <option value="4" <?= $info['funs_status']==4 ? 'selected': ''?>>Lưu vào nháp</option>
                             </select>
                         </div>
-                        <label class="col-form-label" for="funs_image"><i class="fa fa-pencil"></i> Chọn ảnh</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="funs_image" name="funs_image" value="<?= ROOT_DOMAIN.$info['funs_image']?>" required/>
-                            <div class="input-group-prepend">
-                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
-                                        data-src="<?= FILEMANAGER_PATH.'type=1&field_id=funs_image&fldr=tin-tuc' ?>"> Chọn ảnh </button>
-                            </div>
-                        </div>
-                        <div style="margin: 10px 0; ">
-                            <img id="image_preview"  alt="ảnh bài viết" src="<?=$info['funs_image']?>"
-                                 style="width:100%; background-color: white; text-align: center;    border: 4px solid #eee; border-radius: 8px;"/>
-                        </div>
 
                         <label class="col-form-label" for="funs_title"><i class="fa fa-pencil"></i> Tiêu đề</label>
                         <div class="form-group">
@@ -83,6 +72,19 @@
                         <label class="col-form-label" for="funs_tags"><i class="fa fa-pencil"></i> Từ khóa (cách nhau bởi dấu phẩy)</label>
                         <div class="form-group">
                             <input id="funs_tags" name="funs_tags" data-role="tagsinput"  value="<?= $info['funs_tags']?>" required />
+                        </div>
+
+                        <label class="col-form-label" for="funs_image"><i class="fa fa-pencil"></i> Chọn ảnh</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="funs_image" name="funs_image" value="<?= $info['funs_image']?>" required/>
+                            <div class="input-group-prepend">
+                                <button class="quanlt-open-modal-filemanager btn btn-secondary" type="button"
+                                        data-src='<?= FILEMANAGER_PATH.'extensions=["jpg","png"]&field_id=funs_image&fldr=goc-giai-tri' ?>'> Chọn ảnh </button>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 0; ">
+                            <img id="image_preview"  alt="ảnh bài viết" src="<?=$info['funs_image']?>"
+                                 style="width:100%; background-color: white; text-align: center; border: 4px solid #eee; border-radius: 8px;"/>
                         </div>
                     </div>
                 </div>
@@ -111,22 +113,13 @@
     </form>
 </div>
 <script type="text/javascript">
-    $('.iframe-btn').fancybox({
-        'width'		: 900,
-        'height'	: 700,
-        'type'		: 'iframe',
-        'autoScale'    	: false,
-        'autoDimensions'    : true,
-        'transitionIn'      : 'elastic',
-        'transitionOut'     : 'elastic',
-        'overlayShow'       : true,
-        'centerOnScroll'    : true,
-        'easingIn'          : 'easeOutBack',
-        'easingOut'         : 'easeInBack',
-    });
     function responsive_filemanager_callback(field_id){
-        var url=jQuery('#'+field_id).val();
-        $("#image_preview").attr('src', url).show();
+        var url = jQuery('#'+field_id).val();
+        url = url.replace(/^.*\/\/[^\/]+/, '');
+        if(field_id == 'funs_image'){
+            jQuery('#'+field_id).val(url);
+            $("#image_preview").attr('src', url).show();
+        }
     }
 
     $('#content img').addClass('img-fluid');
@@ -138,13 +131,14 @@
         theme: 'silver',
         language: 'vi',
         plugins: [
-            "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
+            "autoresize advlist autolink lists link image charmap preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
         toolbar1: 'insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_title: "Quản lý tài nguyên ",
+        filemanager_title: "Quản lý tài nguyên",
+        filemanager_subfolder: "goc-giai-tri",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
             "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"

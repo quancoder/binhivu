@@ -49,15 +49,13 @@ class News extends MY_Controller {
     function add()
     {
         $data = array();
-
-        $data['news_title'] = '';
-        $data['news_sapo'] = '';
-        $data['news_tags'] = '';
-        $data['news_image'] = '';
-        $data['news_content'] = '';
-        $data['news_status'] = '';
-        $data['news_id'] = 0;
-        $data['error']= array();
+        $data['info']['news_title']     = '';
+        $data['info']['news_sapo']      = '';
+        $data['info']['news_tags']      = '';
+        $data['info']['news_image']     = '';
+        $data['info']['news_content']   = '';
+        $data['success']    = false;
+        $data['error']      = array();
 
         if(isset($_POST['news_title'])){
             $data = $this->_add_process($data);
@@ -71,7 +69,7 @@ class News extends MY_Controller {
     function edit($news_id)
     {
         $data = array();
-        $data['isupdate'] = FALSE;
+        $data['success'] = FALSE;
         $data['error']= array();
 
         $info  = $this->News_model->news_info($news_id);
@@ -91,19 +89,24 @@ class News extends MY_Controller {
 
     private function _add_process($data)
     {
-        $news_title = $this->input->post('news_title', true);
-        $news_sapo = $this->input->post('news_sapo', true);
-        $news_tag = $this->input->post('news_tags', true);
-        $news_image = $this->input->post('news_image', true);
-        $news_content = $this->input->post('news_content', true);
-        $news_status_1 = $this->input->post('news_status_1', true);//news_status_1 = public
-        $news_status_4 = $this->input->post('news_status_4', true);//news_status_4 = trash
+        /**PARAM**/
+        $news_title     = $this->input->post('news_title');
+        $news_sapo      = $this->input->post('news_sapo');
+        $news_tag       = $this->input->post('news_tags');
+        $news_image     = $this->input->post('news_image');
+        $news_content   = $this->input->post('news_content');
+        $news_status_1  = $this->input->post('news_status_1');
+        $news_status_4  = $this->input->post('news_status_4');
 
-        $news_title == '' ? $data['error']['news_title'] = TRUE : $data['news_title'] = $news_title;
-        $news_sapo == '' ? $data['error']['news_sapo'] = TRUE :  $data['news_sapo'] = $news_sapo;
-        $news_tag == '' ? $data['error']['news_tags'] = TRUE :  $data['news_tags'] = $news_tag = strtolower($news_tag);
-        $news_image == '' || !is_file_in_public_dir ($news_image, ROOT_DOMAIN.'/public/images')? $data['error']['news_image'] = TRUE : $data['news_image'] = $news_image;
-        $news_content == '' ? $data['error']['news_content'] = TRUE : $data['news_content'] = $news_content;
+        /**VALIDATE**/
+        $news_title == '' ? $data['error']['news_title'] = TRUE : null;
+        $news_sapo == '' ? $data['error']['news_sapo'] = TRUE :  null;
+        $news_content == '' ? $data['error']['news_content'] = TRUE : null;
+
+        if(!is_file_in_public_folder ($news_image)){
+
+            $data['error']['news_image'] = TRUE;
+        }
 
         if($news_status_1 == "ok" && $news_status_4 == "" ){
             $news_status = 1;
@@ -114,11 +117,19 @@ class News extends MY_Controller {
             $data['error']['news_status'] = TRUE;
         }
 
+        /**SET VALUE**/
+        $data['info']['news_title']     = $news_title;
+        $data['info']['news_sapo']      = $news_sapo;
+        $data['info']['news_tags']      = $news_tag;
+        $data['info']['news_image']     = $news_image;
+        $data['info']['news_content']   = $news_content;
+        /**CALL STORE**/
+
         if (empty($data['error'])) {
             $user_id = $this->_session_uid();
-            $newid = $this->News_model->news_insert($news_title, $news_sapo, $news_content, get_path_file($news_image), get_path_file($news_image), $user_id, (int)$news_status, $news_tag);
+            $newid = $this->News_model->news_insert($news_title, $news_sapo, $news_content, $news_image, $news_image, $user_id, (int)$news_status, $news_tag);
             if ($newid > 0){
-                $data['news_id'] = $newid;
+                $data['success'] = $newid;
             }else{
                 $data['error']['execute'] = TRUE;
             }
@@ -128,26 +139,41 @@ class News extends MY_Controller {
 
     private function _edit_process($data, $news_id)
     {
-        $news_title = $this->input->post('news_title', true);
-        $news_sapo = $this->input->post('news_sapo', true);
-        $news_tag = $this->input->post('news_tags', true);
-        $news_image = $this->input->post('news_image', true);
-        $news_content = $this->input->post('news_content', true);
-        $news_status = $this->input->post('news_status', true);
+        /**PARAM**/
+        $news_title     = $this->input->post('news_title');
+        $news_sapo      = $this->input->post('news_sapo');
+        $news_tag       = $this->input->post('news_tags');
+        $news_image     = $this->input->post('news_image');
+        $news_content   = $this->input->post('news_content');
+        $news_status    = $this->input->post('news_status');
 
-        $news_title == '' ? $data['error']['news_title'] = TRUE : $data['info']['news_title'] = $news_title;
-        $news_sapo == '' ? $data['error']['news_sapo'] = TRUE :  $data['info']['news_sapo'] = $news_sapo;
-        $news_tag == '' ? $data['error']['news_tags'] = TRUE :  $data['info']['news_tags'] = $news_tag = strtolower($news_tag);
-        $news_image == '' || !is_file_in_public_dir ($news_image, ROOT_DOMAIN.'/public/images')? $data['error']['news_image'] = TRUE : $data['info']['news_image'] = $news_image;
-        $news_content == '' ? $data['error']['news_content'] = TRUE : $data['info']['news_content'] = $news_content;
-        $news_status != in_array($news_status, array('1','2', '3', '4')) ? $data['error']['news_status'] = TRUE : $data['info']['news_status'] = $news_status;
+        /**VALIDATE**/
+        $news_title == '' ? $data['error']['news_title'] = TRUE : null;
+        $news_sapo == '' ? $data['error']['news_sapo'] = TRUE :  null;
+        $news_tag == '' ? $data['error']['news_tags'] = TRUE :  null;
+        if(!is_file_in_public_folder ($news_image)){
 
+            $data['error']['news_image'] = TRUE;
+        }
+        $news_content == '' ? $data['error']['news_content'] = TRUE : null;
+        if(!in_array($news_status, array('1','2', '3', '4'))){
+            $data['error']['news_status'] = TRUE;
+        }
+        /**SET VALUE**/
+        $data['info']['news_title']     = $news_title;
+        $data['info']['news_sapo']      = $news_sapo;
+        $data['info']['news_tags']      = $news_tag;
+        $data['info']['news_image']     = $news_image;
+        $data['info']['news_content']   = $news_content;
+        $data['info']['news_status']    = $news_status;
+        /**CALL STORE**/
         if (empty($data['error'])) {
 
-            $isUpdate = $this->News_model->news_update($news_id, $news_title, $news_sapo, ($news_content), get_path_file($news_image), get_path_file($news_image),strtolower($news_tag), $news_status);
+            $isUpdate = $this->News_model->news_update($news_id, $news_title, $news_sapo, $news_content, $news_image, $news_image, strtolower($news_tag), $news_status);
             if ($isUpdate == TRUE){
-                $data['isupdate'] = TRUE;
+                $data['success'] = TRUE;
             }else{
+                $data['success'] = FALSE;
                 $data['error']['execute'] = TRUE;
             }
         }
