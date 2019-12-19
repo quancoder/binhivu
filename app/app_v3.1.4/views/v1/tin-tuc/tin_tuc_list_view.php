@@ -90,7 +90,7 @@
                             <?php $i= 1; foreach ($news_list as $new){ ?>
                                 <div class="item">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                        <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
+                                        <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
                                              data-src="<?= $new['news_path'] ?>" >
                                     </a>
                                     <h3 class="carousel-heading">

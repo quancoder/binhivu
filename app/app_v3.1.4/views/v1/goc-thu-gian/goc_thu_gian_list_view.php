@@ -91,7 +91,7 @@
                             <?php $i= 1; foreach ($funs_list as $fun){ ?>
                                 <div class="item">
                                     <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>">
-                                        <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$fun['funs_title']?>"
+                                        <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$fun['funs_title']?>"
                                              data-src="<?=$fun['funs_path']?>" >
                                     </a>
                                     <h3 class="carousel-heading">

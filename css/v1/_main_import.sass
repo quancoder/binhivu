@@ -26,12 +26,12 @@
                 top: 0
 
 
-@mixin category-time-author
+@mixin category-time-author($fontSize)
     .time, .author, .category-name
         font-family: Arial
         font-weight: bold
         color: gray
-        font-size: 11px
+        font-size: $fontSize
     .category-name
         color: #ff914d
 
@@ -75,7 +75,6 @@
 
 @mixin news-list
     padding: 8px 0 0 0
-    margin-bottom: 30px
     border-top: 1px solid #eee
     text-align: justify
     li
@@ -107,11 +106,12 @@
     text-align: justify
     .heading-archive
         text-align: left
-        font-size: 2.6rem
+        font-size: 3rem
         font-weight: bold
     .sapo-archive
         font-weight: bold
-        font-size: 1.5rem
+        font-size: 1.8rem
     .content-archive
         border-top: 1px solid #eeeeee
         border-bottom: 1px solid #eeeeee
+        padding-top: 20px

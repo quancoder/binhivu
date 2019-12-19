@@ -67,7 +67,7 @@
                                     <?php if($i >= 4){?>
                                         <div class="item">
                                             <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                                <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$new['news_title']?>"
+                                                <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
                                                      data-src="<?=$new['news_image']?>" >
                                             </a>
                                             <h3 class="carousel-heading">
@@ -79,14 +79,14 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <h2 class="line-title clearfix">
+                            <h2 class="line-title clearfix" style="border: none">
                                 <a href="javascript:void(0)" title="Góc thư giãn ">TIN ĐANG ĐƯỢC QUAN TÂM</a>
                             </h2>
                             <ul class="media-list main-list" style="margin-top: 20px; text-align: justify; height: 350px; overflow-y: scroll">
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $new){ ?>
-                                    <?php if($i <=20){?>
+                                    <?php if($i <=10){?>
                                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
                                             <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($new['news_title'], 'gtg', $new['news_id'])?>">
                                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
@@ -192,7 +192,7 @@
                                 foreach ($tmp as $fun){ ?>
                                     <div class="item">
                                         <a href="<?= toURLFriendly($fun['funs_title'], 'tt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>">
-                                            <img class="owl-lazy" style="width: 100%; height: 150px;"  alt="<?=$fun['funs_title']?>"
+                                            <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$fun['funs_title']?>"
                                                  data-src="<?=$fun['funs_image']?>" >
                                         </a>
                                         <h3 class="carousel-heading">
@@ -206,10 +206,10 @@
                 </div>
 
                 <div class="zone-most-view">
-                    <h2 class="line-title clearfix">
+                    <h2 class="line-title clearfix" style="border: none">
                         <a href="javascript:void(0)" title="Góc thư giãn ">XEM NHIỀU NHẤT</a>
                     </h2>
-                    <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                    <ul class="media-list main-list" style="margin-top: 20px; text-align: justify; height: 350px; overflow-y: scroll">
                     <?php
                     $i = 1;
                     foreach ($funs_top_view as $fun){ ?>

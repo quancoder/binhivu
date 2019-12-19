@@ -3,7 +3,7 @@
 //INIT
 @include home-title
 @include line-title
-@include category-time-author
+@include category-time-author(1.1rem)
 
 .media-body
     h3.media-heading
@@ -36,7 +36,8 @@
 
 .news-list
     @include news-list
-
+.meta-archive
+    @include category-time-author(1.3rem)
 .archive
     @include archive
 

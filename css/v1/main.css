@@ -7,7 +7,7 @@
 .line-title { font-size: 14px; color: #3d3d3d; font-weight: 700; text-transform: uppercase; border-bottom: 5px solid #ff914d; height: 12px; }
 .line-title a, .line-title span { color: #12844e; float: left; display: block; padding-right: 20px; background: #fff; }
 
-.time, .author, .category-name { font-family: Arial; font-weight: bold; color: gray; font-size: 11px; }
+.time, .author, .category-name { font-family: Arial; font-weight: bold; color: gray; font-size: 1.1rem; }
 
 .category-name { color: #ff914d; }
 
@@ -28,17 +28,20 @@ h3.media-heading { line-height: initial; }
 .block-title .media-heading a:hover { text-shadow: 1px 1px 3px #e0e0e0; }
 .block-title .media-heading .archive-i:hover { text-shadow: 1px 1px 3px #631e02; }
 
-.news-list { padding: 8px 0 0 0; margin-bottom: 30px; border-top: 1px solid #eee; text-align: justify; }
+.news-list { padding: 8px 0 0 0; border-top: 1px solid #eee; text-align: justify; }
 .news-list li { margin-top: 7px; list-style-type: none; }
 .news-list li h3 { position: relative; margin: 0; display: inline-block; padding-left: 20px; line-height: 1.5; }
 .news-list li h3:before { position: absolute; top: 2px; left: 0; font-family: "Glyphicons Halflings"; content: ""; font-size: 10px; color: #ff914d; }
 .news-list li a { display: block; font-size: 1.3rem; color: #222; font-weight: bold; line-height: 1.4; }
 .news-list li a:hover { text-shadow: 1px 1px 3px #e0e0e0; }
 
+.meta-archive .time, .meta-archive .author, .meta-archive .category-name { font-family: Arial; font-weight: bold; color: gray; font-size: 1.3rem; }
+.meta-archive .category-name { color: #ff914d; }
+
 .archive { text-align: justify; }
-.archive .heading-archive { text-align: left; font-size: 2.6rem; font-weight: bold; }
-.archive .sapo-archive { font-weight: bold; font-size: 1.5rem; }
-.archive .content-archive { border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; }
+.archive .heading-archive { text-align: left; font-size: 3rem; font-weight: bold; }
+.archive .sapo-archive { font-weight: bold; font-size: 1.8rem; }
+.archive .content-archive { border-top: 1px solid #eeeeee; border-bottom: 1px solid #eeeeee; padding-top: 20px; }
 
 #zone-news { margin-bottom: 20px; }
 #zone-news #list-news-right .media-list .media { padding-bottom: 10px; border-bottom: 2px solid #eee; }
