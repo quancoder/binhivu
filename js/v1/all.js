@@ -49,7 +49,7 @@ $(document).ready(function () {
     //img lazy loading
     $('img.lazy').lazy();
 
-    var owl_1 = $('.owl-carousel-1');
+    var owl_1 = $('.owl-carousel');
     owl_1.owlCarousel({
         lazyLoad:true,
         margin:2,
