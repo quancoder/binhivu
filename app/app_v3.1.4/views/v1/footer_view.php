@@ -3,37 +3,52 @@
         <div class="container">
             <div class="row">
                 <div class="">
-                    <div class="col-4 col-sm-4">
+                    <div class="col-sm-3">
                         <div style="margin-bottom: 20px">
                             <a href="https://binhivu.com/">
-                                <img alt="" class="img-responsive lazy w-50-xs w-50" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="<?php echo base_url() . 'images/'; ?>logo2.PNG">
+                                <img alt="" class="img-responsive lazy w-50-xs" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                     data-src="<?php echo base_url() . 'images/'; ?>logo2.png">
                             </a>
                         </div>
-                        <div>
-
-                        </div>
-                        <div class="footer-address-additional" style="margin-bottom: 10px">
-                            <i class="glyphicon glyphicon-phone"></i>
-                            <a href="tel:123.456.789">123.456.789</a>
-                        </div>
-                        <div class="footer-address-additional" style="margin-bottom: 10px">
-                            <i class="glyphicon glyphicon-map-marker"></i>
-                            Đường Lê Văn Lương, Q. Thanh Xuân, Hà Nội
-                        </div>
-                        <div class="footer-address-additional" style="margin-bottom: 10px">
-                            <i class="glyphicon glyphicon-envelope"></i>
-                            <a href="mailto:binhivu@binhivu.com">binhivu@binhivu.com</a>
+                    </div>
+                    <div class="col-sm-3">
+                        <h4 class="hidden-xs">
+                            <span style="font-size: 1.2rem"></span>
+                            Liên hệ
+                        </h4>
+                        <div style="margin-bottom: 5px;">
+                            <div class="footer-address-additional" style="margin-bottom: 10px">
+                                <i class="glyphicon glyphicon-phone"></i>
+                                <a href="tel:123.456.789">0926111368</a>
+                            </div>
+                            <div class="footer-address-additional" style="margin-bottom: 10px">
+                                <i class="glyphicon glyphicon-map-marker"></i>
+                                Địa chỉ, Ngọc Thụy Long Biên Hà Nội
+                            </div>
+                            <div class="footer-address-additional" style="margin-bottom: 10px">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                <a href="mailto:binhivu38@gmail.com">binhivu38@gmail.com</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4 col-sm-4">
+                    <div class="col-sm-3">
                         <h4 class="hidden-xs">
                         <span style="font-size: 1.2rem"></span>
-                            Fanpage
+                            Menu
                         </h4>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fibongda%2F&width=250&height=100&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=181356779470999" width="250" height="150" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <div style="margin-bottom: 5px;">
+                            <ul style="list-style: none; padding-left: 0">
+                                <li><a href="<?=site_url()?>">Trang chủ</a></li>
+                                <li><a href="<?=site_url('tin-tuc.html')?>">Tin tức</a></li>
+                                <li><a href="<?=site_url('tai-lieu.html')?>">Tài liệu</a></li>
+                                <li><a href="<?=site_url('sach.html')?>">Sách</a></li>
+                                <li><a href="<?=site_url('goc-giai-tri.html')?>">Góc giải trí</a></li>
+                                <li><a href="<?=site_url('lien-he.html')?>">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fibongda%2F&width=250&height=100&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=181356779470999" width="250" height="150" style="border:none;overflow:hidden; display: none" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
-                    <div class="col-4 col-sm-4">
+                    <div class="col-sm-3">
                         <h4 class="hidden-xs">
                             Chứng nhận
                         </h4>
@@ -42,14 +57,14 @@
                             <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=51683" rel="nofollow">
                                 <img alt="Chứng nhận" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                      data-src="/images/fot_chung_nhan.png"
-                                     class="img-responsive lazy w-5-xs">
+                                     class="img-responsive lazy ">
                             </a>
                         </div>
                         <div style="margin-top: 15px;">
                             <a href="https://binhivu.com/" rel="nofollow">
                                 <img alt="Chứng nhận" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                      data-src="/images/fot_chung_nhan2.png"
-                                     class="img-responsive lazy w-5-xs">
+                                     class="img-responsive lazy ">
                             </a>
                         </div>
                     </div>
@@ -86,8 +101,8 @@
                         <div class="inline-dsk">
                             © Bản quyền thuộc về <a href="https://binhivu.com/" rel="nofollow" target="_blank">binhivu</a>
                         </div>
-                        <div class="inline-dsk hidden-xs"> |</div>
-                        <div class="inline-dsk">
+                        <div class="inline-dsk hidden"> |</div>
+                        <div class="inline-dsk hidden">
                             Cung cấp bởi <a href="javascript:void(0)" title="lequanltv" target="_blank"
                                             rel="nofollow">lequanltv</a>
                         </div>
@@ -116,7 +131,7 @@
             </div>
         </div>
     </footer>
-    <a href="tel:123.456.789" class="suntory-alo-phone suntory-alo-green"
+    <a href="tel:0926111368" class="suntory-alo-phone suntory-alo-green"
        style="left: 0px; bottom: 0px;">
         <div class="suntory-alo-ph-circle"></div>
         <div class="suntory-alo-ph-circle-fill"></div>
@@ -124,7 +139,7 @@
     </a>
     </div>
 
-    <a href="tel:123.456.789" class="suntory-alo-phone suntory-alo-green visible-xs visible-sm"
+    <a href="tel:0926111368" class="suntory-alo-phone suntory-alo-green visible-xs visible-sm"
        style="left: 0px; bottom: 0px;">
         <div class="suntory-alo-ph-circle"></div>
         <div class="suntory-alo-ph-circle-fill"></div>

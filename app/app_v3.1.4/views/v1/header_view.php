@@ -48,6 +48,7 @@
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>jquery.lazy.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>boostrap.3.3.7.js"></script>
     <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() . 'js/' . $template_f; ?>all.js"></script>
 
 </head>

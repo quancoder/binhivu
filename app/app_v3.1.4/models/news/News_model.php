@@ -20,7 +20,6 @@ class News_model extends CI_Model
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     $data = $stmt->fetch(PDO::FETCH_ASSOC);
-                    $data['news_path'] = site_url($data['news_image']);
                 }
                 $stmt->closeCursor();
             }
@@ -51,9 +50,6 @@ class News_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
-                        $title = htmlentities($row['news_title']);
-                        $row['news_title'] = $title;
-                        $row['news_path'] = site_url($row['news_image']);
                         $data['list'][] = $row;
                     }
                 }
@@ -89,9 +85,6 @@ class News_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
-                        $title = htmlentities($row['news_title']);
-                        $row['news_title'] = $title;
-                        $row['news_path'] = site_url($row['news_image']);
                         $data[] = $row;
                     }
                 }
