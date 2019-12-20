@@ -49,7 +49,7 @@ $(document).ready(function () {
     //img lazy loading
     $('img.lazy').lazy();
 
-    var owl_1 = $('.owl-carousel');
+    var owl_1 = $('.my-carousel-1');
     owl_1.owlCarousel({
         lazyLoad:true,
         margin:2,
@@ -84,8 +84,7 @@ $(document).ready(function () {
     owl_2.owlCarousel({
         lazyLoad:true,
         margin:2,
-        autoplay:true,
-        autoplaySpeed:3000,
+        autoplaySpeed:500,
         autoplayHoverPause:true,
         nav: true,
         loop: true,
@@ -97,7 +96,7 @@ $(document).ready(function () {
                 items:3
             },
             1000:{
-                items:4
+                items:5
             }
         }
     });

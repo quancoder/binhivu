@@ -110,4 +110,30 @@ class Document_model extends CI_Model
         }
         return $isUpdate;
     }
+
+    function document_filter($free, $order){
+        $data = array();
+        $iconn = $this->db->conn_id;
+        $sql = "CALL document_filter(:free, :order);";
+        $stmt = $iconn->prepare($sql);
+        if($stmt)
+        {
+            $stmt->bindParam(':free', $free, PDO::PARAM_INT);
+            $stmt->bindParam(':order', $order, PDO::PARAM_STR);
+            // execute the stored procedure
+            if($stmt->execute())
+            {
+                if($stmt->rowCount() > 0)
+                {
+                    while($row = $stmt->fetch(PDO::FETCH_ASSOC))
+                    {
+                        $data[] = $row;
+                    }
+                }
+                $stmt->closeCursor();
+            }
+        }
+
+        return $data;
+    }
 }

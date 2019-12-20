@@ -61,7 +61,7 @@
 
                         <div class="col-md-12">
                             <!--LIST LOOP NEWS-->
-                            <div class="owl-carousel owl-theme carousel-custom">
+                            <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
                                 <?php $i=1?>
                                 <?php foreach ($news_list as $new){ ?>
                                     <?php if($i >= 4){?>
@@ -201,7 +201,7 @@
 
                         <div class="col-md-12">
                             <!--LIST LOOP NEWS-->
-                            <div class="owl-carousel owl-theme carousel-custom mt-10">
+                            <div class="my-carousel-1 owl-carousel owl-theme carousel-custom mt-10">
                                 <?php $tmp = array_reverse($funs_list);
                                 foreach ($tmp as $fun){ ?>
                                     <div class="item">

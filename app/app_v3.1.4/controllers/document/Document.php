@@ -18,14 +18,29 @@ class Document extends MY_Controller{
     	// load header
     	$header = array();
     	$header['title'] = 'Tài liệu';
+        $data['q'] ='';
+        $data['order'] ='';
 
         $status  = 1;
         $start = 0;
         $limit = 12;
-        $search_tt = $this->input->get('search');
-        $doc_list = $this->Document_model->document_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
+        $q = $this->input->get('q');
+        $order = $this->input->get('order');
+        if(in_array($q, array('-1', '0','1')) and in_array($order, array('asc','desc')))
+        {
+            $doc_list = $this->Document_model->document_filter($q, $order);
+            $data['doc_list'] = $doc_list;
+            $data['q'] =$q;
+            $data['q'] =$q;
+        }
+        else
+        {
+            $doc_list = $this->Document_model->document_list_paging(ALL_USER, $status, '', '', $start, $limit);
+            $data['doc_list'] = $doc_list['list'];
+        }
+        $book_top = $this->Book_model->book_list_top_view();
 
-        $data['doc_list'] = $doc_list['list'];
+        $data['book_top'] = $book_top;
     	$this->_loadHeader($header);
     	$this->load->view($this->_template_f . 'document/document_list_view', $data);
     	$this->_loadFooter();

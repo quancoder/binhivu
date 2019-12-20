@@ -2543,20 +2543,6 @@ h3.ega-product-col-name {
     margin-bottom: 10px;
 }
 /*PAGE TAI LIEU*/
-/*todo*/
-#main-tai-lieu .media{
-    margin-bottom: 20px;
-}
-#main-tai-lieu .media-heading{
-    min-height: 50px;
-    background-color: #ff914d;
-    margin: 0;
-    padding: 5px;
-}
-#main-tai-lieu .media-heading a{
-    color: white;
-}
-
 .item-content .thumb-image, .item-content .thumb-image img {
     display: block;
     width: 100px;
@@ -2585,4 +2571,39 @@ h3.ega-product-col-name {
 
 .media-heading a, .media-heading span{
 
+}
+.sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: inline-block;
+    background: orange;
+    color: white;
+    height: 3.5rem;
+    width: 3.5rem;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3.5rem;
+    transform: rotate(-20deg);
+    animation: beat 1s ease infinite alternate;
+}
+.sale:before, .sale:after {
+     content:"";
+     position: absolute;
+     background: inherit;
+     height: inherit;
+     width: inherit;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     transform: rotate(30deg);
+ }
+
+.sale:after {
+     transform: rotate(60deg);
+ }
+
+@keyframes beat {
+    from {	transform: rotate(-20deg) scale(1); }
+    to {	transform: rotate(-20deg) scale(1.1); }
 }

@@ -65,7 +65,7 @@
                 <!--LIST LOOP NEWS-->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="owl-carousel owl-theme carousel-custom">
+                        <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
                             <?php $i= 1; foreach ($news_top as $new){ ?>
                                 <div class="item">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
