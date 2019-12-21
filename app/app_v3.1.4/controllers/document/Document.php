@@ -31,7 +31,7 @@ class Document extends MY_Controller{
             $doc_list = $this->Document_model->document_filter($q, $order);
             $data['doc_list'] = $doc_list;
             $data['q'] =$q;
-            $data['q'] =$q;
+            $data['order'] =$order;
         }
         else
         {
@@ -70,13 +70,13 @@ class Document extends MY_Controller{
 
     function detail($p1, $id){
         $data= array();
-        $info = $this->News_model->news_info($id);
+        $info = $this->Document_model->document_info($id);
 
         if(empty($info)){
-            redirect(site_url('tin-tuc.html'));
+            redirect(site_url('tai-lieu.html'));
             die;
         }
-        $seo = toURLFriendly($info['news_title'], 'tt', $info['news_id']);
+        $seo = toURLFriendly($info['doc_name'], 'document', $info['doc_id']);
         if(current_url() != $seo)
         {
             redirect($seo);
@@ -87,24 +87,13 @@ class Document extends MY_Controller{
         $sessionKey = 'ss_up_view_news_' . $id;
         if (!isset($_SESSION[$sessionKey])) {
             $_SESSION[$sessionKey] = 1;
-            $this->News_model->news_up_view($id);
+            //$this->News_model->news_up_view($id);
         }
 
-        $news_top = $this->News_model->news_list_top_view(10);
-        $funs_top = $this->Funs_model->funs_list_top_view(10);
-        $news_top_view = $this->News_model->news_list_top_view(TOP_VIEW);
-        $doc_top_view = $this->Document_model->document_list_top_view();
-        $book_top_view = $this->Book_model->book_list_top_view();
-
         $data['info'] = $info;
-        $data['news_top'] = $news_top;
-        $data['funs_top'] = $funs_top;
-        $data['news_top_view'] = $news_top_view;
-        $data['doc_top_view'] = $doc_top_view;
-        $data['book_top_view'] = $book_top_view;
-        $header['title'] = $info['news_title'];
+        $header['title'] = $info['doc_name'];
         $this->_loadHeader($header);
-        $this->load->view($this->_template_f . 'tin-tuc/tin_tuc_chi_tiet_view', $data);
+        $this->load->view($this->_template_f . 'document/document_detail_view', $data);
         $this->_loadFooter();
     }
 }

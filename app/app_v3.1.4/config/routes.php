@@ -65,3 +65,4 @@ $route['tim-kiem-thu-gian.html'] = 'funs/funs/search';
 
 //tai lieu
 $route['tai-lieu.html'] = 'document/document/index';
+$route['([a-zA-Z0-9-_]+)-document([0-9]+).html'] = 'document/document/detail/$1/$2';
