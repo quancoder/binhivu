@@ -2,16 +2,6 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-12 col-lg-12">
-                <div style="margin: 10px 0px">
-                    <a href="<?= site_url()?>">Trang Chủ</a>
-                    ➝ <a href="<?= site_url('go-thu-gian.html')?>">Góc thư giãn</a>
-                    ➝ <a href=""><?php echo ($info['funs_title'])?></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col-sm-8">
                 <h2 class="home-title clearfix">
                     <a href="<?=site_url('go-thu-gian.html')?>" title="Góc thư giãn ">Góc thư giãn</a>

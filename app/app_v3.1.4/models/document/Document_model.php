@@ -111,6 +111,22 @@ class Document_model extends CI_Model
         return $isUpdate;
     }
 
+    function document_up_download($id)
+    {
+        $isUpdate = FALSE;
+        $iconn = $this->db->conn_id;
+        $sql = "CALL document_up_download(:id);";
+        $stmt = $iconn->prepare($sql);
+        if ($stmt) {
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            if ($stmt->execute()) {
+                $isUpdate = TRUE;
+            }
+            $stmt->closeCursor();
+        }
+        return $isUpdate;
+    }
+
     function document_filter($free, $order){
         $data = array();
         $iconn = $this->db->conn_id;

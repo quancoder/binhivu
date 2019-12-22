@@ -89,12 +89,10 @@
                     <div class="col-xs-6 text-right">
                         <div class="ega-item-top-bar">
                             <div class="ega-top-message">
-								<span class="">
-								Liên hệ:
-							</span>
-                                <a class="ega-phone" href="tel:0926111368">
-                                    0926111368
-                                </a>
+                                    <i class="glyphicon glyphicon-earphone" style="line-height: 1; font-size: 14px; animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim"></i>
+                                    <a class="ega-phone" href="tel:0926111368">
+                                        0926111368
+                                    </a>
                                 <span class="ega-fz-12 ega-header-top-item hide"> ( 8:00 - 18:00 ) </span>
                                 <span class="hidden-xs ega-header-top-item hide">
 									<a title="Đăng ký/Đăng nhập" href="https://binhivu.com/account"
@@ -178,7 +176,7 @@
                         <ul class="nav navbar-nav w-100">
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?= site_url()?>" title="Trang chủ" class=" visible-lg active" aria-expanded="true">
+                                <a href="<?= site_url()?>" title="Trang chủ" class=" visible-lg <?=$module=='home'? 'active' :''?>" aria-expanded="true">
                                     Trang chủ
                                 </a>
                                 <div class="visible-ega-table-xs">
@@ -190,7 +188,7 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('tin-tuc.html')?>" title="Tin tức" class="visible-lg " aria-expanded="true">
+                                <a href="<?=site_url('tin-tuc.html')?>" title="Tin tức" class="visible-lg <?=$module=='news'? 'active' :''?>" aria-expanded="true">
                                     Tin tức
                                 </a>
                                 <div class="visible-ega-table-xs">
@@ -202,7 +200,7 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('tai-lieu.html')?>" title="Tài liệu" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('tai-lieu.html')?>" title="Tài liệu" class=" visible-lg <?=$module=='document'? 'active' :''?>" aria-expanded="true">
                                     Tài liệu
                                 </a>
                                 <div class="visible-ega-table-xs">
@@ -214,7 +212,7 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('sach.html')?>" title="Sách" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('sach.html')?>" title="Sách" class=" visible-lg <?=$module=='book'? 'active' :''?>" aria-expanded="true">
                                     Sách
                                 </a>
                                 <div class="visible-ega-table-xs">
@@ -226,7 +224,7 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn" class=" visible-lg <?=$module=='funs'? 'active' :''?>" aria-expanded="true">
                                     Góc thư giãn
                                 </a>
                                 <div class="visible-ega-table-xs">
@@ -238,7 +236,7 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('lien-he.html')?>" title="Liên hệ" class=" visible-lg" aria-expanded="true">
+                                <a href="<?=site_url('lien-he.html')?>" title="Liên hệ" class=" visible-lg <?=$module=='contact'? 'active' :''?>" aria-expanded="true">
                                     Liên hệ
                                 </a>
                                 <div class="visible-ega-table-xs">

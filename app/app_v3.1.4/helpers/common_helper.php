@@ -912,3 +912,28 @@ function trim_text($text, $iword)
     }
     return trim($trimed.'...');
 }
+
+function is_ip_address_spam($cookie_name, $time_spam=30)
+{
+    $ip = ip_address();
+    $cookie_name = md5($ip .'-'. $cookie_name);
+    $cookie_value = $time_spam;
+
+    if(!isset($_COOKIE[$cookie_name]))
+    {
+        setcookie($cookie_name, $cookie_value, (time() + $time_spam), "/");
+        return false;
+    }
+    else
+    {
+        $value = $_COOKIE[$cookie_name];
+        if($value == $cookie_value)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}

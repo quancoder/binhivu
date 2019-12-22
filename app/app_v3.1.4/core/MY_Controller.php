@@ -128,6 +128,7 @@ class MY_Controller extends CI_Controller
     protected function _loadHeader($data = NULL, $loadHeader = TRUE)
     {
         $header = array();
+        $header['module'] = $this->_module;
 		$header['function'] = $this->_function;
         $header['title'] = isset($data['title']) ? $data['title'] : '';
         $header['metaTitle'] = isset($data['metaTitle']) ? $data['metaTitle'] : '';

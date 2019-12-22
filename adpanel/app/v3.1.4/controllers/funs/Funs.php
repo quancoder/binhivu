@@ -94,7 +94,7 @@ class Funs extends MY_Controller {
         $funs_sapo      = $this->input->post('funs_sapo');
         $funs_tag       = $this->input->post('funs_tags');
         $funs_image     = $this->input->post('funs_image');
-        $funs_content   = $this->input->post('funs_content');
+        $funs_content   = $this->input->post('funs_content', false);
         $funs_status_1  = $this->input->post('funs_status_1');
         $funs_status_4  = $this->input->post('funs_status_4');
 
@@ -144,7 +144,7 @@ class Funs extends MY_Controller {
         $funs_sapo      = $this->input->post('funs_sapo');
         $funs_tag       = $this->input->post('funs_tags');
         $funs_image     = $this->input->post('funs_image');
-        $funs_content   = $this->input->post('funs_content');
+        $funs_content   = $this->input->post('funs_content', false);
         $funs_status    = $this->input->post('funs_status');
 
         /**VALIDATE**/

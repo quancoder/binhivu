@@ -54,10 +54,10 @@ $(document).ready(function () {
         lazyLoad:true,
         margin:2,
         autoplay:true,
-        autoplaySpeed:3000,
+        autoplaySpeed:5000,
         autoplayHoverPause:true,
         nav: true,
-        loop: true,
+        loop: false,
         responsive:{
             0:{
                 items:1
@@ -84,10 +84,10 @@ $(document).ready(function () {
     owl_2.owlCarousel({
         lazyLoad:true,
         margin:2,
-        autoplaySpeed:500,
+        autoplaySpeed:5000,
         autoplayHoverPause:true,
         nav: true,
-        loop: true,
+        loop: false,
         responsive:{
             0:{
                 items:1
@@ -96,7 +96,7 @@ $(document).ready(function () {
                 items:3
             },
             1000:{
-                items:5
+                items:4
             }
         }
     });

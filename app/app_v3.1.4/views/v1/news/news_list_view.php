@@ -1,62 +1,62 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 <main>
     <div class="container" style="background: #fff">
+        <div style="margin: 10px 0px">
+            <a href="<?= site_url()?>">Trang Chủ</a> ➝ Tin tức
+        </div>
         <div class="row">
-            <div class="col-sm-12">
-                <div style="margin: 10px 0px">
-                    <a href="<?= site_url()?>">Trang Chủ</a> ➝ Tin tức
-                </div>
-                <div class="row">
-                    <!--1 NEW NOI BAT-->
-                    <div class="col-md-6 col-lg-6">
-                        <h2 class="home-title">
-                            <a href="javascript:void(0)" title="Tin tức mới">Tin nổi bật</a>
+            <!--1 NEW NOI BAT-->
+            <div class="col-md-6 col-lg-6">
+                <h2 class="home-title">
+                    <a href="javascript:void(0)" title="Tin tức mới">Tin nổi bật</a>
+                </h2>
+                <div class="featured-article">
+                    <?php $new = $news_list[0]; ?>
+                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                        <img class="w-100" src="<?= $new['news_image'] ?>"
+                             alt="<?= $new['news_title'] ?>">
+                    </a>
+                    <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                        <h2 class="media-heading">
+                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" style="color: #fb7e31;" class="archive-i">
+                                <?= $new['news_title'] ?></a>
                         </h2>
-                        <div class="featured-article">
-                            <?php $new = $news_list[0]; ?>
-                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
-                                <img class="w-100" src="<?= $new['news_image'] ?>"
-                                     alt="<?= $new['news_title'] ?>">
-                            </a>
-                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
-                                <h2 class="media-heading">
-                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" style="color: #fb7e31;" class="archive-i">
-                                        <?= $new['news_title'] ?></a>
-                                </h2>
-                                <p>
-                                    <a href="<?= site_url('tin-tuc.html')?>">
-                                        <span class="category-name">Tin tức</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
-                                </p>
+                        <p>
+                            <a href="<?= site_url('tin-tuc.html')?>">
+                                <span class="category-name">Tin tức</span></a> -
+                            <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                            <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
+                        </p>
 
-                                <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify;color: #cccccc">
-                                    (Tin tức)  <?= $new['news_sapo']?>
-                                </p>
-                            </div>
-                        </div>
-                        <ul class="news-list">
-                            <?php $i=1?>
-                            <?php foreach ($news_list as $new){?>
-                                <?php if($i >= 6 and $i <=10){?>
-                                    <li>
-                                        <h3>
-                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                               title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                        </h3>
-                                    </li>
-                                <?php } ?>
-                            <?php $i++;} ?>
-                        </ul>
+                        <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify;color: #cccccc">
+                            (Tin tức)  <?= $new['news_sapo']?>
+                        </p>
                     </div>
-                    <!--4 NEW MOI-->
-                    <div class="col-md-6 col-lg-6">
-                        <h2 class="home-title">
-                            <a href="javascript:void(0)" title="Tin tức mới">Tin mới nhất </a>
-                        </h2>
-                        <?php $i= 2; foreach ($news_list as $new){ ?>
-                            <?php if($i >=2 and $i <=5){?>
-                                <div class="featured-articles featured-articles-min pull-left w-50 w-100-xs mb-5 pr-5 pr-0-xs h-400 min-h-400 h-xs-auto">
+                </div>
+                <ul class="news-list">
+                    <?php $i=1?>
+                    <?php foreach ($news_list as $new){?>
+                        <?php if($i >= 6 and $i <=10){?>
+                            <li>
+                                <h3>
+                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
+                                       title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                </h3>
+                            </li>
+                        <?php } ?>
+                    <?php $i++;} ?>
+                </ul>
+            </div>
+            <!--4 NEW MOI-->
+            <div class="col-md-6 col-lg-6">
+                <h2 class="home-title">
+                    <a href="javascript:void(0)" title="Tin tức mới">Tin mới nhất </a>
+                </h2>
+                <div class="row">
+                    <?php $i= 2; foreach ($news_list as $new){ ?>
+                        <?php if($i >=2 and $i <=5){?>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="featured-articles featured-articles-min pull-left mb-10 h-400 min-h-400 h-xs-auto">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                         <img class="w-100 h-150 h-xs-auto" src="<?= $new['news_image'] ?>" alt="<?= $new['news_title'] ?>">
                                     </a>
@@ -77,31 +77,33 @@
                                     </div>
 
                                 </div>
-                            <?php } ?>
-                        <?php $i++;} ?>
-                    </div>
+                            </div>
+                        <?php } ?>
+                    <?php $i++;} ?>
                 </div>
+            </div>
+        </div>
 
-                <!--LIST LOOP NEWS-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="my-carousel-2 owl-carousel owl-theme carousel-custom">
-                            <?php $i= 1; foreach ($news_list as $new){ ?>
-                                <div class="item">
-                                    <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                        <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
-                                             data-src="<?= $new['news_image'] ?>" >
-                                    </a>
-                                    <h3 class="carousel-heading">
-                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                    </h3>
-                                </div>
-                                <?php } ?>
+        <!--LIST LOOP NEWS-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="my-carousel-2 owl-carousel owl-theme carousel-custom">
+                    <?php $i= 1; foreach ($news_list as $new){ ?>
+                        <div class="item">
+                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
+                                <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
+                                     data-src="<?= $new['news_image'] ?>" >
+                            </a>
+                            <h3 class="carousel-heading">
+                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                            </h3>
                         </div>
-                    </div>
+                        <?php } ?>
                 </div>
+            </div>
+        </div>
 
-                <div class="row">
+        <div class="row">
                     <div class="col-md-8" >
                         <div class="zone-most-view">
                             <h2 class="home-title clearfix">
@@ -160,9 +162,10 @@
                                 <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>
                             </h2>
                             <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
+                                <?php $i=1?>
                                 <?php foreach ($doc_top_view as $doc){?>
                                     <div class="panel">
-                                        <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="false" aria-controls="collapse1">
+                                        <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="<?= $i==1? 'true': 'false'?>" aria-controls="collapse1">
                                             <h4 class="panel-title">
                                                 <i class="glyphicon glyphicon-file"></i> <?= substr($doc['doc_des'], 0, 40)?>
                                             </h4>
@@ -175,16 +178,16 @@
                                                              data-src="<?= $doc['doc_image'] ?>" alt="">
                                                     </a>
                                                     <p>
-                                                        <?= substr($doc['doc_des'], 0, 200)?>...
+                                                        <?= $doc['doc_des']?>
                                                     </p>
                                                 </div>
                                                 <div class="item-footer clearfix">
-                                                    <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], '#tailieu', $doc['doc_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                                    <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                <?php } ?>
+                                <?php $i++ ; } ?>
                             </div>
                         </div>
 
@@ -223,7 +226,5 @@
                     </div>
 
                 </div>
-            </div>
-        </div>
     </div>
 </main>

@@ -36,5 +36,4 @@ class Home extends MY_Controller {
     	$this->load->view($this->_template_f . 'home/home_view', $data);
     	$this->_loadFooter();
     }
-    
 }

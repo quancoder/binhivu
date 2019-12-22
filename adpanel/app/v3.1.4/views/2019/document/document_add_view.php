@@ -8,7 +8,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="<?=site_url('Document')?>">Tài liệu</a></li>
+                    <li class="breadcrumb-item"><a href="<?=site_url('document')?>">Tài liệu</a></li>
                     <li class="breadcrumb-item active">Thêm tài liệu</li>
                 </ol>
             </div>

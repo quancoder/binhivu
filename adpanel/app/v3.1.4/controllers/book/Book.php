@@ -102,7 +102,7 @@ class Book extends MY_Controller {
         /**GET VALUE PARAMS**/
         $b_name     = $this->input->post('b_name');
         $b_des      = $this->input->post('b_des');
-        $b_content  = $this->input->post('b_content');
+        $b_content  = $this->input->post('b_content', false);
         $b_image    = $this->input->post('b_image');
         $b_path_file= $this->input->post('b_path_file');
         $b_tag      = $this->input->post('b_tag');
@@ -169,7 +169,7 @@ class Book extends MY_Controller {
         /**GET VALUE PARAMS**/
         $b_name     = $this->input->post('b_name');
         $b_des      = $this->input->post('b_des');
-        $b_content  = $this->input->post('b_content');
+        $b_content  = $this->input->post('b_content', false);
         $b_image    = $this->input->post('b_image');
         $b_path_file= $this->input->post('b_path_file');
         $b_tag      = $this->input->post('b_tag');

@@ -276,23 +276,24 @@
                     <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($doc_top_view as $doc){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="false" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="<?= $i==1? 'true': 'false'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
                                         <i class="glyphicon glyphicon-file"></i> <?= substr($doc['doc_name'], 0, 40)?>
                                     </h4>
                                 </a>
-                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse" role="tabpanel">
+                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= $i==1? 'in': ''?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
                                                 <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$doc['doc_image']?>" alt="">
                                             </a>
                                             <p>
-                                                <?= substr($doc['doc_des'], 0, 200)?>...
+                                                <strong><?=$doc['doc_name']?></strong>
+                                                <?=$doc['doc_des']?>
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
-                                            <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], '##doc', $doc['doc_id'])?>" title="<?= $doc['doc_name']?>">
+                                            <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="<?= $doc['doc_name']?>">
                                                 CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i>
                                             </a>
                                         </div>

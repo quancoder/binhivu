@@ -94,7 +94,7 @@ class News extends MY_Controller {
         $news_sapo      = $this->input->post('news_sapo');
         $news_tag       = $this->input->post('news_tags');
         $news_image     = $this->input->post('news_image');
-        $news_content   = $this->input->post('news_content');
+        $news_content   = $this->input->post('news_content', false);
         $news_status_1  = $this->input->post('news_status_1');
         $news_status_4  = $this->input->post('news_status_4');
 
@@ -144,7 +144,7 @@ class News extends MY_Controller {
         $news_sapo      = $this->input->post('news_sapo');
         $news_tag       = $this->input->post('news_tags');
         $news_image     = $this->input->post('news_image');
-        $news_content   = $this->input->post('news_content');
+        $news_content   = $this->input->post('news_content', false);
         $news_status    = $this->input->post('news_status');
 
         /**VALIDATE**/

@@ -4,7 +4,6 @@
 }
 
 body {
-    background: #f1f1f1;
     color: #010101;
     font-size: 14px;
     font-family: Google_OpenSans_400, 700 _sans, "HelveticaNeue", "Helvetica Neue", sans-serif;
@@ -246,7 +245,7 @@ img {
     background: #183544;
     border: none;
     min-height: 1px;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
     border-radius: 0
 }
 
@@ -258,23 +257,26 @@ img {
 
 .ega-menu-top ul.nav.navbar-nav > li > a {
     color: #fff;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border-radius: 4px 4px 0px 0px;
+    border-radius: 4px;
     text-transform: uppercase;
-    border-bottom: 3px solid #183544;
+    /*border-bottom: 3px solid #183544;*/
+    padding: 10px 40px;
+    margin: 5px 2px;
+    font-weight: bold;
 }
 
 .ega-menu-top ul.nav.navbar-nav > li > a:hover {
-    border-bottom: 3px solid #ff914d;
+    /*border-bottom: 3px solid #ff914d;*/
     color: #ff914d;
+    background-color: #0f2935;
 }
 .ega-menu-top ul.nav.navbar-nav > li > a.active {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     color: #ff914d;
-    border-bottom: 3px solid #ff914d
+    /*border-bottom: 3px solid #ff914d;*/
+    background-color: #0f2935;
 }
 
 .ega-menu-top ul.nav.navbar-nav > li > a:hover > b.caret {
@@ -2544,9 +2546,7 @@ h3.ega-product-col-name {
 }
 /*PAGE TAI LIEU*/
 .item-content .thumb-image, .item-content .thumb-image img {
-    display: block;
-    width: 100px;
-    height: 100px
+
 }
 
 
