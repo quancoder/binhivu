@@ -80,6 +80,9 @@
         <!--LIST LOOP NEWS-->
         <div class="row">
             <div class="col-md-12">
+                <h2 class="home-title clearfix">
+                    <a href="javascript:void(0)" title="BÀI VIẾT XEM NHIỀU NHẤT">Đừng bỏ lỡ</a>
+                </h2>
                 <div class="my-carousel-2 owl-carousel owl-theme carousel-custom">
                     <?php $i= 1; foreach ($funs_list as $fun){ ?>
                         <div class="item">
@@ -97,7 +100,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8" >
+            <div class="col-md-7" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="BÀI VIẾT XEM NHIỀU NHẤT">BÀI VIẾT XEM NHIỀU NHẤT</a>
@@ -149,7 +152,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div id="accordion-document" class="departments" style="margin-bottom: 25px;">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>

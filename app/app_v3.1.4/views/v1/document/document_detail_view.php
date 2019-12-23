@@ -102,7 +102,7 @@
                             <a href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>">
                                 <div class="detail-image">
                                     <?= $doc['doc_free']==1 ? '<span class="sale">Free</span>' : ''?>
-                                    <img class="media-object img-doc h-250 h-auto-xs w-100" src="<?= $doc['doc_image']?>" alt="<?= $doc['doc_name']?>">
+                                    <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $doc['doc_image']?>" alt="<?= $doc['doc_name']?>">
                                 </div>
                                 <div class="detail-des">
                                     <div class="text"><?= $doc['doc_des']?></div>
@@ -123,14 +123,12 @@
                                         <span class="textstat">vnđ</span>
                                     </div>
                                     <div class="mt-5" style="width: 100%; color: #666666">
-                                        <i class="glyphicon glyphicon-download"></i> <span><?=number_format($doc['doc_download'])?></span>
-                                        <br/>
+                                        <i class="glyphicon glyphicon-download"></i> <span class="pr-20"><?=number_format($doc['doc_download'])?></span>
                                         <i class="glyphicon glyphicon-eye-open"></i> <span><?=number_format($doc['doc_view'])?></span>
                                     </div>
                                 </div>
                                 <div style="width: 30%; float: left">
-                                    <a class="tlmask button glow" href=""> </a>
-                                    <a href="">
+                                    <a href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>">
                                         <button type="button" class="btn btn-warning" style="background-color: #ff914d; float: right">Xem ngay</button>
                                     </a>
                                 </div>

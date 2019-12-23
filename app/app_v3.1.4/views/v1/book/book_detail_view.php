@@ -100,7 +100,7 @@
                             <a href="<?= toURLFriendly($item['b_name'], 'book', $item['b_id'])?>">
                                 <div class="detail-image">
                                     <?= $item['b_free']==1 ? '<span class="sale">Free</span>' : ''?>
-                                    <img class="media-object img-doc h-250 h-auto-xs w-100" src="<?= $item['b_image']?>" alt="<?= $item['b_name']?>">
+                                    <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $item['b_image']?>" alt="<?= $item['b_name']?>">
                                 </div>
                                 <div class="detail-des">
                                     <div class="text"><?= $item['b_des']?></div>
@@ -133,8 +133,7 @@
                                     </div>
                                 </div>
                                 <div style="width: 30%; float: left">
-                                    <a class="tlmask button glow" href=""> </a>
-                                    <a href="">
+                                    <a href="<?= toURLFriendly($item['b_name'], 'book', $item['b_id'])?>">
                                         <button type="button" class="btn btn-warning" style="background-color: #ff914d; float: right">Xem ngay</button>
                                     </a>
                                 </div>

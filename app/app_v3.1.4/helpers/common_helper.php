@@ -910,7 +910,12 @@ function trim_text($text, $iword)
         }
         $i++;
     }
-    return trim($trimed.'...');
+    if(strlen($trimed) < strlen($text)){
+        $dot = '...';
+    }else{
+        $dot = '';
+    }
+    return trim($trimed. $dot);
 }
 
 function is_ip_address_spam($cookie_name, $time_spam=30)

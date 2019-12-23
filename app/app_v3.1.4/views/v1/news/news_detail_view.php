@@ -42,7 +42,7 @@
 
                                     <?php $i++; } ?>
                                 </ul>
-                                <div class="content-archive mb-20" style="font-size: 1.6rem">
+                                <div class="content-archive mb-20">
                                     <?php echo ($info['news_content']) ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
@@ -55,6 +55,9 @@
                 <!--LIST LOOP NEWS-->
                 <div class="row">
                     <div class="col-md-12">
+                        <h2 class="line-title clearfix" style="border: none">
+                            <a href="javascript:void(0)" title="Góc thư giãn ">ĐỪNG BỎ LỠ</a>
+                        </h2>
                         <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
                             <?php $i= 1; foreach ($news_top as $new){ ?>
                                 <div class="item">
@@ -79,7 +82,7 @@
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $news){ ?>
-                                    <?php if($i <= 4){?>
+                                    <?php if($i <= 2){?>
                                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
                                             <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>">
                                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
@@ -106,7 +109,7 @@
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $news){?>
-                                    <?php if($i >= 5 and $i <=10){?>
+                                    <?php if($i >= 3 and $i <=10){?>
                                         <li>
                                             <h3>
                                                 <a href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>"
@@ -124,6 +127,45 @@
             </div>
 
             <div class="col-sm-4">
+                <h2 class="line-title clearfix">
+                    <a href="javascript:void(0)" title="Góc thư giãn ">TIN XEM NHIỀU NHẤT</a>
+                </h2>
+                <ul class="media-list main-list">
+                    <?php $i=1?>
+                    <?php foreach ($news_top as $new){?>
+                        <?php if($i <=4){?>
+                            <li class="media" style="padding-bottom: 10px;">
+                                <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                                    <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                         data-src="<?=$new['news_image']?>"
+                                         alt="<?= $new['news_title']?>">
+                                </a>
+                                <div class="media-body">
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
+                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                                            <?= $new['news_title']?>
+                                        </a>
+                                    </h3>
+                                    <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
+                                </div>
+                            </li>
+                        <?php } ?>
+                        <?php $i++;} ?>
+
+                    <ul class="news-list">
+                        <?php $i=1?>
+                        <?php foreach ($news_top as $new){?>
+                            <?php if($i >= 5 and $i <=12){?>
+                                <li>
+                                    <h3><a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
+                                           title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                    </h3>
+                                </li>
+                            <?php } ?>
+                        <?php $i++;} ?>
+                    </ul>
+                </ul>
                 <div id="accordion-document" class="departments" style="margin-bottom: 25px;">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>
@@ -189,45 +231,6 @@
                         <?php } ?>
                     </div>
                 </div>
-                <h2 class="line-title clearfix">
-                    <a href="javascript:void(0)" title="Góc thư giãn ">TIN XEM NHIỀU NHẤT</a>
-                </h2>
-                <ul class="media-list main-list">
-                    <?php $i=1?>
-                    <?php foreach ($news_top as $new){?>
-                        <?php if($i <=4){?>
-                            <li class="media" style="padding-bottom: 10px;">
-                                <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
-                                    <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?=$new['news_image']?>"
-                                         alt="<?= $new['news_title']?>">
-                                </a>
-                                <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
-                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
-                                            <?= $new['news_title']?>
-                                        </a>
-                                    </h3>
-                                    <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
-                                </div>
-                            </li>
-                        <?php } ?>
-                        <?php $i++;} ?>
-
-                    <ul class="news-list">
-                        <?php $i=1?>
-                        <?php foreach ($news_top as $new){?>
-                            <?php if($i >= 5 and $i <=12){?>
-                                <li>
-                                    <h3><a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                           title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
-                                    </h3>
-                                </li>
-                            <?php } ?>
-                        <?php $i++;} ?>
-                    </ul>
-                </ul>
             </div>
         </div>
     </div>

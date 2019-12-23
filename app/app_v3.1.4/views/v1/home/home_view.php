@@ -2,7 +2,7 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div id="zone-news">
                     <h1 class="home-title">
                         <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN MỚI CẬP NHẬT</a>
@@ -48,7 +48,7 @@
                                                 <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
                                                 <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1.8rem">
+                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1.6rem">
                                                         <?= $new['news_title']?>
                                                     </a>
                                                 </h3>
@@ -61,6 +61,9 @@
 
                         <div class="col-md-12">
                             <!--LIST LOOP NEWS-->
+                            <h2 class="line-title clearfix" style="border: none">
+                                <a href="javascript:void(0)" title="Góc thư giãn ">TIN ĐÁNG CHÚ Ý</a>
+                            </h2>
                             <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
                                 <?php $i=1?>
                                 <?php foreach ($news_list as $new){ ?>
@@ -201,6 +204,9 @@
 
                         <div class="col-md-12">
                             <!--LIST LOOP NEWS-->
+                            <h2 class="line-title clearfix" style="border: none">
+                                <a href="javascript:void(0)" title="Góc thư giãn ">ĐÁNG CHÚ Ý</a>
+                            </h2>
                             <div class="my-carousel-1 owl-carousel owl-theme carousel-custom mt-10">
                                 <?php $tmp = array_reverse($funs_list);
                                 foreach ($tmp as $fun){ ?>
@@ -268,28 +274,29 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div id="accordion-document" class="departments">
                     <h1 class="home-title">
-                        <span>Tài liệu xem nhiều</span>
+                        <a href="<?= site_url('tai-lieu.html')?>" title="TIN TỨC">Tài liệu hay</a>
                     </h1>
                     <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($doc_top_view as $doc){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="<?= $i==1? 'true': 'false'?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>"
+                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'true': ''?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <i class="glyphicon glyphicon-file"></i> <?= substr($doc['doc_name'], 0, 40)?>
+                                        <i class="glyphicon glyphicon-file"></i> <strong><?= ucwords(trim_text($doc['doc_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
-                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= $i==1? 'in': ''?>" role="tabpanel">
+                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
-                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$doc['doc_image']?>" alt="">
+                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>rolling.svg" class="lazy" data-src="<?=$doc['doc_image']?>" alt="">
                                             </a>
+                                            <strong><?=$doc['doc_name']?></strong>
                                             <p>
-                                                <strong><?=$doc['doc_name']?></strong>
-                                                <?=$doc['doc_des']?>
+                                                <?= trim_text($doc['doc_des'], 45)?>
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
@@ -306,28 +313,30 @@
 
                 <div id="accordion-book" class="departments" style="margin-bottom: 25px;">
                     <h1 class="home-title">
-                        <span>Sách xem nhiều</span>
+                        <a href="<?= site_url('sach.html')?>" title="TIN TỨC">Sách hay</a>
                     </h1>
                     <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($book_top_view as $book){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$book['b_id'] ?>" aria-expanded="false" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$book['b_id'] ?>"
+                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <i class="glyphicon glyphicon-book"></i> <?= substr($book['b_name'], 0, 40)?>
+                                        <i class="glyphicon glyphicon-book"></i> <strong><?= ucwords(trim_text($book['b_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
-                                <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse" role="tabpanel">
+                                <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
-                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy" data-src="<?=$book['b_image']?>" alt="">
+                                                <img width="100" src="<?php echo base_url() . 'images/'; ?>rolling.svg" class="lazy" data-src="<?=$book['b_image']?>" alt="">
                                             </a>
+                                            <strong><?= $book['b_name']; ?></strong>
                                             <p>
-                                                <?= substr($book['b_des'], 0, 200)?>...
+                                                <?= trim_text($book['b_des'], 45); ?>
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
-                                            <a class="btn-more" href="https://binhivu.com/dan-su" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                            <a class="btn-more" href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" title="Xem ngay">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
