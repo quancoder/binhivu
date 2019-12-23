@@ -223,7 +223,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-header"> QUẢN TRỊ TÀI LIỆU</li>
+                    <li class="nav-header"> QUẢN TRỊ TÀI LIỆU / SÁCH</li>
 
                     <li class="nav-item">
                         <a href="<?php echo site_url("document", $langcode) ?>" class="nav-link">
