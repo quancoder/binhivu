@@ -5,7 +5,7 @@
             <div class="col-md-7">
                 <div id="zone-news">
                     <h1 class="home-title">
-                        <a href="<?= site_url('tin-tuc.html')?>" title="TIN TỨC">TIN MỚI CẬP NHẬT</a>
+                        <a href="<?= site_url('tin-tuc.html')?>" >TIN MỚI NHẤT</a>
                     </h1>
                     <div class="row">
                         <div class="col-md-8">
@@ -74,7 +74,7 @@
                                                      data-src="<?=$new['news_image']?>" >
                                             </a>
                                             <h3 class="carousel-heading">
-                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= trim_text($new['news_title'], 17)?></a>
                                             </h3>
                                         </div>
                                     <?php } ?>
@@ -132,7 +132,7 @@
 
                 <div id="zone-thu-gian">
                     <h1 class="home-title">
-                        <a href="<?= site_url('goc-thu-gian.html')?>" title="TIN TỨC">GÓC THƯ GIÃN</a>
+                        <a href="<?= site_url('goc-thu-gian.html')?>" >GÓC THƯ GIÃN</a>
                     </h1>
                     <div class="row" style="margin-bottom: 20px;">
                         <!--row1 left-->
@@ -216,7 +216,7 @@
                                                  data-src="<?=$fun['funs_image']?>" >
                                         </a>
                                         <h3 class="carousel-heading">
-                                            <a href="<?= toURLFriendly($fun['funs_title'], 'gtt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>"><?= $fun['funs_title']?></a>
+                                            <a href="<?= toURLFriendly($fun['funs_title'], 'gtt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>"><?= trim_text($fun['funs_title'], 17)?></a>
                                         </h3>
                                     </div>
                                 <?php } ?>
@@ -277,18 +277,18 @@
             <div class="col-md-5">
                 <div id="accordion-document" class="departments">
                     <h1 class="home-title">
-                        <a href="<?= site_url('tai-lieu.html')?>" title="TIN TỨC">Tài liệu hay</a>
+                        <a href="<?= site_url('tai-lieu.html')?>" >Tài liệu mới nhất</a>
                     </h1>
                     <div id="box-tai-lieu" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($doc_top_view as $doc){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>"
-                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'true': ''?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="javascript:void(0)<?= 'document-'.$doc['doc_id'] ?>"
+                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'true': 'true'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
                                         <i class="glyphicon glyphicon-file"></i> <strong><?= ucwords(trim_text($doc['doc_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
-                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" role="tabpanel">
+                                <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': 'in'?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
@@ -300,6 +300,8 @@
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
+                                            <span class="time mr-20"><i class="glyphicon glyphicon-download"></i> <?= number_format($doc['doc_download'])?> Lượt tải </span>
+                                            <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($doc['doc_view'])?> Lượt xem </span>
                                             <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="<?= $doc['doc_name']?>">
                                                 CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i>
                                             </a>
@@ -313,18 +315,18 @@
 
                 <div id="accordion-book" class="departments" style="margin-bottom: 25px;">
                     <h1 class="home-title">
-                        <a href="<?= site_url('sach.html')?>" title="TIN TỨC">Sách hay</a>
+                        <a href="<?= site_url('sach.html')?>" >Sách mới nhất</a>
                     </h1>
                     <div id="box-book" class="accordion" role="tablist" aria-multiselectable="true">
                         <?php $i = 1;foreach ($book_top_view as $book){?>
                             <div class="panel">
-                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$book['b_id'] ?>"
-                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" aria-controls="collapse1">
+                                <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="javascript:void(0)<?= 'book-'.$book['b_id'] ?>"
+                                   aria-expanded="<?= in_array($i, array(1,2,3,4,5)) ? 'true': 'true'?>" aria-controls="collapse1">
                                     <h4 class="panel-title">
                                         <i class="glyphicon glyphicon-book"></i> <strong><?= ucwords(trim_text($book['b_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
-                                <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': ''?>" role="tabpanel">
+                                <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': 'in'?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
                                             <a class="thumb-image" href="" title="">
@@ -336,6 +338,8 @@
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
+                                            <span class="time mr-20"><i class="glyphicon glyphicon-download"></i> <?= number_format($book['b_download'])?> Lượt tải </span>
+                                            <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($book['b_view'])?> Lượt xem </span>
                                             <a class="btn-more" href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" title="Xem ngay">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
                                         </div>
                                     </div>
@@ -365,3 +369,13 @@
         </div>
     </div>
 </main>
+<script>
+    $('.panel-heading a').on('click',function(e){
+        if($(this).parents('.panel').children('.panel-collapse').hasClass('in')){
+            e.stopPropagation();
+        }
+        // You can also add preventDefault to remove the anchor behavior that makes
+        // the page jump
+        // e.preventDefault();
+    });
+</script>

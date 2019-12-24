@@ -55,8 +55,8 @@
                 <div class="row">
                     <?php $i= 2; foreach ($news_list as $new){ ?>
                         <?php if($i >=2 and $i <=5){?>
-                            <div class="col-md-6 col-xs-12">
-                                <div class="featured-articles featured-articles-min pull-left mb-10 h-400 min-h-400 h-xs-auto">
+                            <div class="col-md-6 col-xs-12 pr-0">
+                                <div class="featured-articles featured-articles-min pull-left mb-5 h-400 min-h-400 h-xs-auto">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                         <img class="w-100 h-150 h-xs-auto" src="<?= $new['news_image'] ?>" alt="<?= $new['news_title'] ?>">
                                     </a>
@@ -98,7 +98,7 @@
                                      data-src="<?= $new['news_image'] ?>" >
                             </a>
                             <h3 class="carousel-heading">
-                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= trim_text($new['news_title'],17)?></a>
                             </h3>
                         </div>
                         <?php } ?>

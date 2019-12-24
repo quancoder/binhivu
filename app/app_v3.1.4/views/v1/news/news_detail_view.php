@@ -10,22 +10,23 @@
                     <!--row1 left-->
                     <div class="col-md-12 col-lg-12">
                         <div class="archive" style="border: none">
-                            <h2 class="heading-archive ml-20 mr-20 ml-20-xs mr-20-xs">
+                            <h2 class="heading-archive ml-20-xs mr-20-xs">
                                 <?php echo ($info['news_title'])?>
                             </h2>
-                            <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
-                                <div class="meta-archive">
-                                    <div style="float: left">
-                                        <a href="<?= site_url('tin-tuc.html')?>">
-                                            <span class="category-name">Tin tức</span></a> -
-                                        <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                        <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['news_create_time'])?></span>
-                                    </div>
-                                    <div style="float: right">
-                                        <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
-                                        <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-size="small"></div>
-                                    </div>
+                            <div class="meta-archive">
+                                <div style="float: left">
+                                    <a href="<?= site_url('tin-tuc.html')?>">
+                                        <span class="category-name">Tin tức</span></a> -
+                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['news_create_time'])?></span>
+                                    <span class="time ml-10"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($info['news_views'])?> Lượt xem</span>
                                 </div>
+                                <div style="float: right">
+                                    <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                                    <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-size="small"></div>
+                                </div>
+                            </div>
+                            <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
                                 <div style="clear: both"></div>
                                 <p class="sapo-archive mt-20 pt-20" style="border-top: 1px solid #eeeeee;"><?php echo ($info['news_sapo'])?></p>
                                 <ul class="news-list" style="border: none;">
@@ -148,6 +149,9 @@
                                     </h3>
                                     <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
+                                    <p>
+                                        <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($news['news_views'])?> Lượt xem </span>
+                                    </p>
                                 </div>
                             </li>
                         <?php } ?>
