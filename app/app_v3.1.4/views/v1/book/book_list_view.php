@@ -3,7 +3,7 @@
     <div class="container" style="background: #fff">
         <h2 class="home-title clearfix mt-10">
             <a href="<?=site_url('sach.html')?>" title="" style="float: left">Sách</a>
-            <form method="get" action="">
+            <form method="get" action="<?=current_url()?>">
                 <select name="q" class="form-control w-95-xs w-10 mr-10" style="float: right" onchange="this.form.submit()">
                     <option value="-1" <?=$q=='-1'?'selected' : ' '?> >Tất cả</option>
                     <option value="1" <?=$q=='1'?'selected' : ' '?>>Miễn phí</option>
@@ -27,7 +27,7 @@
                                 <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $item['b_image']?>" alt="<?= $item['b_name']?>">
                             </div>
                             <div class="detail-des">
-                                <div class="text"><?= $item['b_des']?></div>
+                                <div class="text"><?= trim_text($item['b_des'], 77)?></div>
                             </div>
                         </a>
                     </div>

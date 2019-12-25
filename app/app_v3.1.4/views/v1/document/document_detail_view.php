@@ -42,11 +42,10 @@
             <div class="col-xs-12 col-md-4">
                 <img src="<?= $info['doc_image'] ?>">
                 <div class="tag-item mt-20">
-                    <strong>Từ khóa:</strong>
                     <p>
                         <?php $tag = explode( ',', $info['doc_tag']) ;foreach ($tag as $value){?>
-                            <a class="btn btn-warning btn-sm mb-5" href="">
-                                <?= $value?>
+                            <a href="<?=site_url('tim-kiem-tai-lieu.html').'?tag='.$value?>">
+                                <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
                             </a>
                         <?php } ?>
                     </p>
@@ -75,7 +74,7 @@
                 </a>
             <?php }else{?>
                 <p>
-                    HÃY <a href=""><span style="color: #ffef00">LIÊN HỆ </span> </a>
+                    HÃY <a href="<?=site_url('lien-he.html?type=document&id='.$info['doc_id'])?>"><span style="color: #ffef00">LIÊN HỆ </span> </a>
                     TÁC GIẢ  ĐỂ TẢI TÀI LIỆU NÀY
                 </p>
             <?php }?>
@@ -92,7 +91,7 @@
     </div>
     <div class="container">
         <h2 class="home-title clearfix">
-            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Có thể bạn quan tâm</a>
+            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Đề xuất cho bạn</a>
         </h2>
         <div id="page-list-tai-lieu" class="row" style="margin-bottom: 20px; margin-top: 20px">
             <?php foreach ($doc_list as $doc) { ?>
@@ -105,7 +104,7 @@
                                     <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $doc['doc_image']?>" alt="<?= $doc['doc_name']?>">
                                 </div>
                                 <div class="detail-des">
-                                    <div class="text"><?= $doc['doc_des']?></div>
+                                    <div class="text"><?= trim_text($doc['doc_des'], 77)?></div>
                                 </div>
                             </a>
                         </div>

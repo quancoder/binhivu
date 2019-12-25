@@ -25,6 +25,14 @@
                                     <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($fun['funs_views'])?></span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                     <p style="margin-top: 10px; color: #1e1e1e"><?= $fun['funs_sapo']?></p>
+                                    <div class="mb-10 pb-10">
+                                        <?php $tag = explode(',', $fun['funs_tag']) ?>
+                                        <?php foreach ($tag as $value){?>
+                                            <a href="<?= site_url('tim-kiem-thu-gian.html').'?tag='.$value?>">
+                                                <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
+                                            </a>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </li>
                         <?php } ?>

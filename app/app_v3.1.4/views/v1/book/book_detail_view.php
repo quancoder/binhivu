@@ -40,11 +40,10 @@
             <div class="col-xs-12 col-md-4">
                 <img src="<?= $info['b_image'] ?>" class="w-80 w-100-xs">
                 <div class="tag-item mt-20">
-                    <strong>Từ khóa:</strong>
                     <p>
                         <?php $tag = explode( ',', $info['b_tag']) ;foreach ($tag as $value){?>
-                            <a class="btn btn-warning btn-sm mb-5" href="<?=site_url('sach.html').'?tag='.$value?>">
-                                <?= $value?>
+                            <a href="<?=site_url('tim-kiem-sach.html').'?tag='.$value?>">
+                                <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
                             </a>
                         <?php } ?>
                     </p>
@@ -73,7 +72,7 @@
                 </a>
             <?php }else{?>
                 <p>
-                    HÃY <a href="<?=site_url('lien-he.html?bid='.$info['b_id'])?>"><span style="color: #ffef00">LIÊN HỆ </span> </a>
+                    HÃY <a href="<?=site_url('lien-he.html?type=book&id='.$info['b_id'])?>"><span style="color: #ffef00">LIÊN HỆ </span> </a>
                     TÁC GIẢ  ĐỂ TẢI TÀI LIỆU NÀY
                 </p>
             <?php }?>
@@ -90,7 +89,7 @@
     </div>
     <div class="container">
         <h2 class="home-title clearfix">
-            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Có thể bạn quan tâm</a>
+            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Đề xuất cho bạn</a>
         </h2>
         <div id="page-list-sach" class="row" style="margin-bottom: 20px; margin-top: 20px">
             <?php foreach ($book_list as $item) { ?>
@@ -103,7 +102,7 @@
                                     <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $item['b_image']?>" alt="<?= $item['b_name']?>">
                                 </div>
                                 <div class="detail-des">
-                                    <div class="text"><?= $item['b_des']?></div>
+                                    <div class="text"><?= trim_text($item['b_des'], 77)?></div>
                                 </div>
                             </a>
                         </div>
@@ -121,8 +120,7 @@
                                         <span class="textstat">vnđ</span>
                                     </div>
                                     <div class="mt-5" style="width: 100%; color: #666666">
-                                        <i class="glyphicon glyphicon-download"></i> <span><?=number_format($item['b_download'])?></span>
-                                        <br/>
+                                        <i class="glyphicon glyphicon-download"></i> <span class="pr-20"> <?=number_format($item['b_download'])?></span>
                                         <i class="glyphicon glyphicon-eye-open"></i> <span><?=number_format($item['b_view'])?></span>
                                     </div>
 

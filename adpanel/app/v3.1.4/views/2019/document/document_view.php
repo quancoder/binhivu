@@ -71,7 +71,7 @@
                         <thead>
                         <tr>
                             <th style="width: 3%">ID</th>
-                            <th style="width: 10%" class="text-center">Ảnh</th>
+                            <th style="width: 5%" class="text-center">Ảnh</th>
                             <th>Tên tài liệu</th>
                             <th style="width: 5%" class="text-center">Status</th>
                             <th style="width: 10%" class="text-right">Giá</th>

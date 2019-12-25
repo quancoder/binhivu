@@ -14,7 +14,6 @@ class Home extends MY_Controller {
 
     function index()
     {
-
         $data = array();
     	// load header
     	$header = array();

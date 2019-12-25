@@ -45,11 +45,14 @@ class News extends MY_Controller{
         $status  = 1;
         $start = 0;
         $limit = 12;
-        $search_tt = $this->input->get('search');
-        $news_list = $this->News_model->news_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
+        $search = $this->input->get('search');
+        $tag = $this->input->get('tag');
+        $news_list = $this->News_model->news_list_paging(ALL_USER, $status, $search, $tag, $start, $limit);
         $doc_top_view = $this->Document_model->document_list_top_view();
         $book_top_view = $this->Book_model->book_list_top_view();
 
+        $data['search'] = $search;
+        $data['tag'] = $tag;
         $data['doc_top_view'] = $doc_top_view;
         $data['book_top_view'] = $book_top_view;
         $data['news_list'] = $news_list['list'];

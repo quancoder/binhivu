@@ -66,10 +66,15 @@ $route['tim-kiem-thu-gian.html'] = 'funs/funs/search';
 //tai lieu
 $route['tai-lieu.html'] = 'document/document/index';
 $route['([a-zA-Z0-9-_]+)-document([0-9]+).html'] = 'document/document/detail/$1/$2';
+$route['tim-kiem-tai-lieu.html'] = 'document/document/search';
 
-//tai lieu
+//sach
 $route['sach.html'] = 'book/book/index';
 $route['([a-zA-Z0-9-_]+)-book([0-9]+).html'] = 'book/book/detail/$1/$2';
+$route['tim-kiem-sach.html'] = 'book/book/search';
+
+//lien he
+$route['lien-he.html'] = 'contact/contact/index';
 
 //tai xuong
 $route['download-([a-z]+)-([0-9]+)'] = 'taixuong/taixuong/index/$1/$2';

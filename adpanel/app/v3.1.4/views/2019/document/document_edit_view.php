@@ -64,14 +64,6 @@
                                     <label class="col-form-label" for="doc_price"><i class="fa fa-pencil"></i> Giá tài liệu</label>
                                     <input type="number" id="doc_price" name="doc_price" step="any" class="form-control" value="<?= $info['doc_price'] ?>"/>
                                 </div>
-
-                                <div class="input-group">
-                                    <label class="col-form-label" for="doc_free" style="margin-right: 15px">Cho phép tải miễn phí</label>
-                                    <label class="checkbox-custom" >
-                                        <input id="doc_free"  name="doc_free" type="checkbox" <?=$info['doc_free'] == 1 ? 'checked' : '' ?> >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <div class="form-group">
@@ -118,7 +110,15 @@
                                                 data-src='<?= FILEMANAGER_PATH.'extensions=["rar"]&field_id=doc_path_file&fldr=tai-lieu/du-lieu' ?>'> Chọn file </button>
                                     </div>
                                 </div>
+                                <div class="input-group">
+                                    <label class="col-form-label" for="doc_free" style="margin-right: 15px">Cho phép tải miễn phí</label>
+                                    <label class="checkbox-custom" >
+                                        <input id="doc_free"  name="doc_free" type="checkbox" <?=$info['doc_free'] == 1 ? 'checked' : '' ?> >
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

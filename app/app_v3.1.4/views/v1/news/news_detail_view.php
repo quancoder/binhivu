@@ -13,23 +13,10 @@
                             <h2 class="heading-archive ml-20-xs mr-20-xs">
                                 <?php echo ($info['news_title'])?>
                             </h2>
-                            <div class="meta-archive">
-                                <div style="float: left">
-                                    <a href="<?= site_url('tin-tuc.html')?>">
-                                        <span class="category-name">Tin tức</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['news_create_time'])?></span>
-                                    <span class="time ml-10"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($info['news_views'])?> Lượt xem</span>
-                                </div>
-                                <div style="float: right">
-                                    <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
-                                    <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-size="small"></div>
-                                </div>
-                            </div>
                             <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
                                 <div style="clear: both"></div>
-                                <p class="sapo-archive mt-20 pt-20" style="border-top: 1px solid #eeeeee;"><?php echo ($info['news_sapo'])?></p>
-                                <ul class="news-list" style="border: none;">
+                                <p class="sapo-archive mt-20" style="font-size: 1.6rem"><?php echo ($info['news_sapo'])?></p>
+                                <ul class="news-list" style="border: none; border-top: 1px solid #eeeeee;">
                                     <?php $i = 1; foreach ($news_top as $news){ ?>
                                         <?php if($i <= 4){?>
                                             <li>
@@ -43,8 +30,29 @@
 
                                     <?php $i++; } ?>
                                 </ul>
-                                <div class="content-archive mb-20">
+                                <div class="meta-archive">
+                                    <div style="float: left">
+                                        <span class="author mr-10"><i class="glyphicon "></i> binhivu</span>
+                                        <span class="time mr-10"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['news_create_time'])?></span>
+                                        <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($info['news_views'])?> Lượt xem</span>
+                                    </div>
+                                    <div style="float: right">
+                                        <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                                        <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-size="small"></div>
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                                <div class="content-archive mb-10 mt-10" style="font-size: 1.6rem">
                                     <?php echo ($info['news_content']) ?>
+                                </div>
+                                <div class="mb-10 pb-10" style="border-bottom: 1px solid #eeeeee;">
+                                    Từ khóa:
+                                    <?php $tag = explode(',', $info['news_tags']) ?>
+                                    <?php foreach ($tag as $value){?>
+                                        <a href="<?= site_url('tim-kiem-tin-tuc.html').'?tag='.$value?>">
+                                            <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
+                                        </a>
+                                    <?php } ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
                                 <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['news_title'], 'tt', $info['news_id'])?>" data-size="small"></div>
@@ -142,7 +150,7 @@
                                          alt="<?= $new['news_title']?>">
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.6rem; line-height: 1.2">
                                         <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                             <?= $new['news_title']?>
                                         </a>
@@ -162,8 +170,9 @@
                         <?php foreach ($news_top as $new){?>
                             <?php if($i >= 5 and $i <=12){?>
                                 <li>
-                                    <h3><a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                           title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                    <h3>
+                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
+                                           title="<?= $new['news_title']?>" style="font-size: 1.4rem"><?= $new['news_title']?></a>
                                     </h3>
                                 </li>
                             <?php } ?>

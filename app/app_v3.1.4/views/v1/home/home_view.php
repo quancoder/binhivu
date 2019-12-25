@@ -85,13 +85,13 @@
                             <h2 class="line-title clearfix" style="border: none">
                                 <a href="javascript:void(0)" title="Góc thư giãn ">TIN NỔI BẬT</a>
                             </h2>
-                            <ul class="media-list main-list slimScroll" style="margin-top: 20px; text-align: justify;">
+                            <ul class="media-list main-list" style="margin-top: 20px; text-align: justify;">
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $new){ ?>
                                     <?php if($i <=3){?>
                                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
-                                            <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                                            <a class="pull-left pull-right-xs w-35 w-100-xs" href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                                      data-src="<?=$new['news_image']?>"
                                                      alt="<?= $new['news_title']?>" style="width: ">

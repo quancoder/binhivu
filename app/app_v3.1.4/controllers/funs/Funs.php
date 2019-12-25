@@ -40,7 +40,7 @@ class Funs extends MY_Controller{
         $data = array();
         // load header
         $header = array();
-        $header['title'] = 'Tin tức';
+        $header['title'] = 'Góc thư giãn';
 
         $status  = 1;
         $start = 0;

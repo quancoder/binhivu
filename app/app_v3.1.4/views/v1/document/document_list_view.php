@@ -27,7 +27,7 @@
                                 <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $doc['doc_image']?>" alt="<?= $doc['doc_name']?>">
                             </div>
                             <div class="detail-des">
-                                <div class="text"><?= $doc['doc_des']?></div>
+                                <div class="text"><?= trim_text($doc['doc_des'], 77)?></div>
                             </div>
                         </a>
                     </div>

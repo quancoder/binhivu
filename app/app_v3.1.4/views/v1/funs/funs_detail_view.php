@@ -13,23 +13,9 @@
                             <h2 class="heading-archive ml-20-xs mr-20-xs">
                                 <?php echo ($info['funs_title'])?>
                             </h2>
-                            <div class="meta-archive">
-                                <div style="float: left">
-                                    <a href="<?= site_url('go-thu-gian.html')?>">
-                                        <span class="category-name">Góc thư giãn</span></a> -
-                                    <span class="author"><i class="glyphicon "></i> binhivu</span> -
-                                    <span class="time "><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['funs_create_time'])?></span>
-                                    <span class="time ml-10"><i class="glyphicon glyphicon-eye-open"></i> <?= ($info['funs_views'])?> Lượt xem</span>
-                                </div>
-                                <div style="float: right">
-                                    <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
-                                    <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-size="small"></div>
-                                </div>
-                            </div>
                             <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
-                                <div style="clear: both"></div>
-                                <p class="sapo-archive mt-20 pt-20" style="border-top: 1px solid #eeeeee;"><?php echo ($info['funs_sapo'])?></p>
-                                <ul class="news-list" style="border: none;">
+                                <p class="sapo-archive mt-20" style="font-size: 1.6rem"><?php echo ($info['funs_sapo'])?></p>
+                                <ul class="news-list" style="border: none;border-top: 1px solid #eeeeee; ">
                                     <?php $i = 1; foreach ($funs_top as $fun){ ?>
                                         <?php if($i <= 4){?>
                                             <li>
@@ -40,10 +26,21 @@
                                                 </h3>
                                             </li>
                                         <?php } ?>
-
                                     <?php $i++; } ?>
                                 </ul>
-                                <div class="content-archive mb-20" style="font-size: 1.6rem">
+                                <div class="meta-archive">
+                                    <div style="float: left">
+                                        <span class="author mr-10"><i class="glyphicon glyphicon-user"></i> <strong>binhivu</strong></span>
+                                        <span class="time mr-10"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['funs_create_time'])?></span>
+                                        <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= ($info['funs_views'])?> Lượt xem</span>
+                                    </div>
+                                    <div style="float: right">
+                                        <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+                                        <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-size="small"></div>
+                                    </div>
+                                </div>
+                                <div style="clear: both"></div>
+                                <div class="content-archive mb-20 mt-10" style="font-size: 1.6rem">
                                     <?php echo ($info['funs_content']) ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
@@ -56,6 +53,9 @@
                 <!--LIST LOOP NEWS-->
                 <div class="row">
                     <div class="col-md-12">
+                        <h2 class="line-title clearfix" style="border: none">
+                            <a href="javascript:void(0)" title="Góc thư giãn ">Đừng bỏ lỡ</a>
+                        </h2>
                         <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
                             <?php $i= 1; foreach ($funs_top as $fun){ ?>
                                 <div class="item">
@@ -117,7 +117,7 @@
                                             </h3>
                                         </li>
                                     <?php } ?>
-                                    <?php $i++;} ?>
+                                <?php $i++;} ?>
                             </ul>
                         </div>
                     </div>
@@ -143,26 +143,26 @@
                         <?php $i++;} ?>
                 </ul>
                 <h2 class="line-title clearfix">
-                    <a href="javascript:void(0)" title="Góc thư giãn ">TIN QUAN TÂM NHIỀU NHẤT</a>
+                    <a href="javascript:void(0)" title="Góc thư giãn ">BÀI VIẾT XEM NHIỀU NHẤT</a>
                 </h2>
                 <ul class="media-list main-list">
                     <?php $i=1?>
-                    <?php foreach ($news_top as $new){?>
+                    <?php foreach ($funs_top_view as $funs){?>
                         <?php if($i <=4){?>
                             <li class="media" style="padding-bottom: 10px;">
-                                <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
+                                <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
                                     <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                         data-src="<?=$new['news_image']?>"
-                                         alt="<?= $new['news_title']?>">
+                                         data-src="<?=$funs['funs_image']?>"
+                                         alt="<?= $funs['funs_title']?>">
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
-                                        <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
-                                            <?= $new['news_title']?>
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.6rem; line-height: 1.4">
+                                        <a href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
+                                            <?= $funs['funs_title']?>
                                         </a>
                                     </h3>
-                                    <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
-                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
+                                    <a href="<?= site_url('goc-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
+                                    <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($funs['funs_create_time'])?></span>
                                 </div>
                             </li>
                         <?php } ?>
@@ -170,11 +170,14 @@
 
                     <ul class="news-list ">
                         <?php $i=1?>
-                        <?php foreach ($news_top as $new){?>
+                        <?php foreach ($funs_top_view as $funs){?>
                             <?php if($i >= 5 and $i <=12){?>
                                 <li>
-                                    <h3><a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                           title="<?= $new['news_title']?>"><?= $new['news_title']?></a>
+                                    <h3>
+                                        <a href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>"
+                                           title="<?= $funs['funs_title']?>" style="font-size: 1.4rem">
+                                            <?= $funs['funs_title']?>
+                                        </a>
                                     </h3>
                                 </li>
                             <?php } ?>

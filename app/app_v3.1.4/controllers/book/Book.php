@@ -52,21 +52,24 @@ class Book extends MY_Controller{
         $data = array();
         // load header
         $header = array();
-        $header['title'] = 'Tin tức';
+        $header['title'] = 'Tìm kiếm';
 
         $status  = 1;
         $start = 0;
         $limit = 12;
-        $search_tt = $this->input->get('search');
-        $news_list = $this->News_model->news_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
-        $doc_top_view = $this->Document_model->document_list_top_view();
-        $book_top_view = $this->Book_model->book_list_top_view();
+        $search = $this->input->get('search');
+        $tag = $this->input->get('tag');
+        $author = $this->input->get('author');
+        $nxb = $this->input->get('nxb');
+        $list = $this->Book_model->book_list_paging(ALL_USER, $status, $search, $tag,$author,$nxb, $start, $limit);
 
-        $data['doc_top_view'] = $doc_top_view;
-        $data['book_top_view'] = $book_top_view;
-        $data['news_list'] = $news_list['list'];
+        $data['list'] = $list['list'];
+        $data['search'] = $search;
+        $data['tag'] = $tag;
+        $data['author'] = $author;
+        $data['nxb'] = $nxb;
         $this->_loadHeader($header);
-        $this->load->view($this->_template_f . 'tin-tuc/search_view', $data);
+        $this->load->view($this->_template_f . 'book/book_search_view', $data);
         $this->_loadFooter();
     }
 
@@ -74,7 +77,7 @@ class Book extends MY_Controller{
         $data= array();
         $info = $this->Book_model->book_info($id);
 
-        if(empty($info)){
+        if(empty($info) || $info['b_status'] !=1){
             redirect(site_url('book.html'));
             die;
         }

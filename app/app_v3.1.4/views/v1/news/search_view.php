@@ -7,6 +7,7 @@
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TIN TỨC TÌM ĐƯỢC</a>
                     </h2>
+                    <p>Kết quả tìm kiếm cho: "<?=$tag.' '.$search?>"</p>
                     <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
                         <?php foreach ($news_list as $news){ ?>
                             <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
@@ -25,6 +26,14 @@
                                     <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($news['news_views'])?></span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_create_time'])?></span>
                                     <p style="margin-top: 10px; color: #1e1e1e"><?= $news['news_sapo']?></p>
+                                    <div class="mb-10 pb-10">
+                                        <?php $tag = explode(',', $news['news_tags']) ?>
+                                        <?php foreach ($tag as $value){?>
+                                            <a href="<?= site_url('tim-kiem-tin-tuc.html').'?tag='.$value?>">
+                                                <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
+                                            </a>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </li>
                         <?php } ?>
