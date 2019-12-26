@@ -200,6 +200,18 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
+                                <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn" class=" visible-lg <?=$module=='funs'? 'active' :''?>" aria-expanded="true">
+                                    Góc thư giãn
+                                </a>
+                                <div class="visible-ega-table-xs">
+                                    <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn">
+                                        Góc thư giãn
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!--submenu-->
+                            <li class="yamm-fw li-ega-menu-no-mega">
                                 <a href="<?=site_url('tai-lieu.html')?>" title="Tài liệu" class=" visible-lg <?=$module=='document'? 'active' :''?>" aria-expanded="true">
                                     Tài liệu
                                 </a>
@@ -224,24 +236,24 @@
 
                             <!--submenu-->
                             <li class="yamm-fw li-ega-menu-no-mega">
-                                <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn" class=" visible-lg <?=$module=='funs'? 'active' :''?>" aria-expanded="true">
-                                    Góc thư giãn
-                                </a>
-                                <div class="visible-ega-table-xs">
-                                    <a href="<?=site_url('goc-thu-gian.html')?>" title="Góc thư giãn">
-                                        Góc thư giãn
-                                    </a>
-                                </div>
-                            </li>
-
-                            <!--submenu-->
-                            <li class="yamm-fw li-ega-menu-no-mega">
                                 <a href="<?=site_url('lien-he.html')?>" title="Liên hệ" class=" visible-lg <?=$module=='contact'? 'active' :''?>" aria-expanded="true">
                                     Liên hệ
                                 </a>
                                 <div class="visible-ega-table-xs">
                                     <a href="<?=site_url('lien-he.html')?>" title="Liên hệ">
                                         Liên hệ
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!--submenu-->
+                            <li class="yamm-fw li-ega-menu-no-mega">
+                                <a href="<?=site_url('gioi-thieu.html')?>" title="Giới thiệu" class=" visible-lg <?=$module=='intro'? 'active' :''?>" aria-expanded="true">
+                                    Giới thiệu
+                                </a>
+                                <div class="visible-ega-table-xs">
+                                    <a href="<?=site_url('gioi-thieu.html')?>" title="Giới thiệu">
+                                        Giới thiệu
                                     </a>
                                 </div>
                             </li>

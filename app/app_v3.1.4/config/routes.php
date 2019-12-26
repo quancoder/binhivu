@@ -76,5 +76,8 @@ $route['tim-kiem-sach.html'] = 'book/book/search';
 //lien he
 $route['lien-he.html'] = 'contact/contact/index';
 
+//gioi thieu
+$route['gioi-thieu.html'] = 'intro/intro/index';
+
 //tai xuong
 $route['download-([a-z]+)-([0-9]+)'] = 'taixuong/taixuong/index/$1/$2';
