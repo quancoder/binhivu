@@ -14,12 +14,12 @@ class Dashboard extends MY_Controller {
 	{
 		$this->_loadHeader();
 		
-//		$this->load->view($this->_template_f . 'dashboard/dashboard_view');
+		$this->load->view($this->_template_f . 'dashboard/dashboard_view');
 		
 		$this->_loadFooter();
 	}
 
-    function download()
+    function _download()
     {
         // check id_file
         // check login

@@ -72,7 +72,7 @@
                         </form>
 
                         <p class="mt-3 mb-1">
-                            <a href="<?= site_url('dashboard ')?>">Thoát</a>
+                            <a href="<?= site_url('dashboard ')?>">Hủy</a>
                         </p>
                     </div>
                     <!-- /.login-card-body -->

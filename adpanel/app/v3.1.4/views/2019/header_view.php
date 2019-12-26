@@ -203,21 +203,21 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/adpanel">
+                        <a class="nav-link" href="/adpanel">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p> Dashboard </p></a>
+                            <p> Trang chủ </p></a>
                     </li>
 
                     <li class="nav-header"> QUẢN TRỊ BÀI VIẾT</li>
 
                     <li class="nav-item">
-                        <a href="<?php echo site_url("news", $langcode) ?>" class="nav-link">
+                        <a href="<?php echo site_url("news", $langcode) ?>" class="nav-link <?=$module=='news' ?' active' : ''?>">
                             <i class="nav-icon fas fa-newspaper"></i>
                             <p> Tin tức </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo site_url("funs", $langcode) ?>" class="nav-link">
+                        <a href="<?php echo site_url("funs", $langcode) ?>" class="nav-link <?=$module=='funs' ?' active' : ''?>">
                             <i class="nav-icon fas fa-coffee"></i>
                             <p> Góc thư giãn </p>
                         </a>
@@ -226,22 +226,22 @@
                     <li class="nav-header"> QUẢN TRỊ TÀI LIỆU / SÁCH</li>
 
                     <li class="nav-item">
-                        <a href="<?php echo site_url("document", $langcode) ?>" class="nav-link">
+                        <a href="<?php echo site_url("document", $langcode) ?>" class="nav-link <?=$module=='document' ?' active' : ''?>">
                             <i class="nav-icon fas fa-file-alt"></i>
                             <p> Tài liệu </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo site_url("book", $langcode) ?>" class="nav-link">
+                        <a href="<?php echo site_url("book", $langcode) ?>" class="nav-link <?=$module=='book' ?' active' : ''?>">
                             <i class="nav-icon fas fa-fw fa-book"></i>
                             <p> Sách </p>
                         </a>
                     </li>
 
-                    <li class="nav-header"> QUẢN TRỊ HỆ THỐNG</li>
+                    <li class="nav-header" style="display: none"> KHÁCH HÀNG</li>
 
-                    <li class="nav-item">
-                        <a href="<?php echo site_url("book", $langcode) ?>" class="nav-link">
+                    <li class="nav-item" style="display: none">
+                        <a href="<?php echo site_url("feed", $langcode) ?>" class="nav-link <?=$module=='feed' ?' active' : ''?>">
                             <i class="nav-icon fas fa-comments"></i>
                             <p> Phản hồi liên hệ
                                 <span class="right badge badge-info">10</span>
@@ -249,14 +249,25 @@
                         </a>
                     </li>
 
+                    <li class="nav-header"> QUẢN TRỊ HỆ THỐNG</li>
+
                     <li class="nav-item">
-                        <a href="<?php echo site_url("authenticate/change-password", $langcode) ?>" class="nav-link">
+                        <a href="<?php echo site_url("intro/edit", $langcode) ?>" class="nav-link <?=$module=='intro' ?' active' : ''?>">
+                            <i class="nav-icon  fas fa-info-circle"></i>
+                            <p> Trang giới thiệu</p>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="<?php echo site_url("authenticate/change-password", $langcode) ?>" class="nav-link <?=$module=='authenticate' ?' active' : ''?>">
                             <i class="nav-icon fas fa-lock"></i>
                             <p> Thay đổi mật khẩu </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="<?php echo site_url("settings/mod", $langcode) ?>" class="nav-link">
+
+                    <li class="nav-item" style="display: none">
+                        <a href="<?php echo site_url("settings/mod", $langcode) ?>" class="nav-link <?=$module=='settings' ?' active' : ''?>">
                             <i class="nav-icon  fas fa-info-circle"></i>
                             <p> Thông tin website</p>
                         </a>
