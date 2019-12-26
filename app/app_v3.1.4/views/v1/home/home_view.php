@@ -27,7 +27,7 @@
                                         <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                     </p>
-                                    <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
+                                    <p style="margin-bottom: 0; text-align: justify; color: #cccccc">
                                         (Tin tức)  <?= ($news_list[0]['news_sapo'])?>
                                     </p>
                                 </div>
@@ -48,7 +48,7 @@
                                                 <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
                                                 <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1.6rem">
+                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1rem">
                                                         <?= $new['news_title']?>
                                                     </a>
                                                 </h3>
@@ -98,7 +98,7 @@
                                             </a>
                                             <div class="media-body w-100-xs">
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly($new['news_title'], 'gtg', $new['news_id'])?>" style="font-size: 2rem">
+                                                    <a href="<?= toURLFriendly($new['news_title'], 'gtg', $new['news_id'])?>" style="font-size: 1.2rem">
                                                         <?= $new['news_title']?>
                                                     </a>
                                                 </h3>
@@ -155,7 +155,7 @@
                                         <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                     </p>
-                                    <p style="font-size: 13px; margin-bottom: 0px">
+                                    <p style="margin-bottom: 0px">
                                         (Góc thư giãn)  <?= ($fun['funs_sapo'])?>
                                     </p>
                                     <div class="clearfix"></div>
@@ -164,42 +164,28 @@
                         </div>
                         <!--row1 right-->
                         <div class="col-md-5 col-lg-5"  id="list-thu-gian-right">
-                            <ul class="media-list main-list">
+                            <div class="media-list main-list" style="text-align: justify">
                                 <?php $i=1?>
                                 <?php foreach ($funs_list as $fun){?>
-                                    <?php if($i >= 2 and $i <=4){?>
-                                        <li class="media" style="padding-bottom: 10px;">
-                                            <a class="pull-left w-40 w-40-xs" href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
-                                                <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                                     data-src="<?=$fun['funs_image']?>"
-                                                     alt="<?= $fun['funs_title']?>">
-                                            </a>
+                                    <?php if($i >= 2 and $i <=3){?>
+                                        <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
                                             <div class="media-body">
-                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.3rem; line-height: 1.4">
-                                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
+                                                <a class="" href="<?= toURLFriendly(($fun['funs_title']),'gtg', $fun['funs_id'])?>">
+                                                    <img class="media-object lazy w-100" src="<?=$fun['funs_image']?>"
+                                                         data-src="<?=$fun['funs_image']?>" alt="<?= $fun['funs_title']?>">
+                                                </a>
+                                                <a href="<?= site_url('goc-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
+                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
+                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
+                                                    <a href="<?= toURLFriendly(($fun['funs_title']),'gtg', $fun['funs_id'])?>" style="font-size: 1rem">
                                                         <?= $fun['funs_title']?>
                                                     </a>
                                                 </h3>
-                                                <a href="<?= site_url('goc-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
-                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                             </div>
-                                        </li>
+                                        </div>
                                     <?php } ?>
                                     <?php $i++;} ?>
-
-                                <ul class="news-list">
-                                    <?php $i=1?>
-                                    <?php foreach ($funs_list as $fun){?>
-                                        <?php if($i >= 8 and $i <=12){?>
-                                            <li>
-                                                <h3><a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>"
-                                                       title="<?= $fun['funs_title']?>"><?= $fun['funs_title']?></a>
-                                                </h3>
-                                            </li>
-                                        <?php } ?>
-                                    <?php $i++;} ?>
-                                </ul>
-                            </ul>
+                            </div>
                         </div>
 
                         <div class="col-md-12">
@@ -235,14 +221,14 @@
                     foreach ($funs_top_view as $fun){ ?>
                         <?php if($i <=3){?>
                         <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
-                            <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
+                            <a class="pull-left pull-right-xs w-35 w-100-xs" href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
                                 <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                      data-src="<?=$fun['funs_image']?>"
                                      alt="<?= $fun['funs_title']?>" style="width: ">
                             </a>
                             <div class="media-body w-100-xs">
                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 2rem">
+                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 1.2rem">
                                         <?= $fun['funs_title']?>
                                     </a>
                                 </h3>

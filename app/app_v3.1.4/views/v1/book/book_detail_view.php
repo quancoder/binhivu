@@ -67,7 +67,7 @@
             </div>
 
             <?php if($info['b_free']==1){?>
-                <a href="download-document-<?=$info['b_id']?>">
+                <a href="download-book-<?=$info['b_id']?>">
                     <img src="/images/download-button.png">
                 </a>
             <?php }else{?>

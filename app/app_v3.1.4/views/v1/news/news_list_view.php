@@ -28,7 +28,7 @@
                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                         </p>
 
-                        <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify;color: #cccccc">
+                        <p style="font-size: 1rem; margin-bottom: 0; text-align: justify;color: #cccccc">
                             (Tin tức)  <?= $new['news_sapo']?>
                         </p>
                     </div>
@@ -61,7 +61,7 @@
                                         <img class="w-100 h-150 h-xs-auto" src="<?= $new['news_image'] ?>" alt="<?= $new['news_title'] ?>">
                                     </a>
                                     <div class="block-title">
-                                        <h2 class="media-heading" style="font-size: 2rem">
+                                        <h2 class="media-heading" style="font-size: 1.2rem">
                                             <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" style="color: #fb7e31;" class="archive-i">
                                                 <?= $new['news_title'] ?></a>
                                         </h2>
@@ -71,7 +71,7 @@
                                             <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                         </p>
-                                        <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
+                                        <p style="font-size: 1rem; margin-bottom: 0; text-align: justify; color: #cccccc">
                                             (Tin tức)  <?= (trim_text($new['news_sapo'], 35))?>
                                         </p>
                                     </div>
@@ -120,13 +120,13 @@
                         foreach ($news_top_view as $news){ ?>
                             <?php if($i <= 4){?>
                                 <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
-                                    <a class="pull-left pull-right-xs w-25 w-100-xs" href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>">
+                                    <a class="pull-left pull-right-xs w-35 w-100-xs" href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>">
                                         <img class="media-object lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                              data-src="<?= $news['news_image'] ?>" alt="<?= $news['news_title']?>" style="width: ">
                                     </a>
                                     <div class="media-body w-100-xs">
                                         <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                            <a href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>" style="font-size: 2rem">
+                                            <a href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>" style="font-size: 1.2rem">
                                                 <?= $news['news_title']?>
                                             </a>
                                         </h3>

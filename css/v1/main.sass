@@ -3,18 +3,17 @@
 //INIT
 @include home-title
 @include line-title
-@include category-time-author(1.1rem)
+@include category-time-author(0.8rem)
 
 .media-body
     h3.media-heading
-        @include media-heading(1.6rem)
+        @include media-heading(1.4rem)
 
 
 .carousel-custom
     h3.carousel-heading
-        font-size: 1.5rem
+        font-size: 1rem
         margin: 0
-        text-align: justify
         background: #ebebeb
         height: 75px
         padding: 7px
@@ -37,7 +36,7 @@
 .news-list
     @include news-list
 .meta-archive
-    @include category-time-author(1.3rem)
+    @include category-time-author(0.9rem)
 .archive
     @include archive
 .media-list
@@ -74,7 +73,6 @@
                 font-weight: bold
                 &:after
                     float: right
-                    font-size: 14px
                     color: #666
                     font-family: 'Glyphicons Halflings'
                     content: "\2b" !important
@@ -89,8 +87,7 @@
             .panel-body
                 .item-content
                     p
-                        text-align: justify
-                        font-size: 14px
+                        font-size: 1rem
                     .thumb-image
                         float: left
                         display: block
@@ -104,9 +101,7 @@
                             width: calc(100% - 115px)
                             width: -moz-calc(100% - 115px)
                             width: -webkit-calc(100% - 115px)
-                .item-footer
-                    line-height: 1
-                    .btn-more
+                .item-footer .btn-more
                         background: #ff8729
                         padding: 5px 10px
                         float: right
@@ -131,7 +126,7 @@
         color: white
         height: 100%
         h2.media-heading
-            font-size: 1.5rem
+            font-size: 1.2rem
 
 #page-list-tai-lieu, #page-list-sach, .my-carousel-2
     .media
@@ -150,7 +145,6 @@
                 height: auto
             .detail-des
                 padding: 10px
-                text-align: justify
                 background: #ffffff
                 position: absolute
                 bottom: 100%
@@ -159,7 +153,7 @@
                 width: 100%
                 height: 0
                 overflow: hidden
-                font-size: 1.6rem
+                font-size: 1rem
                 transition: .3s ease
         .img-doc
             transition: transform .2s
