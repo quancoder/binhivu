@@ -20,8 +20,9 @@ class Contact extends MY_Controller{
         $header['title'] = 'Liên hệ';
         $type= $this->input->get('type');
         $id = $this->input->get('id');
+        $info = array();
 
-        if(!is_numeric($id))
+        if($id != '' && !is_numeric($id))
         {
             redirect(site_url());
             die;
@@ -30,21 +31,20 @@ class Contact extends MY_Controller{
         if($type=='book')
         {
             $info = $this->Book_model->book_info($id);
+            if(empty($info))
+            {
+                redirect(site_url());
+                die;
+            }
         }
         else if($type == 'document')
         {
             $info = $this->Document_model->document_info($id);
-        }
-        else
-        {
-            redirect(site_url());
-            die;
-        }
-
-        if(empty($info))
-        {
-            redirect(site_url());
-            die;
+            if(empty($info))
+            {
+                redirect(site_url());
+                die;
+            }
         }
 
         $data['info'] = $info;

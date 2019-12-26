@@ -13,7 +13,7 @@
         </div>
 
         <div style="margin-bottom: 20px; margin-top: 20px" class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 <?=$type=='' || $id ==''? 'hide': '' ?>">
                 <h3 class="post-title">
                    Sản phẩm
                 </h3>
