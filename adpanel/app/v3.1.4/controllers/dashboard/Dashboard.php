@@ -18,7 +18,9 @@ class Dashboard extends MY_Controller {
         $data['book'] = $this->Home_model->book_statistic();
         $data['news'] = $this->Home_model->news_statistic();
         $data['funs'] = $this->Home_model->funs_statistic();
-        $data['contact'] = $this->Home_model->contact_list(0);
+        $data['contact_0'] = $this->Home_model->contact_list(0);
+        $data['contact_1'] = $this->Home_model->contact_list(1);
+        $data['contact_2'] = $this->Home_model->contact_list(2);
 
 		$this->_loadHeader();
 		

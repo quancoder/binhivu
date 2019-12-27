@@ -8,7 +8,7 @@ class Document_model extends CI_Model
 	}
 
 	//info
-        function document_info($doc_id)
+    function document_info($doc_id)
     {
         $data = array();
         $iconn = $this->db->conn_id;

@@ -4,22 +4,15 @@
         <h2 class="home-title clearfix mt-10">
             <a href="<?=site_url('lien-he.html')?>" title="" style="float: left">Liên hệ với tác giả</a>
         </h2>
-        <div class="alert alert-success" role="alert" style="display: <?= $success == TRUE ? 'block' : 'none'?>">
-            <strong>Thành công!</strong>
-            Bạn đã gửi thành công yêu câu
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-        </div>
 
         <div style="margin-bottom: 20px; margin-top: 20px" class="row">
-            <div class="col-xs-12 col-sm-4 col-sm-4 <?=$type=='' || $id ==''? 'hide': '' ?>">
+            <div class="col-xs-12 col-sm-3 col-sm-3 <?=$type=='' || $id ==''? 'hide': '' ?>">
                 <h3 class="post-title">
                    Sản phẩm
                 </h3>
                 <div id="page-list-sach">
                     <div class="media mb-10 ribbon-holder">
-                        <?php if($type=='book'){?>
+                        <?php if($type == 'book'){?>
                         <div class="detail-des-image h-280 h-auto-xs">
                             <a href="<?= toURLFriendly($info['b_name'], 'book', $info['b_id'])?>">
                                 <div class="detail-image">
@@ -32,7 +25,7 @@
                             </a>
                         </div>
                         <div class="media-body" style="text-align: left;">
-                            <h3 class="media-heading h-70" style="font-size: 1.4rem">
+                            <h3 class="media-heading h-70" style="font-size: 1rem; text-align: center">
                                 <a href="<?= toURLFriendly($info['b_name'], 'book', $info['b_id'])?>">
                                     <?= $info['b_name']?>
                                 </a>
@@ -67,7 +60,7 @@
                                 <a href="<?= toURLFriendly($info['doc_name'], 'document', $info['doc_id'])?>">
                                     <div class="detail-image">
                                         <?= $info['doc_free']==1 ? '<span class="sale">Free</span>' : ''?>
-                                        <img class="media-object img-doc h-280 h-auto-xs w-100" src="<?= $info['doc_image']?>" alt="<?= $info['doc_name']?>">
+                                        <img class="media-object img-doc h-280 h-auto-xs" src="<?= $info['doc_image']?>" alt="<?= $info['doc_name']?>">
                                     </div>
                                     <div class="detail-des">
                                         <div class="text"><?= trim_text($info['doc_des'], 77)?></div>
@@ -75,7 +68,7 @@
                                 </a>
                             </div>
                             <div class="media-body" style="text-align: left;">
-                                <h3 class="media-heading h-70" style="font-size: 1.4rem">
+                                <h3 class="media-heading h-70" style="font-size: 1rem; text-align: center">
                                     <a href="<?= toURLFriendly($info['doc_name'], 'document', $info['doc_id'])?>">
                                         <?= $info['doc_name']?>
                                     </a>
@@ -110,7 +103,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-sm-8">
+            <div class="col-xs-12 col-sm-9 col-sm-9">
                 <h3 class="post-title">
                     Thông tin liên hệ
                 </h3>
@@ -122,40 +115,43 @@
 
                     </div>
                     <div class="row">
-                        <form method="post" about="">
+                        <form id="frm" method="post" action="<?=site_url('ajax_add_contact')?>">
                             <div class="col-xs-12 col-sm-6 col-sm-6">
                                 <p>
-                                    <label class="col-form-label" for="name"><i class="fa fa-pencil"></i> Họ và tên</label>
-                                    <input id="name" name="name" class="form-control" required=""/>
-                                </p>
-                                <p>
-                                    <label class="col-form-label" for="address"><i class="fa fa-pencil"></i> Địa chỉ </label>
-                                    <input id="address" name="address" class="form-control" >
+                                    <label class="col-form-label" for="c_name"><i class="fa fa-pencil"></i> Họ và tên</label>
+                                    <input id="c_name" name="c_name" class="form-control" required="" value=""/>
                                 </p>
 
                                 <p>
-                                    <label class="col-form-label" for="email"><i class="fa fa-pencil"></i> Email</label>
-                                    <input id="email" name="email" class="form-control" type="email" required=""/>
+                                    <label class="col-form-label" for="c_email"><i class="fa fa-pencil"></i> Email</label>
+                                    <input id="c_email" name="c_email" class="form-control" type="email" required="" value=""/>
                                 </p>
 
                                 <p>
-                                    <label class="col-form-label" for="phone-number"><i class="fa fa-pencil"></i> Số điện thoại </label>
-                                    <input id="phone-number" name="phone-number" class="form-control" required="" type="number"/>
+                                    <label class="col-form-label" for="c_phone"><i class="fa fa-pencil"></i> Số điện thoại </label>
+                                    <input id="c_phone" name="c_phone" class="form-control" required="" type="number" value=""/>
                                 </p>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-sm-6">
                                 <p>
-                                    <label class="col-form-label" for="title"><i class="fa fa-pencil"></i> Tiêu đề </label>
-                                    <input id="title" name="title" class="form-control"  required=""/>
+                                    <label class="col-form-label" for="c_content"><i class="fa fa-pencil"></i> Yêu cầu</label>
+                                    <textarea id="c_content" name="c_content" class="form-control" required="" rows="6"><?=$content?></textarea>
                                 </p>
                                 <p>
-                                    <label class="col-form-label" for="des"><i class="fa fa-pencil"></i> Yêu cầu</label>
-                                    <textarea id="des" name="des" class="form-control" required="" rows="6"></textarea>
-                                </p>
-                                <p>
+                                    <input type="hidden" value="<?=$type?>" name="c_type">
+                                    <input type="hidden" value="<?=$id?>" name="c_req_id">
                                     <input type="submit" class="btn btn-primary" value="Gửi đi">
                                     <input type="reset" class="btn btn-warning" value="Soạn lại">
                                 </p>
+                            </div>
+                            <div class="col-xs-12">
+                            <div class="alert alert-success" role="alert" style="display: none">
+                                <strong>Thành công!</strong>
+                                Bạn đã gửi thành công yêu câu <a href="<?=site_url()?>">Quay lại trang chủ</a>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -171,3 +167,23 @@
         </div>
     </div>
 </main>
+<script>
+    $("#frm").submit(function(event){
+        event.preventDefault(); //prevent default action
+        var post_url = $(this).attr("action"); //get form action url
+        var request_method = $(this).attr("method"); //get form GET/POST method
+        var form_data = $(this).serialize(); //Encode form elements for submission
+
+        $.ajax({
+            url : post_url,
+            type: request_method,
+            data : form_data
+        }).done(function(response){ //
+            if(response == 'success'){
+                $('.alert').show()
+            }else{
+                alert(response);
+            }
+        });
+    });
+</script>

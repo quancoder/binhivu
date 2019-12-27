@@ -90,10 +90,14 @@ class MY_Controller extends CI_Controller
 
     protected function _loadHeader($title = '')
     {
+        $this->load->model('contact/Contact_model');
+        $new_contact = $this->Contact_model->contact_list(0);
+
         $header = array();
 		$header['title'] = $title == '' ? $this->_product_name . ' - Administartor' : $this->_product_name . ' - ' . $title;
 		$header['function'] = $this->_function;
         $header['module'] = $this->router->class;
+        $header['new_contact'] = count($new_contact);
 		// load header
 		$this->load->view($this->_template_f . 'header_view', $header);
     }

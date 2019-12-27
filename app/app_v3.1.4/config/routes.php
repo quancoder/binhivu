@@ -76,6 +76,8 @@ $route['tim-kiem-sach.html'] = 'book/book/search';
 //lien he
 $route['lien-he.html'] = 'contact/contact/index';
 
+$route['ajax_add_contact'] = 'contact/contact/ajax_add_contact';
+
 //gioi thieu
 $route['gioi-thieu.html'] = 'intro/intro/index';
 

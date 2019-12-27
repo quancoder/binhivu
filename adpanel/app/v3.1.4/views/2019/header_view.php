@@ -32,7 +32,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>plugins/tag-input/tagsinput.css">
 
     <!-- REQUIRED SCRIPTS CUSTOM -->
-    <script src="<?php echo base_url(); ?>js/2019/all.js"></script>
+    <script src="<?php echo base_url() . "js" . $template_f; ?>all.js"></script>
+    <script src="<?php echo base_url() . "js" . $template_f; ?>common.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!--quanlt model file manager-->
@@ -203,7 +204,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
                     <li class="nav-item">
-                        <a class="nav-link" href="/adpanel">
+                        <a class="nav-link <?=$module=='dashboard' ?' active' : ''?>" href="/adpanel">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p> Trang chủ </p></a>
                     </li>
@@ -238,13 +239,13 @@
                         </a>
                     </li>
 
-                    <li class="nav-header" style="display: none"> KHÁCH HÀNG</li>
+                    <li class="nav-header"> KHÁCH HÀNG</li>
 
-                    <li class="nav-item" style="display: none">
-                        <a href="<?php echo site_url("feed", $langcode) ?>" class="nav-link <?=$module=='feed' ?' active' : ''?>">
+                    <li class="nav-item">
+                        <a href="<?php echo site_url("contact", $langcode) ?>" class="nav-link <?=$module=='contact' ?' active' : ''?>">
                             <i class="nav-icon fas fa-comments"></i>
-                            <p> Phản hồi liên hệ
-                                <span class="right badge badge-info">10</span>
+                            <p> Phản hồi khách hàng
+                                <span class="right badge badge-info <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span>
                             </p>
                         </a>
                     </li>
