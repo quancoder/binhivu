@@ -71,3 +71,6 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+.small-box .icon>i.fa, .small-box .icon>i.fab, .small-box .icon>i.far, .small-box .icon>i.fas, .small-box .icon>i.glyphicon, .small-box .icon>i.ion{
+    top:100px
+}

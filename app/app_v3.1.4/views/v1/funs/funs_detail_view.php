@@ -10,7 +10,7 @@
                     <!--row1 left-->
                     <div class="col-sm-12 col-lg-12">
                         <div class="archive" style="border: none">
-                            <h2 class="heading-archive ml-20-xs mr-20-xs">
+                            <h2 class="heading-archive">
                                 <?php echo ($info['funs_title'])?>
                             </h2>
                             <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
@@ -32,11 +32,10 @@
                                     <div style="float: left">
                                         <span class="author mr-10"><i class="glyphicon glyphicon-user"></i> binhivu</span>
                                         <span class="time mr-10"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['funs_create_time'])?></span>
-                                        <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= ($info['funs_views'])?> Lượt xem</span>
+                                        <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= ($info['funs_views'])?></span>
                                     </div>
                                     <div style="float: right">
                                         <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
-                                        <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-size="small"></div>
                                     </div>
                                 </div>
                                 <div style="clear: both"></div>
@@ -44,7 +43,6 @@
                                     <?php echo ($info['funs_content']) ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
-                                <div class="fb-save" style="float: right" data-uri="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-size="small"></div>
                                 <div class="fb-comments" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $fun['funs_id'])?>" data-width="100%" data-numposts="5"></div>
                             </div>
                         </div>

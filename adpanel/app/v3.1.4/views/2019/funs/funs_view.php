@@ -75,7 +75,6 @@
                         <th>Tiêu đề</th>
                         <th style="width: 10%" class="text-center">Trạng thái</th>
                         <th style="width: 5%" class="text-right">Xem</th>
-                        <th style="width: 10%" class="text-right">Ngày đăng</th>
                         <th style="width: 10%" class="text-right">Sửa gần nhất</th>
                         <th style="width: 20%;">Từ khóa </th>
                         <th style="width: 5%" class="text-center"></th>
@@ -90,7 +89,13 @@
                                     <img src="<?=$fun['funs_thumbs']?>" class="img-fluid" />
                                 </a>
                             </td>
-                            <td class="align-middle font-weight-bold"><?php echo $fun['funs_title'] ?></td>
+                            <td class="align-middle font-weight-bold">
+                                <?php echo $fun['funs_title'] ?>
+                                <p style="color: #8c8c8c; font-weight:normal">
+                                    <?= get_time_ago($fun['funs_create_time'])?> <br>
+                                    <?= date('d/m/Y - h:m', strtotime($fun['funs_create_time'])) ?>
+                                </p>
+                            </td>
                             <td class="align-middle text-center">
                                 <?php if($fun['funs_status'] ==1){?>
                                     <span class="badge badge-primary">Hiển thị</span>
@@ -108,11 +113,7 @@
                                     <option value="4" <?= $fun['funs_status']==4 ? 'selected' : ''?> >Thùng rác</option>
                                 </select>
                             </td>
-                            <td class="align-middle text-right">0</td>
-                            <td class="align-middle text-right">
-                                <span><?= get_time_ago($fun['funs_create_time'])?></span>
-                                <p style="color: #8c8c8c"><?= date('h:m - d/m/Y', strtotime($fun['funs_create_time'])) ?></p>
-                            </td>
+                            <td class="align-middle text-right"><?=$fun['funs_views']?></td>
                             <td class="align-middle text-right">
                                 <?= strtotime($fun['funs_update_time']) > 0 ? get_time_ago($fun['funs_update_time']) : ''?>
                                 <p style="color: #8c8c8c">

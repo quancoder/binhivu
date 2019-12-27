@@ -8,14 +8,22 @@ class Dashboard extends MY_Controller {
 		parent::__construct();
 		
 		$this->_checkAdminPermission();
+        $this->load->model('home/Home_model');
 	}
 	
 	function index()
 	{
+	    $data = array();
+        $data['document'] = $this->Home_model->document_statistic();
+        $data['book'] = $this->Home_model->book_statistic();
+        $data['news'] = $this->Home_model->news_statistic();
+        $data['funs'] = $this->Home_model->funs_statistic();
+        $data['contact'] = $this->Home_model->contact_list(0);
+
 		$this->_loadHeader();
 		
-		$this->load->view($this->_template_f . 'dashboard/dashboard_view');
-		
+		$this->load->view($this->_template_f . 'dashboard/dashboard_view', $data);
+
 		$this->_loadFooter();
 	}
 
