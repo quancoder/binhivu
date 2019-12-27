@@ -180,7 +180,7 @@
                                     Trang chủ
                                 </a>
                                 <div class="visible-ega-table-xs">
-                                    <a href="<?=site_url('lien-he.html')?>" title="Giới thiệu">
+                                    <a href="<?=site_url()?>" title="Giới thiệu">
                                         Trang chủ
                                     </a>
                                 </div>

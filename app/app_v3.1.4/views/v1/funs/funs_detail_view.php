@@ -8,13 +8,13 @@
                 </h2>
                 <div class="row" style="margin-bottom: 20px;">
                     <!--row1 left-->
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-lg-12">
                         <div class="archive" style="border: none">
                             <h2 class="heading-archive ml-20-xs mr-20-xs">
                                 <?php echo ($info['funs_title'])?>
                             </h2>
                             <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
-                                <p class="sapo-archive mt-20" style="font-size: 1.6rem"><?php echo ($info['funs_sapo'])?></p>
+                                <p class="sapo-archive mt-20" style="font-size: 1rem"><?php echo ($info['funs_sapo'])?></p>
                                 <ul class="news-list" style="border: none;border-top: 1px solid #eeeeee; ">
                                     <?php $i = 1; foreach ($funs_top as $fun){ ?>
                                         <?php if($i <= 4){?>
@@ -30,7 +30,7 @@
                                 </ul>
                                 <div class="meta-archive">
                                     <div style="float: left">
-                                        <span class="author mr-10"><i class="glyphicon glyphicon-user"></i> <strong>binhivu</strong></span>
+                                        <span class="author mr-10"><i class="glyphicon glyphicon-user"></i> binhivu</span>
                                         <span class="time mr-10"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['funs_create_time'])?></span>
                                         <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= ($info['funs_views'])?> Lượt xem</span>
                                     </div>
@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
                                 <div style="clear: both"></div>
-                                <div class="content-archive mb-20 mt-10" style="font-size: 1.6rem">
+                                <div class="content-archive mb-20 mt-10" style="font-size: 1rem">
                                     <?php echo ($info['funs_content']) ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
@@ -52,7 +52,7 @@
                 </div>
                 <!--LIST LOOP NEWS-->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-12">
                         <h2 class="line-title clearfix" style="border: none">
                             <a href="javascript:void(0)" title="Góc thư giãn ">Đừng bỏ lỡ</a>
                         </h2>
@@ -70,7 +70,7 @@
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-sm-12">
                         <div class="zone-most-view">
                             <h2 class="line-title clearfix" style="border: none">
                                 <a href="javascript:void(0)" title="Góc thư giãn ">CÙNG CHUYÊN MỤC</a>
@@ -88,12 +88,12 @@
                                             </a>
                                             <div class="media-body w-100-xs">
                                                 <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 2rem">
+                                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 1.2rem">
                                                         <?= $fun['funs_title']?>
                                                     </a>
                                                 </h3>
                                                 <a href="<?= site_url('go-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
-                                                <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                                <span class="author"><i class="glyphicon  glyphicon-user"></i> binhivu</span> -
                                                 <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($fun['funs_views'])?></span> -
                                                 <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                                 <p style="margin-top: 10px; color: #1e1e1e"><?= $fun['funs_sapo']?></p>
@@ -156,7 +156,7 @@
                                          alt="<?= $funs['funs_title']?>">
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.6rem; line-height: 1.4">
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.2rem; line-height: 1.4">
                                         <a href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>">
                                             <?= $funs['funs_title']?>
                                         </a>
@@ -175,7 +175,7 @@
                                 <li>
                                     <h3>
                                         <a href="<?= toURLFriendly($funs['funs_title'], 'gtg', $funs['funs_id'])?>"
-                                           title="<?= $funs['funs_title']?>" style="font-size: 1.4rem">
+                                           title="<?= $funs['funs_title']?>" style="font-size: 1rem">
                                             <?= $funs['funs_title']?>
                                         </a>
                                     </h3>

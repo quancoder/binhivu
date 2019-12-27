@@ -131,15 +131,8 @@
             </div>
         </div>
     </footer>
-    <a href="tel:0926111368" class="suntory-alo-phone suntory-alo-green"
-       style="left: 0px; bottom: 0px;">
-        <div class="suntory-alo-ph-circle"></div>
-        <div class="suntory-alo-ph-circle-fill"></div>
-        <div class="suntory-alo-ph-img-circle"><i class="glyphicon glyphicon-earphone"></i></div>
-    </a>
-    </div>
 
-    <a href="tel:0926111368" class="suntory-alo-phone suntory-alo-green visible-xs visible-sm"
+    <a href="tel:0926111368" class="suntory-alo-phone suntory-alo-green hidden-xs"
        style="left: 0px; bottom: 0px;">
         <div class="suntory-alo-ph-circle"></div>
         <div class="suntory-alo-ph-circle-fill"></div>

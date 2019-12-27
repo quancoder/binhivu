@@ -8,14 +8,14 @@
                 </h2>
                 <div class="row" style="margin-bottom: 20px;">
                     <!--row1 left-->
-                    <div class="col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-lg-12">
                         <div class="archive" style="border: none">
                             <h2 class="heading-archive ml-20-xs mr-20-xs">
                                 <?php echo ($info['news_title'])?>
                             </h2>
                             <div class="entry-content pl-100 pr-100 pl-5-xs pr-5-xs">
                                 <div style="clear: both"></div>
-                                <p class="sapo-archive mt-20" style="font-size: 1.6rem"><?php echo ($info['news_sapo'])?></p>
+                                <p class="sapo-archive mt-20" ><?php echo ($info['news_sapo'])?></p>
                                 <ul class="news-list" style="border: none; border-top: 1px solid #eeeeee;">
                                     <?php $i = 1; foreach ($news_top as $news){ ?>
                                         <?php if($i <= 4){?>
@@ -32,7 +32,7 @@
                                 </ul>
                                 <div class="meta-archive">
                                     <div style="float: left">
-                                        <span class="author mr-10"><i class="glyphicon "></i> binhivu</span>
+                                        <span class="author mr-10"><i class="glyphicon  glyphicon-user"></i> binhivu</span>
                                         <span class="time mr-10"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($info['news_create_time'])?></span>
                                         <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($info['news_views'])?> Lượt xem</span>
                                     </div>
@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div style="clear: both"></div>
-                                <div class="content-archive mb-10 mt-10" style="font-size: 1.6rem">
+                                <div class="content-archive mb-10 mt-10" >
                                     <?php echo ($info['news_content']) ?>
                                 </div>
                                 <div class="mb-10 pb-10" style="border-bottom: 1px solid #eeeeee;">
@@ -63,7 +63,7 @@
                 </div>
                 <!--LIST LOOP NEWS-->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-sm-12">
                         <h2 class="line-title clearfix" style="border: none">
                             <a href="javascript:void(0)" title="Góc thư giãn ">ĐỪNG BỎ LỠ</a>
                         </h2>
@@ -81,13 +81,13 @@
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-sm-12">
                         <div class="zone-most-view">
                             <h2 class="line-title clearfix" style="border: none">
                                 <a href="javascript:void(0)" title="Góc thư giãn ">CÙNG CHUYÊN MỤC</a>
                             </h2>
                             <!--LIST NEWS MOST VIEWS-->
-                            <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
+                            <ul class="media-list main-list" style="margin-top: 20px; ">
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $news){ ?>
@@ -98,13 +98,13 @@
                                                      data-src="<?= $news['news_image'] ?>" alt="<?= $news['news_title']?>" style="width: ">
                                             </a>
                                             <div class="media-body w-100-xs">
-                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>" style="font-size: 2rem">
+                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.2rem">
+                                                    <a href="<?= toURLFriendly($news['news_title'], 'tt', $news['news_id'])?>" >
                                                         <?= $news['news_title']?>
                                                     </a>
                                                 </h3>
                                                 <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
-                                                <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                                <span class="author"><i class="glyphicon  glyphicon-user"></i> binhivu</span> -
                                                 <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($news['news_views'])?></span> -
                                                 <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($news['news_create_time'])?></span>
                                                 <p style="margin-top: 10px; color: #1e1e1e"><?= $news['news_sapo']?></p>
@@ -150,7 +150,7 @@
                                          alt="<?= $new['news_title']?>">
                                 </a>
                                 <div class="media-body">
-                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1.6rem; line-height: 1.2">
+                                    <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0; font-size: 1rem; line-height: 1.2">
                                         <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                             <?= $new['news_title']?>
                                         </a>
@@ -172,7 +172,7 @@
                                 <li>
                                     <h3>
                                         <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>"
-                                           title="<?= $new['news_title']?>" style="font-size: 1.4rem"><?= $new['news_title']?></a>
+                                           title="<?= $new['news_title']?>" style="font-size: 1rem"><?= $new['news_title']?></a>
                                     </h3>
                                 </li>
                             <?php } ?>

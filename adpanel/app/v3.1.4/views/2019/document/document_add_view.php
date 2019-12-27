@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="doc_status_1" value="ok" class="btn btn-primary float-left"><i class="fa fa-pencil"></i> Đăng lên trang chủ</button>
+                        <button type="submit" name="doc_status_1" value="ok" class="btn btn-danger float-left"><i class="fa fa-pencil"></i> Đăng lên trang chủ</button>
 
                         <div class="float-right">
                             <button type="reset" class="btn btn-default"><i class="fa fa-pencil" ></i> Nhập lại</button>

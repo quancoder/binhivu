@@ -2,7 +2,7 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-8" >
+            <div class="col-sm-8" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TÌM KIẾM TÀI LIỆU</a>
@@ -17,7 +17,7 @@
                                 </a>
                                 <div class="media-body w-100-xs">
                                     <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                        <a href="<?= toURLFriendly($doc['doc_name'], 'book', $doc['doc_id'])?>" style="font-size: 2rem">
+                                        <a href="<?= toURLFriendly($doc['doc_name'], 'book', $doc['doc_id'])?>" style="font-size: 1.2rem">
                                             <?= $doc['doc_name']?>
                                         </a>
                                     </h3>

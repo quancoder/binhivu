@@ -1,14 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 <main>
     <div class="container" style="background: #fff">
-        <div style="margin: 10px 0px">
-            <a href="<?= site_url()?>">Trang Chủ</a> ➝ Tin tức
-        </div>
         <div class="row">
             <!--1 NEW NOI BAT-->
-            <div class="col-md-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6">
                 <h2 class="home-title">
-                    <a href="javascript:void(0)" title="Tin tức mới">Tin nổi bật</a>
+                    <a href="javascript:void(0)" title="Tin tức mới">Tin tức nổi bật</a>
                 </h2>
                 <div class="featured-article">
                     <?php $new = $news_list[0]; ?>
@@ -24,7 +21,7 @@
                         <p>
                             <a href="<?= site_url('tin-tuc.html')?>">
                                 <span class="category-name">Tin tức</span></a> -
-                            <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                            <span class="author"><i class="glyphicon  glyphicon-user"></i> binhivu</span> -
                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                         </p>
 
@@ -48,14 +45,14 @@
                 </ul>
             </div>
             <!--4 NEW MOI-->
-            <div class="col-md-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6">
                 <h2 class="home-title">
-                    <a href="javascript:void(0)" title="Tin tức mới">Tin mới nhất </a>
+                    <a href="javascript:void(0)" title="Tin tức mới">Tin tức mới nhất </a>
                 </h2>
                 <div class="row">
-                    <?php $i= 2; foreach ($news_list as $new){ ?>
+                    <?php $i= 1; foreach ($news_list as $new){ ?>
                         <?php if($i >=2 and $i <=5){?>
-                            <div class="col-md-6 col-xs-12 pr-0">
+                            <div class="col-sm-6 col-xs-12 pr-0">
                                 <div class="featured-articles featured-articles-min pull-left mb-5 h-400 min-h-400 h-xs-auto">
                                     <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>">
                                         <img class="w-100 h-150 h-xs-auto" src="<?= $new['news_image'] ?>" alt="<?= $new['news_title'] ?>">
@@ -86,7 +83,7 @@
 
         <!--LIST LOOP NEWS-->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <h2 class="home-title clearfix">
                     <a href="javascript:void(0)" title="BÀI VIẾT XEM NHIỀU NHẤT">Đừng bỏ lỡ</a>
                 </h2>
@@ -107,7 +104,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-7" >
+            <div class="col-sm-7" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TIN TỨC XEM NHIỀU NHẤT</a>
@@ -159,7 +156,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-sm-5">
                 <div id="accordion-document" class="departments" style="margin-bottom: 25px;">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>

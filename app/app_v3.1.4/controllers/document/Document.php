@@ -38,9 +38,9 @@ class Document extends MY_Controller{
             $doc_list = $this->Document_model->document_list_paging(ALL_USER, $status, '', '', $start, $limit);
             $data['doc_list'] = $doc_list['list'];
         }
-        $book_top = $this->Book_model->book_list_top_view();
+        $doc_top = $this->Document_model->document_list_top_view();
 
-        $data['book_top'] = $book_top;
+        $data['doc_top'] = $doc_top;
     	$this->_loadHeader($header);
     	$this->load->view($this->_template_f . 'document/document_list_view', $data);
     	$this->_loadFooter();

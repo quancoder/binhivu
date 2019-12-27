@@ -2,7 +2,7 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-8" >
+            <div class="col-sm-8" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)">Tìm kiếm sách</a>
@@ -17,7 +17,7 @@
                                 </a>
                                 <div class="media-body w-100-xs">
                                     <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                        <a href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" style="font-size: 2rem">
+                                        <a href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" style="font-size: 1.2rem">
                                             <?= $book['b_name']?>
                                         </a>
                                     </h3>

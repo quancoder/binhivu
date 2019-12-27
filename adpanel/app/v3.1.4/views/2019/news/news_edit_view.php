@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="submit" value="1" class="btn btn-primary"><i class="fa fa-pencil"></i> Cập nhật thay đổi</button>
+                        <button type="submit" name="submit" value="1" class="btn btn-danger"><i class="fa fa-pencil"></i> Cập nhật thay đổi</button>
                     </div>
                 </div>
             </div>

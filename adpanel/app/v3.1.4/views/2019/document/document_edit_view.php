@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" name="submit" value="ok" class="btn btn-primary float-left"><i class="fa fa-pencil"></i> Lưu thay đổi</button>
+                        <button type="submit" name="submit" value="ok" class="btn btn-danger float-left"><i class="fa fa-pencil"></i> Lưu thay đổi</button>
                     </div>
                 </div>
             </div>

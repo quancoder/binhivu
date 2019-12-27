@@ -13,13 +13,13 @@
                 </div>
 
                 <div class="tieude2 w-70 w-100-xs" style="margin: 0 auto">
-                    <p style="text-align:center;color:#FF8C00; font-size:4rem;  font-family:tahoma,geneva,sans-serif">
+                    <p style="text-align:center;color:#FF8C00; font-size:3rem;  font-family:tahoma,geneva,sans-serif">
                         <strong> <?= $info['doc_name'] ?> </strong>
                     </p>
                 </div>
 
                 <div class="stat1">
-                    <p style="text-align:center; font-size:2rem;color:#FFFFFF; font-family:tahoma,geneva,sans-serif">
+                    <p style="text-align:center; font-size:1.4rem;color:#FFFFFF; font-family:tahoma,geneva,sans-serif">
                         <i class="glyphicon glyphicon-download"></i> <?= $info['doc_download'] ?> tải xuống
                         &nbsp;&nbsp;&nbsp;
                         <i class="glyphicon glyphicon-eye-open"></i> <?= $info['doc_view'] ?> xem
@@ -39,7 +39,7 @@
     </div>
     <div class="container mt-10">
         <div class="row">
-            <div class="col-xs-12 col-md-4">
+            <div class="col-xs-12 col-sm-4">
                 <img src="<?= $info['doc_image'] ?>">
                 <div class="tag-item mt-20">
                     <p>
@@ -51,7 +51,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-8">
+            <div class="col-xs-12 col-sm-8">
                 <div style="background: white; padding: 10px">
                     <div class="">
                         <?= $info['doc_content'] ?>
@@ -62,10 +62,10 @@
     </div>
     <div class="container-fluid mt-10"
          style="padding: 50px 0; text-align: center; background-color: #b51b06; color: white ">
-        <div style="font-size: 2rem; display: inline-block" class="w-70 w-100-xs">
+        <div style="font-size: 1.4rem; display: inline-block" class="w-70 w-100-xs">
             <div>
                 <p>ĐÃ CÓ <span style="color: #ffef00"><?= $info['doc_download'] ?></span> LƯỢT TẢI</p>
-                <p style="font-size: 3rem"><?= $info['doc_name'] ?></p>
+                <p style="font-size: 2rem"><?= $info['doc_name'] ?></p>
             </div>
 
             <?php if($info['doc_free']==1){?>
@@ -91,7 +91,7 @@
     </div>
     <div class="container">
         <h2 class="home-title clearfix">
-            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Đề xuất cho bạn</a>
+            <a href="<?= site_url('sach.html') ?>" title="DÂN SỰ ">Tài liệu liên quan</a>
         </h2>
         <div id="page-list-tai-lieu" class="row" style="margin-bottom: 20px; margin-top: 20px">
             <?php foreach ($doc_list as $doc) { ?>
@@ -109,7 +109,7 @@
                             </a>
                         </div>
                         <div class="media-body" style="text-align: left;">
-                            <h3 class="media-heading h-70" style="font-size: 1.4rem">
+                            <h3 class="media-heading h-70" style="font-size: 1rem; text-align: center">
                                 <a href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>">
                                     <?= $doc['doc_name']?>
                                 </a>

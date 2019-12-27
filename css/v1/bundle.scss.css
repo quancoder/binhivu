@@ -1,7 +1,17 @@
 ﻿html{
     color: #010101;
-    font-size: 16px;
     font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", sans-serif
+}
+
+@media (max-width: 767px) {
+    html{
+        font-size: 16px;
+    }
+}
+@media (min-width: 768px) {
+    html{
+        font-size: 14px;
+    }
 }
 ﻿html, body {
     margin: 0;

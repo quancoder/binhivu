@@ -2,14 +2,14 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-sm-7">
                 <div id="zone-news">
                     <h1 class="home-title">
-                        <a href="<?= site_url('tin-tuc.html')?>" >TIN MỚI NHẤT</a>
+                        <a href="<?= site_url('tin-tuc.html')?>" >TIN TỨC MỚI NHẤT</a>
                     </h1>
                     <div class="row">
-                        <div class="col-md-8">
-                            <div class="featured-article mb-20">
+                        <div class="col-sm-8">
+                            <div class="featured-article mb-5">
                                 <?php $new = $news_list[0]?>
                                 <a href="<?= toURLFriendly($new['news_title'],'tt', $new['news_id'])?>">
                                     <img class="img-responsive w-100" src="<?=$new['news_image']?>"
@@ -27,31 +27,30 @@
                                         <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
                                     </p>
-                                    <p style="margin-bottom: 0; text-align: justify; color: #cccccc">
+                                    <p style="margin-bottom: 0; color: #cccccc">
                                         (Tin tức)  <?= ($news_list[0]['news_sapo'])?>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <!--row1 right-->
-                        <div class="col-md-4 mt-20-xs" id="list-news-right">
-                            <div class="media-list main-list" style="text-align: justify">
+                        <div class="col-sm-4" id="list-news-right">
+                            <div class="media-list main-list">
                                 <?php $i=1?>
                                 <?php foreach ($news_list as $new){?>
                                     <?php if($i >= 2 and $i <=3){?>
-                                        <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
-                                            <div class="media-body">
-                                                <a class="" href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>">
-                                                    <img class="media-object lazy w-100" src="<?=$new['news_image']?>"
-                                                         data-src="<?=$new['news_image']?>" alt="<?= $new['news_title']?>">
-                                                </a>
-                                                <a href="<?= site_url('tin-tuc.html')?>"><span class="category-name">Tin tức</span></a> -
-                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($new['news_create_time'])?></span>
-                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="font-size: 1rem">
+                                        <div class="featured-article mb-5">
+                                            <a href="<?= toURLFriendly($new['news_title'],'tt', $new['news_id'])?>">
+                                                <img class="img-responsive w-100" src="<?=$new['news_image']?>"
+                                                     data-src="<?=$new['news_image']?>"
+                                                     alt="<?= $new['news_title']?>">
+                                            </a>
+                                            <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                                <h2 class="media-heading">
+                                                    <a href="<?= toURLFriendly(($new['news_title']),'tt', $new['news_id'])?>" style="color: #fb7e31; font-size: 1rem" class="archive-i">
                                                         <?= $new['news_title']?>
                                                     </a>
-                                                </h3>
+                                                </h2>
                                             </div>
                                         </div>
                                     <?php } ?>
@@ -59,33 +58,11 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            <!--LIST LOOP NEWS-->
+                        <div class="col-sm-12">
                             <h2 class="line-title clearfix" style="border: none">
-                                <a href="javascript:void(0)" title="Góc thư giãn ">TIN ĐÁNG CHÚ Ý</a>
+                                <a href="javascript:void(0)" title="Góc thư giãn ">NỔI BẬT NHẤT</a>
                             </h2>
-                            <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
-                                <?php $i=1?>
-                                <?php foreach ($news_list as $new){ ?>
-                                    <?php if($i >= 4){?>
-                                        <div class="item">
-                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
-                                                <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
-                                                     data-src="<?=$new['news_image']?>" >
-                                            </a>
-                                            <h3 class="carousel-heading">
-                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= trim_text($new['news_title'], 17)?></a>
-                                            </h3>
-                                        </div>
-                                    <?php } ?>
-                                <?php $i++;} ?>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <h2 class="line-title clearfix" style="border: none">
-                                <a href="javascript:void(0)" title="Góc thư giãn ">TIN NỔI BẬT</a>
-                            </h2>
-                            <ul class="media-list main-list" style="margin-top: 20px; text-align: justify;">
+                            <ul class="media-list main-list mt-10" >
                                 <?php
                                 $i = 1;
                                 foreach ($news_top_view as $new){ ?>
@@ -127,6 +104,28 @@
                                 <?php $i++;} ?>
                             </ul>
                         </div>
+                        <div class="col-sm-12">
+                            <!--LIST LOOP NEWS-->
+                            <h2 class="line-title clearfix" style="border: none;">
+                                <a href="javascript:void(0)" title="Góc thư giãn ">ĐỪNG BỎ LỠ</a>
+                            </h2>
+                            <div class="my-carousel-1 owl-carousel owl-theme carousel-custom">
+                                <?php $i=1?>
+                                <?php foreach ($news_list as $new){ ?>
+                                    <?php if($i >= 4){?>
+                                        <div class="item">
+                                            <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>">
+                                                <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$new['news_title']?>"
+                                                     data-src="<?=$new['news_image']?>" >
+                                            </a>
+                                            <h3 class="carousel-heading">
+                                                <a href="<?= toURLFriendly($new['news_title'], 'tt', $new['news_id'])?>" title="<?= $new['news_title']?>"><?= trim_text($new['news_title'], 17)?></a>
+                                            </h3>
+                                        </div>
+                                    <?php } ?>
+                                    <?php $i++;} ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -134,9 +133,9 @@
                     <h1 class="home-title">
                         <a href="<?= site_url('goc-thu-gian.html')?>" >GÓC THƯ GIÃN</a>
                     </h1>
-                    <div class="row" style="margin-bottom: 20px;">
+                    <div class="row" style="margin-bottom: 10px;">
                         <!--row1 left-->
-                        <div class="col-md-7 col-lg-7">
+                        <div class="col-sm-8 col-lg-8">
                             <div class="featured-article">
                                 <?php $fun = $funs_list[0]?>
                                 <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
@@ -155,7 +154,7 @@
                                         <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                     </p>
-                                    <p style="margin-bottom: 0px">
+                                    <p style="margin-bottom: 0px; color: #cccccc">
                                         (Góc thư giãn)  <?= ($fun['funs_sapo'])?>
                                     </p>
                                     <div class="clearfix"></div>
@@ -163,59 +162,35 @@
                             </div>
                         </div>
                         <!--row1 right-->
-                        <div class="col-md-5 col-lg-5"  id="list-thu-gian-right">
-                            <div class="media-list main-list" style="text-align: justify">
-                                <?php $i=1?>
-                                <?php foreach ($funs_list as $fun){?>
-                                    <?php if($i >= 2 and $i <=3){?>
-                                        <div class="media" style="padding-bottom: 10px;border-bottom: 2px solid #eee;">
-                                            <div class="media-body">
-                                                <a class="" href="<?= toURLFriendly(($fun['funs_title']),'gtg', $fun['funs_id'])?>">
-                                                    <img class="media-object lazy w-100" src="<?=$fun['funs_image']?>"
-                                                         data-src="<?=$fun['funs_image']?>" alt="<?= $fun['funs_title']?>">
-                                                </a>
-                                                <a href="<?= site_url('goc-thu-gian.html')?>"><span class="category-name">Góc thư giãn</span></a> -
-                                                <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
-                                                <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                                    <a href="<?= toURLFriendly(($fun['funs_title']),'gtg', $fun['funs_id'])?>" style="font-size: 1rem">
-                                                        <?= $fun['funs_title']?>
-                                                    </a>
-                                                </h3>
-                                            </div>
-                                        </div>
-                                    <?php } ?>
-                                    <?php $i++;} ?>
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <!--LIST LOOP NEWS-->
-                            <h2 class="line-title clearfix" style="border: none">
-                                <a href="javascript:void(0)" title="Góc thư giãn ">ĐÁNG CHÚ Ý</a>
-                            </h2>
-                            <div class="my-carousel-1 owl-carousel owl-theme carousel-custom mt-10">
-                                <?php $tmp = array_reverse($funs_list);
-                                foreach ($tmp as $fun){ ?>
-                                    <div class="item">
-                                        <a href="<?= toURLFriendly($fun['funs_title'], 'tt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>">
-                                            <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$fun['funs_title']?>"
-                                                 data-src="<?=$fun['funs_image']?>" >
+                        <div class="col-sm-4 col-lg-4"  id="list-thu-gian-right">
+                            <?php $i=1?>
+                            <?php foreach ($funs_list as $fun){?>
+                                <?php if($i >= 2 and $i <=3){?>
+                                    <div class="featured-article mb-5">
+                                        <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>">
+                                            <img class="thumb lazy w-100" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
+                                                 data-src="<?=$fun['funs_image']?>"
+                                                 alt="<?= $fun['funs_title']?>">
                                         </a>
-                                        <h3 class="carousel-heading">
-                                            <a href="<?= toURLFriendly($fun['funs_title'], 'gtt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>"><?= trim_text($fun['funs_title'], 17)?></a>
-                                        </h3>
+                                        <div class="block-title" style="padding: 8px; background-color: rgba(0, 0, 0,0.8);color: white;">
+                                            <h2 class="media-heading">
+                                                <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $funs_list['0']['funs_id'])?>" style="color: #fb7e31; font-size: 1rem" class="archive-i">
+                                                    <?= $fun['funs_title']?>
+                                                </a>
+                                            </h2>
+                                        </div>
                                     </div>
                                 <?php } ?>
-                            </div>
+                            <?php $i++;} ?>
                         </div>
                     </div>
                 </div>
 
                 <div class="zone-most-view">
                     <h2 class="line-title clearfix" style="border: none">
-                        <a href="javascript:void(0)" title="Góc thư giãn ">TRUYỆN XEM NHIỀU NHẤT</a>
+                        <a href="javascript:void(0)" title="Góc thư giãn ">NỔI BẬT NHẤT</a>
                     </h2>
-                    <ul class="media-list main-list" style="margin-top: 20px; text-align: justify;">
+                    <ul class="media-list main-list" >
                     <?php
                     $i = 1;
                     foreach ($funs_top_view as $fun){ ?>
@@ -258,9 +233,30 @@
                         <?php $i++;} ?>
                     </ul>
                 </div>
+
+                <div class="col-sm-12">
+                    <!--LIST LOOP NEWS-->
+                    <h2 class="line-title clearfix" style="border: none">
+                        <a href="javascript:void(0)" title="Góc thư giãn ">ĐỪNG BỎ LỠ</a>
+                    </h2>
+                    <div class="my-carousel-1 owl-carousel owl-theme carousel-custom mt-10">
+                        <?php $tmp = array_reverse($funs_list);
+                        foreach ($tmp as $fun){ ?>
+                            <div class="item">
+                                <a href="<?= toURLFriendly($fun['funs_title'], 'tt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>">
+                                    <img class="owl-lazy h-150 h-xs-auto" style="width: 100%;"  alt="<?=$fun['funs_title']?>"
+                                         data-src="<?=$fun['funs_image']?>" >
+                                </a>
+                                <h3 class="carousel-heading">
+                                    <a href="<?= toURLFriendly($fun['funs_title'], 'gtt', $fun['funs_id'])?>" title="<?= $fun['funs_title']?>"><?= trim_text($fun['funs_title'], 17)?></a>
+                                </h3>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-5">
+            <div class="col-sm-5">
                 <div id="accordion-document" class="departments">
                     <h1 class="home-title">
                         <a href="<?= site_url('tai-lieu.html')?>" >Tài liệu mới nhất</a>

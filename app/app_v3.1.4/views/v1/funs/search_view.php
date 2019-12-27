@@ -2,7 +2,7 @@
 <main>
     <div class="container" style="background: #fff">
         <div class="row">
-            <div class="col-md-8" >
+            <div class="col-sm-8" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">Bài viết tìm được</a>
@@ -16,7 +16,7 @@
                                 </a>
                                 <div class="media-body w-100-xs">
                                     <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                        <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 2rem">
+                                        <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 1.2rem">
                                             <?= $fun['funs_title']?>
                                         </a>
                                     </h3>
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-sm-4">
                 <div id="accordion-document" class="departments" style="margin-bottom: 25px;">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>

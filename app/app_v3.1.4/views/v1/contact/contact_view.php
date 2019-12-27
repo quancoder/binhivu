@@ -13,7 +13,7 @@
         </div>
 
         <div style="margin-bottom: 20px; margin-top: 20px" class="row">
-            <div class="col-xs-12 col-sm-4 col-md-4 <?=$type=='' || $id ==''? 'hide': '' ?>">
+            <div class="col-xs-12 col-sm-4 col-sm-4 <?=$type=='' || $id ==''? 'hide': '' ?>">
                 <h3 class="post-title">
                    Sản phẩm
                 </h3>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="col-xs-12 col-sm-8 col-sm-8">
                 <h3 class="post-title">
                     Thông tin liên hệ
                 </h3>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="row">
                         <form method="post" about="">
-                            <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="col-xs-12 col-sm-6 col-sm-6">
                                 <p>
                                     <label class="col-form-label" for="name"><i class="fa fa-pencil"></i> Họ và tên</label>
                                     <input id="name" name="name" class="form-control" required=""/>
@@ -143,7 +143,7 @@
                                     <input id="phone-number" name="phone-number" class="form-control" required="" type="number"/>
                                 </p>
                             </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="col-xs-12 col-sm-6 col-sm-6">
                                 <p>
                                     <label class="col-form-label" for="title"><i class="fa fa-pencil"></i> Tiêu đề </label>
                                     <input id="title" name="title" class="form-control"  required=""/>

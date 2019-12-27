@@ -3,7 +3,7 @@
     <div class="container" style="background: #fff">
         <div class="row">
             <!--1 NEW NOI BAT-->
-            <div class="col-md-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6">
                 <h2 class="home-title">
                     <a href="javascript:void(0)" title="Tin tức mới">Bài viết nổi bật</a>
                 </h2>
@@ -25,7 +25,7 @@
                             <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                         </p>
 
-                        <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify;color: #cccccc">
+                        <p style="font-size: 1rem; margin-bottom: 0; text-align: justify;color: #cccccc">
                             (Góc giải trí)  <?= $fun['funs_sapo']?>
                         </p>
                     </div>
@@ -45,7 +45,7 @@
                 </ul>
             </div>
             <!--4 NEW MOI-->
-            <div class="col-md-6 col-lg-6">
+            <div class="col-sm-6 col-lg-6">
                 <h2 class="home-title">
                     <a href="javascript:void(0)" title="Tin tức mới">Bài viết mới nhất </a>
                 </h2>
@@ -56,7 +56,7 @@
                                 <img class="w-100 h-150 h-xs-auto" src="<?= $fun['funs_image'] ?>" alt="<?= $fun['funs_title'] ?>">
                             </a>
                             <div class="block-title">
-                                <h2 class="media-heading" style="font-size: 2rem">
+                                <h2 class="media-heading" style="font-size: 1.2rem">
                                     <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="color: #fb7e31;" class="archive-i">
                                         <?= $fun['funs_title'] ?></a>
                                 </h2>
@@ -66,7 +66,7 @@
                                     <span class="author"><i class="glyphicon "></i> binhivu</span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                 </p>
-                                <p style="font-size: 1.3rem; margin-bottom: 0; text-align: justify; color: #cccccc">
+                                <p style="font-size: 1rem; margin-bottom: 0; text-align: justify; color: #cccccc">
                                     (Góc giải trí)  <?= (trim_text($fun['funs_sapo'], 35))?>
                                 </p>
                             </div>
@@ -79,7 +79,7 @@
 
         <!--LIST LOOP NEWS-->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <h2 class="home-title clearfix">
                     <a href="javascript:void(0)" title="BÀI VIẾT XEM NHIỀU NHẤT">Đừng bỏ lỡ</a>
                 </h2>
@@ -100,7 +100,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-7" >
+            <div class="col-sm-7" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="BÀI VIẾT XEM NHIỀU NHẤT">BÀI VIẾT XEM NHIỀU NHẤT</a>
@@ -119,12 +119,12 @@
                                     </a>
                                     <div class="media-body w-100-xs">
                                         <h3 class="media-heading" style="margin-top: 0; margin-bottom: 0;">
-                                            <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 2rem">
+                                            <a href="<?= toURLFriendly($fun['funs_title'], 'gtg', $fun['funs_id'])?>" style="font-size: 1.2rem">
                                                 <?= $fun['funs_title']?>
                                             </a>
                                         </h3>
                                         <a href="<?= site_url('goc-giai-tri.html')?>"><span class="category-name">Góc giải trí</span></a> -
-                                        <span class="author"><i class="glyphicon "></i> binhivu</span> -
+                                        <span class="author"><i class="glyphicon glyphicon-user"></i> binhivu</span> -
                                         <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($fun['funs_views'])?></span> -
                                         <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                         <p style="margin-top: 10px; color: #1e1e1e"><?= $fun['funs_sapo']?></p>
@@ -152,7 +152,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-sm-5">
                 <div id="accordion-document" class="departments" style="margin-bottom: 25px;">
                     <h2 class="home-title clearfix">
                         <a href="javascript:void(0)" title="TÀI LIỆU">TÀI LIỆU HAY</a>

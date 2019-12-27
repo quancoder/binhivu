@@ -2,23 +2,35 @@
 <main>
     <div class="container" style="background: #fff">
         <h2 class="home-title clearfix mt-10">
-            <a href="<?=site_url('sach.html')?>" title="" style="float: left">Sách</a>
-            <form method="get" action="<?=current_url()?>">
-                <select name="q" class="form-control w-95-xs w-10 mr-10" style="float: right" onchange="this.form.submit()">
+            <a href="<?=site_url('sach.html')?>" title="" style="float: left">Sách mới nhất</a>
+            <form method="get" action="<?=current_url()?>" class="hidden-xs">
+                <select name="q" class="form-control w-45-xs w-10 mr-10" style="float: right" onchange="this.form.submit()">
                     <option value="-1" <?=$q=='-1'?'selected' : ' '?> >Tất cả</option>
                     <option value="1" <?=$q=='1'?'selected' : ' '?>>Miễn phí</option>
                     <option value="0" <?=$q=='0'?'selected' : ' '?>>Tính phí</option>
                 </select>
-                <select name="order" class="form-control w-95-xs w-15 mr-10" style="float: right" onchange="this.form.submit()">
+                <select name="order" class="form-control w-45-xs w-15 mr-10" style="float: right" onchange="this.form.submit()">
                     <option value="asc" <?=$order=='asc'?'selected' : ''?> >Giá tăng dần</option>
                     <option value="desc" <?=$order=='desc'?'selected' : ''?> >Giá giảm dần</option>
                 </select>
                 <div class="clearfix"></div>
             </form>
         </h2>
+        <form method="get" action="<?=current_url()?>" class="visible-xs">
+            <select name="q" class="form-control w-45-xs w-10 mr-10" style="float: right" onchange="this.form.submit()">
+                <option value="-1" <?=$q=='-1'?'selected' : ' '?> >Tất cả</option>
+                <option value="1" <?=$q=='1'?'selected' : ' '?>>Miễn phí</option>
+                <option value="0" <?=$q=='0'?'selected' : ' '?>>Tính phí</option>
+            </select>
+            <select name="order" class="form-control w-45-xs w-15 mr-10" style="float: right" onchange="this.form.submit()">
+                <option value="asc" <?=$order=='asc'?'selected' : ''?> >Giá tăng dần</option>
+                <option value="desc" <?=$order=='desc'?'selected' : ''?> >Giá giảm dần</option>
+            </select>
+            <div class="clearfix"></div>
+        </form>
         <div id="page-list-sach" class="row" style="margin-bottom: 20px; margin-top: 20px">
             <?php foreach ($book_list as $item) { ?>
-            <div class="col-xs-12 col-sm-6 col-lg-3 col-lg-3">
+            <div class="col-xs-12 col-sm-3">
                 <div class="media mb-10 ribbon-holder ">
                     <div class="detail-des-image h-280 h-auto-xs">
                         <a href="<?= toURLFriendly($item['b_name'], 'book', $item['b_id'])?>">
@@ -32,7 +44,7 @@
                         </a>
                     </div>
                     <div class="media-body" style="text-align: left;">
-                        <h3 class="media-heading h-70" style="font-size: 1.4rem">
+                        <h3 class="media-heading h-70" style="font-size: 1rem; text-align: center;">
                             <a href="<?= toURLFriendly($item['b_name'], 'book', $item['b_id'])?>">
                                <?= $item['b_name']?>
                             </a>
@@ -68,7 +80,7 @@
             <?php } ?>
         </div>
         <h2 class="home-title clearfix">
-            <a href="<?= site_url('sach.html')?>" title="DÂN SỰ ">Sách đang được quan tâm</a>
+            <a href="<?= site_url('sach.html')?>" title="DÂN SỰ ">Sách xem nhiều nhất</a>
         </h2>
         <div class="my-carousel-2 owl-carousel owl-theme carousel-custom">
         <?php foreach ($book_top as $book){ ?>
@@ -76,10 +88,10 @@
                 <div class="media mb-10 ribbon-holder">
                     <?= $book['b_free']==1 ? '<span class="sale">Free</span>' : ''?>
                     <a href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>">
-                        <img class="media-object img-doc h-280 h-xs-auto" src="<?= $book['b_image']?>" alt="<?= $book['b_name']?>">
+                        <img class="media-object img-doc h-280 h-xs-auto w-100" src="<?= $book['b_image']?>" alt="<?= $book['b_name']?>">
                     </a>
-                    <div class="media-body" style="">
-                        <h3 class="media-heading h-70 h-xs-auto" style="font-size: 1.4rem">
+                    <div class="media-body" >
+                        <h3 class="media-heading h-70 h-xs-auto" style="font-size: 1rem">
                             <a href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>">
                                 <?= $book['b_name']?>
                             </a>
