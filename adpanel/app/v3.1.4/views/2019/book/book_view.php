@@ -22,7 +22,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="card">
                 <div class="card-body" style="padding: 1rem 0.5rem 0 0.5rem">
-                    <form method="get" action="<?= site_url('Book', $langcode)?>">
+                    <form method="get" action="<?= site_url('book', $langcode)?>">
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2 col-xl-2">
                                 <label class="col-form-label" for="search"><i class="fa fa-pencil"></i> Nhập tên sách</label>

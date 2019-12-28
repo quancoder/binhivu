@@ -9,7 +9,7 @@ class Intro extends MY_Controller {
 		
 		$this->_checkAdminPermission();
         // model
-        $this->load->model('intro/intro_model');
+        $this->load->model('intro/Intro_model');
 	}
 	
     function edit()
@@ -18,7 +18,7 @@ class Intro extends MY_Controller {
         $data['success'] = null;
         $data['error']= array();
 
-        $intro  = $this->intro_model->intro_info(1);
+        $intro  = $this->Intro_model->intro_info(1);
         $data['intro'] = $intro;
         if(isset($_POST['content'])){
             $data = $this->_edit_process($data, 1);
@@ -42,7 +42,7 @@ class Intro extends MY_Controller {
         /**CHECK CALL STORE**/
         if (empty($data['error']))
         {
-            $isUpdate = $this->intro_model->intro_edit($id,$content);
+            $isUpdate = $this->Intro_model->intro_edit($id,$content);
             if ($isUpdate == TRUE){
                 $data['success'] = TRUE;
             }else{

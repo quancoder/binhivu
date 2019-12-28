@@ -8,7 +8,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
-                    <li class="breadcrumb-item"><a href="<?=site_url('Book')?>">Sách</a></li>
+                    <li class="breadcrumb-item"><a href="<?=site_url('book')?>">Sách</a></li>
                     <li class="breadcrumb-item active">Thay đổi thông tin sách</li>
                     <li class="ml-3 float-right">
                         <a href="<?= site_url('book/add', $langcode) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Thêm sách</a>
@@ -21,7 +21,7 @@
 <div class="container-fluid">
     <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: <?= $success > 0 ? 'block' : 'none'?>">
         <strong>Thành công!</strong>
-        Bạn đã thêm thành công sách. <a href="<?=site_url('Book', $langcode)?>">Quay lại danh sách.</a>
+        Bạn đã thêm thành công sách. <a href="<?=site_url('book', $langcode)?>">Quay lại danh sách.</a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
@@ -29,7 +29,7 @@
 
     <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: <?= !empty($error) > 0 ? 'block' : 'none'?>">
         <strong>Thất bại!</strong>
-        <a href="<?=site_url('Book', $langcode)?>">Quay lại danh sách.</a>
+        <a href="<?=site_url('book', $langcode)?>">Quay lại danh sách.</a>
         <?php var_dump($error)?>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>

@@ -31,7 +31,7 @@
                 <span class="info-box-icon"><i class="fas fa-eye"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt xem</span>
+                    <span class="info-box-text">Lượt xem</span>
                     <span class="info-box-number"><?=number_format($news['total_view'])?></span>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <span class="info-box-icon"><i class="fas fa-eye"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt xem</span>
+                    <span class="info-box-text">Lượt xem</span>
                     <span class="info-box-number"><?=number_format($funs['total_view'])?></span>
                 </div>
             </div>
@@ -69,13 +69,13 @@
                 <span class="info-box-icon"><i class="fas fa-eye"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt xem</span>
+                    <span class="info-box-text">Lượt xem</span>
                     <span class="info-box-number"><?=number_format($document['total_view'])?></span>
                 </div>
                 <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt tải</span>
+                    <span class="info-box-text">Lượt tải</span>
                     <span class="info-box-number"><?=number_format($document['total_download'])?></span>
                 </div>
             </div>
@@ -94,13 +94,13 @@
                 <span class="info-box-icon"><i class="fas fa-eye"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt xem</span>
+                    <span class="info-box-text">Lượt xem</span>
                     <span class="info-box-number"><?=number_format($book['total_view'])?></span>
                 </div>
                 <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Tổng lượt tải</span>
+                    <span class="info-box-text">Lượt tải</span>
                     <span class="info-box-number"><?=number_format($book['total_download'])?></span>
                 </div>
             </div>

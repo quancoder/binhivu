@@ -35,7 +35,7 @@ class Intro_model extends CI_Model
         $stmt = $iconn->prepare($sql);
         if ($stmt) {
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            $stmt->bindParam(':content', $content, PDO::PARAM_INT);
+            $stmt->bindParam(':content', $content, PDO::PARAM_STR);
             // execute the stored procedure
             if ($stmt->execute()) {
                 $data = TRUE;
