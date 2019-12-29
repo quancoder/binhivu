@@ -33,24 +33,22 @@
                 <span aria-hidden="true">×</span>
             </button>
         </div>
+        <form method="post" action="<?= site_url('intro/edit')?>">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div class="card card-primary">
                     <form method="post" action="<?= site_url('intro/edit')?>">
                         <div class="card-header">
-                            <h3 class="card-title">Trang giới thiệu</h3>
+                            <h3 class="card-title">Phần giới thiệu</h3>
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                     <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
                                 </button>
                             </div>
                         </div>
 
                         <div class="card-body">
-                            <textarea id="intro-content" name="content"><?=$intro['content']?></textarea>
+                            <textarea id="intro" name="intro"><?=$intro['intro']?></textarea>
                         </div>
                         <div class="card-footer">
                             <button type="submit" name="submit" value="1" class="btn btn-danger"><i class="fa fa-pencil"></i> Cập nhật thay đổi</button>
@@ -58,12 +56,33 @@
                     </form>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Phần tuyên bố bản quyền</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <textarea id="copyright" name="copyright"><?=$intro['copyright']?></textarea>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" name="submit" value="1" class="btn btn-danger"><i class="fa fa-pencil"></i> Cập nhật thay đổi</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        </form>
     </div>
 </div>
 <script type="text/javascript">
     tinymce.init({
-        selector: '#intro-content',
+        selector: '#intro',
         menubar: true,
         width: '100%',
         theme: 'silver',
@@ -72,7 +91,29 @@
         plugins: [
             "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
-        toolbar1: 'insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
+        toolbar1: 'fontselect fontsizeselect |insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
+        image_advtab: true,
+        relative_urls: false,
+        external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
+        filemanager_subfolder: "settings",
+        filemanager_title: "Quản lý tài nguyên ",
+        external_plugins: {
+            "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",
+            "filemanager": "<?php echo base_url(); ?>plugins/filemanager/plugin.min.js"
+        }
+    });
+
+    tinymce.init({
+        selector: '#copyright',
+        menubar: true,
+        width: '100%',
+        theme: 'silver',
+        language: 'vi',
+        image_caption: true,
+        plugins: [
+            "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
+        ],
+        toolbar1: 'fontselect fontsizeselect |insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",

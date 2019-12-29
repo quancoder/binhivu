@@ -273,7 +273,7 @@
                                 <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': 'in'?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
-                                            <a class="thumb-image" href="" title="">
+                                            <a class="thumb-image" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="">
                                                 <img width="100" src="<?php echo base_url() . 'images/'; ?>rolling.svg" class="lazy" data-src="<?=$doc['doc_image']?>" alt="">
                                             </a>
                                             <strong><?=$doc['doc_name']?></strong>
@@ -311,7 +311,7 @@
                                 <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse <?= in_array($i, array(1,2,3,4,5)) ? 'in': 'in'?>" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
-                                            <a class="thumb-image" href="" title="">
+                                            <a class="thumb-image" href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" title="">
                                                 <img width="100" src="<?php echo base_url() . 'images/'; ?>rolling.svg" class="lazy" data-src="<?=$book['b_image']?>" alt="">
                                             </a>
                                             <strong><?= $book['b_name']; ?></strong>

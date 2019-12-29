@@ -6,7 +6,8 @@ class Contact_model extends CI_Model
 	{
 		parent::__construct();
 	}
-    function contact_list($status){
+    function contact_list($status)
+    {
         $data = array();
         $iconn = $this->db->conn_id;
         $sql = "CALL contact_list(:status);";
@@ -21,14 +22,13 @@ class Contact_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
-                        if($row['c_type']=='document'){
-                            $row['c_type_name'] = 'Tài liệu';
-                        }else{
-                            $row['c_type_name'] = 'Sách';
-                        }
+                        $row['c_type_name'] = '';
+                        if($row['c_type']=='document') $row['c_type_name'] = 'Tài liệu';
+                        if($row['c_type']=='book') $row['c_type_name'] = 'Sách';
                         $data[] = $row;
                     }
                 }
+                $stmt->closeCursor();
             }
         }
 
@@ -48,10 +48,19 @@ class Contact_model extends CI_Model
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     $data = $stmt->fetch(PDO::FETCH_ASSOC);
-                    if($data['c_type']=='document'){
+
+                    $data['c_type_name'] = '';
+                    if($data['c_type']=='document')
+                    {
                         $data['c_type_name'] = 'Tài liệu';
-                    }else{
+                    }
+                    else if($data['c_type']=='book')
+                    {
                         $data['c_type_name'] = 'Sách';
+                    }
+                    else if($data['c_type']=='email')
+                    {
+                        $data['c_type_name'] = 'Đăng ký nhận bài viết';
                     }
                 }
                 $stmt->closeCursor();

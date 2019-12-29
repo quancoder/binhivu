@@ -50,22 +50,23 @@
                             <div class="panel">
                                 <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-tai-lieu" href="#<?= 'document-'.$doc['doc_id'] ?>" aria-expanded="false" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <i class="glyphicon glyphicon-file"></i> <?= substr($doc['doc_des'], 0, 40)?>
+                                        <i class="glyphicon glyphicon-file"></i> <strong><?= ucwords(trim_text($doc['doc_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
                                 <div id="<?= 'document-'.$doc['doc_id'] ?>" class="panel-collapse collapse" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
-                                            <a class="thumb-image" href="" title="">
+                                            <a class="thumb-image" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="">
                                                 <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy"
                                                      data-src="<?= $doc['doc_image'] ?>" alt="">
                                             </a>
+                                            <strong><?=$doc['doc_name']?></strong>
                                             <p>
-                                                <?= substr($doc['doc_des'], 0, 200)?>...
+                                                <?= substr($doc['doc_des'], 45)?>
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
-                                            <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], '#tailieu', $doc['doc_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                            <a class="btn-more" href="<?= toURLFriendly($doc['doc_name'], 'document', $doc['doc_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -83,22 +84,25 @@
                             <div class="panel">
                                 <a style="display: block" class="panel-heading " role="button" data-toggle="collapse" data-parent="#box-book" href="#<?= 'book-'.$book['b_id'] ?>" aria-expanded="false" aria-controls="collapse1">
                                     <h4 class="panel-title">
-                                        <i class="glyphicon glyphicon-book"></i> <?= substr($book['b_name'], 0, 40)?>
+                                        <i class="glyphicon glyphicon-book"></i> <strong><?= ucwords(trim_text($book['b_name'], 9)); ?></strong>
                                     </h4>
                                 </a>
                                 <div id="<?= 'book-'.$book['b_id'] ?>" class="panel-collapse collapse" role="tabpanel">
                                     <div class="panel-body">
                                         <div class="item-content clearfix">
-                                            <a class="thumb-image" href="" title="">
+                                            <a class="thumb-image" href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" title="">
                                                 <img width="100" src="<?php echo base_url() . 'images/'; ?>tai-lieu.png" class="lazy"
                                                      data-src=" <?= $book['b_image'] ?>" alt="">
                                             </a>
+                                            <strong><?= $book['b_name']; ?></strong>
                                             <p>
-                                                <?= substr($book['b_des'], 0, 200)?>...
+                                                <?= trim_text($book['b_des'], 45)?>
                                             </p>
                                         </div>
                                         <div class="item-footer clearfix">
-                                            <a class="btn-more" href="<?= toURLFriendly($book['b_name'], '#book', $book['b_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
+                                            <span class="time mr-20"><i class="glyphicon glyphicon-download"></i> <?= number_format($doc['doc_download'])?> Lượt tải </span>
+                                            <span class="time"><i class="glyphicon glyphicon-eye-open"></i> <?= number_format($doc['doc_view'])?> Lượt xem </span>
+                                            <a class="btn-more" href="<?= toURLFriendly($book['b_name'], 'book', $book['b_id'])?>" title="">CHI TIẾT <i class="glyphicon glyphicon-menu-right"></i></a>
                                         </div>
                                     </div>
                                 </div>

@@ -185,7 +185,7 @@
         plugins: [
             "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
-        toolbar1: 'insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
+        toolbar1: 'fontselect fontsizeselect |insertfile undo redo | styleselect | forecolor backcolor emoticons| bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | preview fullscreen media print',
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",

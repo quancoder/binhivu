@@ -29,6 +29,8 @@
     <meta name="twitter:site" content="binhivu">
     <meta name="twitter:creator" content="binhivu">
 
+    <meta name='dmca-site-verification' content='eDllMlNuTVcyNTIxWGhBRGUvaTd5dz090' />
+
     <!--   favicon -->
     <link rel="icon" href="<?php echo base_url() . 'images/'; ?>logo-min.png" type="image/x-icon">
 
@@ -77,7 +79,7 @@
                             <form class="ega-form-search-top" role="search" method="get" action="<?=site_url('tim-kiem.html')?>">
                                 <div class="ega-div-top-search">
                                     <input autocomplete="off" name="search" type="search" placeholder="Nhập nội dung tìm kiếm..."  value="<?=$search?>">
-                                    <select name="type" style="position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
+                                    <select name="type" style="margin-right:15px;position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
                                         <option></option>
                                         <option value="1" <?=$module=='news'?'selected':''?> >Tin tức</option>
                                         <option value="2" <?=$module=='funs'?'selected':''?> >Giải trí</option>
@@ -166,7 +168,7 @@
                                         <div class="ega-div-top-search">
                                             <input autocomplete="off" name="query" type="search" value="<?=$search?>"
                                                    placeholder="Nhập nội dung tìm kiếm...">
-                                            <select name="type" style="position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
+                                            <select name="type" style="margin-right:15px;position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
                                                 <option></option>
                                                 <option value="1" <?=$module=='news'?'selected':''?> >Tin tức</option>
                                                 <option value="2" <?=$module=='funs'?'selected':''?> >Giải trí</option>

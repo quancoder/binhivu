@@ -1,18 +1,26 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
 <main>
     <div class="container" style="background: #fff">
-        <h2 class="home-title clearfix mt-10">
-            <a href="<?=site_url('gioi-thieu.html')?>" title="" style="float: left">Giới thiệu</a>
-        </h2>
-
-        <div style="margin-bottom: 20px; margin-top: 20px" class="row">
-            <div class="col-xs-12 col-sm-8 col-md-8">
+        <div style="margin-bottom: 20px" class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h2 class="home-title clearfix mt-10">
+                    <a href="<?=site_url('gioi-thieu.html')?>" title="" style="float: left">Giới thiệu</a>
+                </h2>
                 <div class="article">
-                    <?=$intro['content']?>
+                    <?=$intro['intro']?>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h2 class="home-title clearfix mt-10">
+                    <a href="<?=site_url('gioi-thieu.html')?>" title="" style="float: left">Bản quyền sở hữu</a>
+                </h2>
+                <div class="article">
+                    <?=$intro['copyright']?>
                 </div>
             </div>
         </div>
-        <h2 class="home-title clearfix mt-10" style="border: none">
+        <h2 class="home-title clearfix mt-10">
             <a href="#" title="" style="float: left"> Xem bản đồ chỉ dẫn địa chỉ của chúng tôi</a>
         </h2>
         <div id="map" class="mt-20">

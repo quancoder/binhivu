@@ -166,7 +166,7 @@
                     <li class="nav-item">
                         <a href="<?php echo site_url("contact", $langcode) ?>" class="nav-link <?=$module=='contact' ?' active' : ''?>">
                             <i class="nav-icon fas fa-envelope "></i>
-                            <p> Phản hồi khách hàng
+                            <p> Hòm thư đến
                                 <span class="right badge badge-info <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span>
                             </p>
                         </a>

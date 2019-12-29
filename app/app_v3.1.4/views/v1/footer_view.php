@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row">
                 <div class="">
-                    <div class="col-sm-3">
-                        <div style="margin-bottom: 20px">
+                    <div class="col-sm-2">
+                        <div style="margin-bottom: 20px; margin-top: 20px">
                             <a href="https://binhivu.com/">
                                 <img alt="" class="img-responsive lazy w-50-xs" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
                                      data-src="<?php echo base_url() . 'images/'; ?>logo2.png">
@@ -22,8 +22,7 @@
                                 <a href="tel:123.456.789">0926111368</a>
                             </div>
                             <div class="footer-address-additional" style="margin-bottom: 10px">
-                                <i class="glyphicon glyphicon-map-marker"></i>
-                                Địa chỉ, Ngọc Thụy Long Biên Hà Nội
+                                <i class="glyphicon glyphicon-map-marker"></i> Ngọc Thụy Long Biên Hà Nội
                             </div>
                             <div class="footer-address-additional" style="margin-bottom: 10px">
                                 <i class="glyphicon glyphicon-envelope"></i>
@@ -31,10 +30,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                         <h4 class="hidden-xs">
-                        <span style="font-size: 1.2rem"></span>
-                            Menu
+                            <span style="font-size: 1.2rem"></span>
+                            Danh mục
                         </h4>
                         <div style="margin-bottom: 5px;">
                             <ul style="list-style: none; padding-left: 0">
@@ -50,22 +49,27 @@
                     </div>
                     <div class="col-sm-3">
                         <h4 class="hidden-xs">
-                            Chứng nhận
+                            Nhận bài viết
+                        </h4>
+                        <div style="margin-top: 15px; ">
+                            Đăng ký email để nhận bài viết mới
+                            <form id="frm-dang-ky-email" method="post" action="<?=site_url('ajax_add_contact')?>">
+                                <input type="email" name="c_email" style="color: black; width: 80%" placeholder="Nhập email">
+                                <input type="hidden" value="Email nhận bài viết mới" name="c_content">
+                                <button type="submit" style="color: black; width: 15%">OK</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="hidden-xs">
+                            Bản quyền nội dung
                         </h4>
 
-                        <div style="margin-bottom: 5px;">
-                            <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=51683" rel="nofollow">
-                                <img alt="Chứng nhận" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="/images/fot_chung_nhan.png"
-                                     class="img-responsive lazy ">
-                            </a>
-                        </div>
                         <div style="margin-top: 15px;">
-                            <a href="https://binhivu.com/" rel="nofollow">
-                                <img alt="Chứng nhận" src="<?php echo base_url() . 'images/'; ?>rolling.svg"
-                                     data-src="/images/fot_chung_nhan2.png"
-                                     class="img-responsive lazy ">
+                            <a href="//www.dmca.com/Protection/Status.aspx?ID=bd4ddb07-2de5-44c3-a0b4-f641d96e3f69" title="DMCA.com Protection Status" class="dmca-badge">
+                                <img src ="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=bd4ddb07-2de5-44c3-a0b4-f641d96e3f69"  alt="DMCA.com Protection Status" />
                             </a>
+                            <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
                         </div>
                     </div>
                 </div>
@@ -140,6 +144,25 @@
     </a>
     <!-- Load Facebook SDK for JavaScript -->
     <script>
+        $("#frm-dang-ky-email").submit(function(event){
+            event.preventDefault(); //prevent default action
+            var post_url = $(this).attr("action"); //get form action url
+            var request_method = $(this).attr("method"); //get form GET/POST method
+            var form_data = $(this).serialize(); //Encode form elements for submission
+
+            $.ajax({
+                url : post_url,
+                type: request_method,
+                data : form_data
+            }).done(function(response){ //
+                if(response == 'success'){
+                    alert('Thành công!');
+                    location.reload();
+                }else{
+                    alert(response);
+                }
+            });
+        });
         window.fbAsyncInit = function() {
             FB.init({
                 xfbml            : true,

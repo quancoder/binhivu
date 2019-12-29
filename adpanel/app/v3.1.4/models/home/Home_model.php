@@ -102,6 +102,11 @@ class Home_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        if($row['c_type']=='document'){
+                            $row['c_type_name'] = 'Tài liệu';
+                        }else{
+                            $row['c_type_name'] = 'Sách';
+                        }
                         $data[] = $row;
                     }
                 }

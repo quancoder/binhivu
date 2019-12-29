@@ -20,8 +20,8 @@ class Intro extends MY_Controller {
 
         $intro  = $this->Intro_model->intro_info(1);
         $data['intro'] = $intro;
-        if(isset($_POST['content'])){
-            $data = $this->_edit_process($data, 1);
+        if(isset($_POST['submit'])){
+            $data = $this->_edit_process($data);
         }
 
         $this->_loadHeader();
@@ -30,19 +30,23 @@ class Intro extends MY_Controller {
     }
 
 
-    private function _edit_process($data, $id)
+    private function _edit_process($data)
     {
         /**GET VALUE PARAMS**/
-        $content    = $this->input->post('content', false);
-        $content    == '' ? $data['error']['content'] = TRUE : null;
+        $intro    = $this->input->post('intro', false);
+        $intro    == '' ? $data['error']['intro'] = TRUE : null;
+
+        $copyright    = $this->input->post('copyright', false);
+        $copyright    == '' ? $data['error']['copyright'] = TRUE : null;
 
         /**SET VALUE **/
-        $data['intro']['content']       = $content;
+        $data['intro']['intro']         = $intro;
+        $data['intro']['copyright']     = $copyright;
 
         /**CHECK CALL STORE**/
         if (empty($data['error']))
         {
-            $isUpdate = $this->Intro_model->intro_edit($id,$content);
+            $isUpdate = $this->Intro_model->intro_edit(1, $intro, $copyright);
             if ($isUpdate == TRUE){
                 $data['success'] = TRUE;
             }else{

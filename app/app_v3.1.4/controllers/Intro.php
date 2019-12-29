@@ -13,7 +13,7 @@ class Intro extends MY_Controller{
         $data = array();
         $header = array();
         $header['title'] = 'Giới thiệu';
-        $intro = $this->Intro_model->intro_info();
+        $intro = $this->Intro_model->intro_info(1);
 
         $data['intro'] = $intro;
 

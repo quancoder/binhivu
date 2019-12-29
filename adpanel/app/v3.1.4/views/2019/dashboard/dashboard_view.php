@@ -108,11 +108,11 @@
     </div>
 </div>
 <div class="container-fluid">
-    <h2>Phản hồi khách hàng</h2>
+    <h2>Hòm thư đến</h2>
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box">
-                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-inbox"></i></span>
+                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-envelope"></i></span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">Chờ xử lý</span>
@@ -122,7 +122,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-4">
             <div class="info-box mb-3">
-                <span class="info-box-icon bg-info elevation-1"><i class="far fa-envelope"></i></span>
+                <span class="info-box-icon bg-info elevation-1"><i class="far fa-envelope-open"></i></span>
 
                 <div class="info-box-content">
                     <span class="info-box-text">Đã xử lý</span>
@@ -147,7 +147,7 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h4 class="card-title">Chờ xử lý</h4>
+                    <h4 class="card-title"><i class="far fa-envelope"></i> Chờ xử lý</h4>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i> </button>
