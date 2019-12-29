@@ -76,3 +76,4 @@ defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREA
 
 define('ALL_USER',  '-1');
 define('TOP_VIEW',  '10');
+define('TIME_SPAM',  60); //60s

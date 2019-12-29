@@ -44,6 +44,7 @@ class Contact extends MY_Controller {
         if($c_type=='book')
         {
             $product = $this->Book_model->book_info($c_req_id);
+            $data['product']['id'] = $product['b_id'];
             $data['product']['name'] = $product['b_name'];
             $data['product']['view'] = $product['b_view'];
             $data['product']['download'] = $product['b_download'];
@@ -54,6 +55,7 @@ class Contact extends MY_Controller {
         else if($c_type == 'document')
         {
             $product = $this->Document_model->document_info($c_req_id);
+            $data['product']['id'] = $product['doc_id'];
             $data['product']['name'] = $product['doc_name'];
             $data['product']['view'] = $product['doc_view'];
             $data['product']['download'] = $product['doc_download'];

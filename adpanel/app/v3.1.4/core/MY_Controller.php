@@ -98,6 +98,8 @@ class MY_Controller extends CI_Controller
 		$header['function'] = $this->_function;
         $header['module'] = $this->router->class;
         $header['new_contact'] = count($new_contact);
+        $header['contact'] = $new_contact;
+        $header['most_new_contact'] = get_time_ago($new_contact[0]['c_create_time']);
 		// load header
 		$this->load->view($this->_template_f . 'header_view', $header);
     }

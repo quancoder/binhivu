@@ -918,7 +918,8 @@ function trim_text($text, $iword)
     return trim($trimed. $dot);
 }
 
-function is_ip_address_spam($cookie_name, $time_spam=30)
+//$cookie_name = '{name_type}'-$id
+function is_ip_address_spam($cookie_name, $time_spam=TIME_SPAM)
 {
     $ip = ip_address();
     $cookie_name = md5($ip .'-'. $cookie_name);

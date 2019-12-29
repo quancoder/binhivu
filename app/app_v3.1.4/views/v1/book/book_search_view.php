@@ -28,7 +28,7 @@
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($book['b_create_date'])?></span>
                                     <p style="margin-top: 10px; color: #1e1e1e"><?= $book['b_des']?></p>
 
-                                    <div class="mb-10 pb-10">
+                                    <div class="mb-10 pb-10" style="text-align: left">
                                         <?php $tag = explode(',', $book['b_tag']) ?>
                                         <?php foreach ($tag as $value){?>
                                             <a href="<?= site_url('tim-kiem-sach.html').'?tag='.$value?>">

@@ -49,37 +49,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home/home/index';
+$route['default_controller'] = 'home/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['tim-kiem.html'] = 'home/search';
 
 //tin tuc
-$route['tin-tuc.html'] = 'news/news/index';
-$route['([a-zA-Z0-9-_]+)-tt([0-9]+).html'] = 'news/news/detail/$1/$2';
-$route['tim-kiem-tin-tuc.html'] = 'news/news/search';
+$route['tin-tuc.html'] = 'news/index';
+$route['([a-zA-Z0-9-_]+)-tt([0-9]+).html'] = 'news/detail/$1/$2';
+$route['tim-kiem-tin-tuc.html'] = 'news/search';
 
 //giai tri
-$route['goc-thu-gian.html'] = 'funs/funs/index';
-$route['([a-zA-Z0-9-_]+)-gtg([0-9]+).html'] = 'funs/funs/detail/$1/$2';
-$route['tim-kiem-thu-gian.html'] = 'funs/funs/search';
+$route['goc-thu-gian.html'] = 'funs/index';
+$route['([a-zA-Z0-9-_]+)-gtg([0-9]+).html'] = 'funs/detail/$1/$2';
+$route['tim-kiem-thu-gian.html'] = 'funs/search';
 
 //tai lieu
-$route['tai-lieu.html'] = 'document/document/index';
-$route['([a-zA-Z0-9-_]+)-document([0-9]+).html'] = 'document/document/detail/$1/$2';
-$route['tim-kiem-tai-lieu.html'] = 'document/document/search';
+$route['tai-lieu.html'] = 'document/index';
+$route['([a-zA-Z0-9-_]+)-document([0-9]+).html'] = 'document/detail/$1/$2';
+$route['tim-kiem-tai-lieu.html'] = 'document/search';
 
 //sach
-$route['sach.html'] = 'book/book/index';
-$route['([a-zA-Z0-9-_]+)-book([0-9]+).html'] = 'book/book/detail/$1/$2';
-$route['tim-kiem-sach.html'] = 'book/book/search';
+$route['sach.html'] = 'book/index';
+$route['([a-zA-Z0-9-_]+)-book([0-9]+).html'] = 'book/detail/$1/$2';
+$route['tim-kiem-sach.html'] = 'book/search';
 
 //lien he
-$route['lien-he.html'] = 'contact/contact/index';
+$route['lien-he.html'] = 'contact/index';
 
-$route['ajax_add_contact'] = 'contact/contact/ajax_add_contact';
+$route['ajax_add_contact'] = 'contact/ajax_add_contact';
 
 //gioi thieu
-$route['gioi-thieu.html'] = 'intro/intro/index';
+$route['gioi-thieu.html'] = 'intro/index';
 
 //tai xuong
-$route['download-([a-z]+)-([0-9]+)'] = 'taixuong/taixuong/index/$1/$2';
+$route['download-([a-z]+)-([0-9]+)'] = 'taixuong/index/$1/$2';

@@ -5,7 +5,7 @@
             <div class="col-sm-8" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
-                        <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TIN TỨC TÌM ĐƯỢC</a>
+                        <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TÌM KIẾM TIN TỨC</a>
                     </h2>
                     <p>Kết quả tìm kiếm cho: "<?=$tag.' '.$search?>"</p>
                     <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">

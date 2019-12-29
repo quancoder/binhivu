@@ -28,7 +28,7 @@
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($doc['doc_create_date'])?></span>
                                     <p style="margin-top: 10px; color: #1e1e1e"><?= $doc['doc_des']?></p>
 
-                                    <div class="mb-10 pb-10">
+                                    <div class="mb-10 pb-10" style="text-align: left">
                                         <?php $tag = explode(',', $doc['doc_tag']) ?>
                                         <?php foreach ($tag as $value){?>
                                             <a href="<?= site_url('tim-kiem-tai-lieu.html').'?tag='.$value?>">

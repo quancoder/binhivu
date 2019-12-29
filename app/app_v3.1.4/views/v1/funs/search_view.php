@@ -5,8 +5,9 @@
             <div class="col-sm-8" >
                 <div class="zone-most-view">
                     <h2 class="home-title clearfix">
-                        <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">Bài viết tìm được</a>
+                        <a href="javascript:void(0)" title="TIN TỨC XEM NHIỀU NHẤT">TÌM KIẾM BÀI VIẾT GÓC THƯ GIÃN</a>
                     </h2>
+                    <p>Kết quả tìm kiếm cho: "<?=$tag.' '.$search?>"</p>
                     <ul class="media-list main-list" style="margin-top: 20px; text-align: justify">
                         <?php foreach ($funs_list as $fun){ ?>
                             <li class="media" style="padding-bottom: 10px; border-bottom: 1px solid #eee">
@@ -25,8 +26,8 @@
                                     <span class="time"><i class="glyphicon glyphicon-eye-open"></i> Lượt xem <?= number_format($fun['funs_views'])?></span> -
                                     <span class="time"><i class="glyphicon glyphicon-time"></i> <?= get_time_ago($fun['funs_create_time'])?></span>
                                     <p style="margin-top: 10px; color: #1e1e1e"><?= $fun['funs_sapo']?></p>
-                                    <div class="mb-10 pb-10">
-                                        <?php $tag = explode(',', $fun['funs_tag']) ?>
+                                    <div class="mb-10 pb-10" style="text-align: left">
+                                        <?php $tag = explode(',', $fun['funs_tags']) ?>
                                         <?php foreach ($tag as $value){?>
                                             <a href="<?= site_url('tim-kiem-thu-gian.html').'?tag='.$value?>">
                                                 <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>

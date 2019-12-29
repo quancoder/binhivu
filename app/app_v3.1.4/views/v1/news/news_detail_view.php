@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div style="clear: both"></div>
-                                <div class="content-archive mb-10 mt-10" >
+                                <div class="content-archive mb-10 mt-10 article" >
                                     <?php echo ($info['news_content']) ?>
                                 </div>
                                 <div class="mb-10 pb-10" style="border-bottom: 1px solid #eeeeee;">

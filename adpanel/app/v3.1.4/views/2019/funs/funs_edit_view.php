@@ -66,7 +66,7 @@
 
                         <label class="col-form-label" for="funs_sapo"><i class="fa fa-pencil"></i> Mô tả</label>
                         <div class="form-group">
-                            <textarea id="funs_sapo" name="funs_sapo"  class="form-control" placeholder="Mô tả:" required><?= $info['funs_sapo']?></textarea>
+                            <textarea id="funs_sapo" name="funs_sapo"  class="form-control" placeholder="Mô tả:" required rows="4"><?= $info['funs_sapo']?></textarea>
                         </div>
 
                         <label class="col-form-label" for="funs_tags"><i class="fa fa-pencil"></i> Từ khóa (cách nhau bởi dấu phẩy)</label>

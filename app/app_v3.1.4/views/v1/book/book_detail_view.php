@@ -51,7 +51,7 @@
             </div>
             <div class=" col-sm-8">
                 <div style="background: white; padding: 10px">
-                    <div class="">
+                    <div class="article">
                         <?= $info['b_content'] ?>
                     </div>
                 </div>

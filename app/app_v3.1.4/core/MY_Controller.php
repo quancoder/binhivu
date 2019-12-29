@@ -135,6 +135,8 @@ class MY_Controller extends CI_Controller
         $header['metaKeyword'] = isset($data['metaKeyword']) ? $data['metaKeyword'] : '';
         $header['metaDesc'] = isset($data['metaDesc']) ? $data['metaDesc'] : '';
 		$header['metaImage'] = isset($data['metaImage']) ? $data['metaImage'] : '';
+        $header['search'] = @$_GET['search'];
+        $header['type'] = @$_GET['type'];
         $header['loadHeader'] = $loadHeader;
        
         // load header

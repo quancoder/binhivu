@@ -6,10 +6,10 @@ class Home extends MY_Controller {
         parent::__construct();
         $this->_module = trim(strtolower(__class__));
         // model
-        $this->load->model('news/News_model');
-        $this->load->model('funs/Funs_model');
-        $this->load->model('document/Document_model');
-        $this->load->model('book/Book_model');
+        $this->load->model('News_model');
+        $this->load->model('Funs_model');
+        $this->load->model('Document_model');
+        $this->load->model('Book_model');
     }
 
     function index()
@@ -34,5 +34,21 @@ class Home extends MY_Controller {
     	$this->_loadHeader($header);
     	$this->load->view($this->_template_f . 'home/home_view', $data);
     	$this->_loadFooter();
+    }
+    function search(){
+        $search = $this->input->get('search');
+        $tag = $this->input->get('tag');
+        $type = $this->input->get('type');
+        if($type==1){
+            redirect('tim-kiem-tin-tuc.html?tag='.$tag.'&search='.$search.'&type='.$type);die;
+        } if($type==2){
+            redirect('tim-kiem-thu-gian.html?tag='.$tag.'&search='.$search.'&type='.$type);die;
+        }else if($type==3){
+            redirect('tim-kiem-sach.html?tag='.$tag.'&search='.$search.'&type='.$type);die;
+        }else if($type==4){
+            redirect('tim-kiem-tai-lieu.html?tag='.$tag.'&search='.$search.'&type='.$type);die;
+        }else{
+            redirect(site_url());
+        }
     }
 }

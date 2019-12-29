@@ -68,6 +68,7 @@
         width: '100%',
         theme: 'silver',
         language: 'vi',
+        image_caption: true,
         plugins: [
             "autoresize advlist autolink lists link image charmap print preview anchor visualblocks code fullscreen insertdatetime media table paste code help filemanager responsivefilemanager"
         ],
@@ -75,7 +76,7 @@
         image_advtab: true,
         relative_urls: false,
         external_filemanager_path: "<?php echo base_url(); ?>plugins/filemanager/",
-        filemanager_subfolder: "tin-tuc",
+        filemanager_subfolder: "settings",
         filemanager_title: "Quản lý tài nguyên ",
         external_plugins: {
             "responsivefilemanager": "<?php echo base_url(); ?>plugins/tinymce/plugins/responsivefilemanager/plugin.min.js",

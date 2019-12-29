@@ -504,3 +504,33 @@ function get_path_file($dirFile)
         return false;
     }
 }
+function trim_text($text, $iword)
+{
+    //xoa khoang trang
+    $arr = explode(" ", $text);
+    foreach ($arr as $key =>$value)
+    {
+        if($value == "")
+        {
+            unset($arr[$key]);
+        }
+    }
+
+    //tim phan tu phu hop
+    $trimed = '';
+    $i = 1;
+    foreach ($arr as $value)
+    {
+        if($i <= $iword)
+        {
+            $trimed .= $value.' ';
+        }
+        $i++;
+    }
+    if(strlen($trimed) < strlen($text)){
+        $dot = '...';
+    }else{
+        $dot = '';
+    }
+    return trim($trimed. $dot);
+}

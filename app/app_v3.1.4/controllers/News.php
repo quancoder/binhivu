@@ -5,10 +5,10 @@ class News extends MY_Controller{
         parent::__construct();
         $this->_module = trim(strtolower(__class__));
         // model
-        $this->load->model('news/News_model');
-        $this->load->model('funs/Funs_model');
-        $this->load->model('document/Document_model');
-        $this->load->model('book/Book_model');
+        $this->load->model('News_model');
+        $this->load->model('Funs_model');
+        $this->load->model('Document_model');
+        $this->load->model('Book_model');
     }
     
     function index()
@@ -77,9 +77,8 @@ class News extends MY_Controller{
         }
 
         //up view
-        $sessionKey = 'ss_up_view_news_' . $id;
-        if (!isset($_SESSION[$sessionKey])) {
-            $_SESSION[$sessionKey] = 1;
+        $spam = is_ip_address_spam('news-'.$id, TIME_SPAM);
+        if ($spam == false){
             $this->News_model->news_up_view($id);
         }
 

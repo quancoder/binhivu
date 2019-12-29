@@ -10,7 +10,7 @@
                     <li class="breadcrumb-item"><a href="<?=site_url()?>">Trang chủ</a></li>
                     <li class="breadcrumb-item active">Tài liệu</li>
                     <li class="ml-3 float-right">
-                        <a href="<?= site_url('document/add', $langcode) ?>" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Thêm tài liệu</a>
+                        <a href="<?= site_url('document/add', $langcode) ?>" class="btn btn-danger btn-sm"><i class="fa fa-edit"></i> Thêm tài liệu</a>
                     </li>
                 </ol>
             </div>

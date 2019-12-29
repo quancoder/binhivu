@@ -123,7 +123,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label class="col-form-label" for="doc_des"><i class="fa fa-pencil"></i> Mô tả</label>
-                            <textarea id="doc_des" name="doc_des"  class="form-control" placeholder="Mô tả:" required><?= $info['doc_des'] ?></textarea>
+                            <textarea id="doc_des" name="doc_des"  class="form-control" placeholder="Mô tả:" required rows="4"><?= $info['doc_des'] ?></textarea>
                         </div>
 
                         <div class="form-group">

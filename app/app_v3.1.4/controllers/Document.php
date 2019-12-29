@@ -5,11 +5,11 @@ class Document extends MY_Controller{
         parent::__construct();
         $this->_module = trim(strtolower(__class__));
         // model
-        $this->load->model('news/News_model');
-        $this->load->model('funs/Funs_model');
-        $this->load->model('document/Document_model');
-        $this->load->model('book/Book_model');
-        $this->load->model('document/Document_model');
+        $this->load->model('News_model');
+        $this->load->model('Funs_model');
+        $this->load->model('Document_model');
+        $this->load->model('Book_model');
+        $this->load->model('Document_model');
     }
     
     function index()
@@ -85,7 +85,8 @@ class Document extends MY_Controller{
         }
 
         //up view
-        if(!is_ip_address_spam('book-view-'.$id)){
+        $spam = is_ip_address_spam('document-'.$id, TIME_SPAM);
+        if ($spam == false){
 
             $this->Document_model->document_up_view($id);
         }

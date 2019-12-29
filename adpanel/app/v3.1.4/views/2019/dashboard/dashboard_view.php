@@ -166,7 +166,7 @@
                                     </td>
                                     <td class="mailbox-name align-middle">
                                         <?=$item['c_product_name']?><br>
-                                        <span style="color: #8c8c8c"><?=$item['c_type']?></span>
+                                        <span style="color: #8c8c8c"><?=$item['c_type_name']?></span>
                                     </td>
                                     <td class="mailbox-name align-middle" style="width: 15%">
                                         <?=$item['c_phone']?><br>

@@ -34,7 +34,7 @@
 
     <form method="post" action="<?= site_url('funs/add', $langcode)?>" id="form">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Thông tin cơ bản</h3>
@@ -51,7 +51,7 @@
 
                         <label class="col-form-label" for="funs_sapo"><i class="fa fa-pencil"></i> Mô tả</label>
                         <div class="form-group">
-                            <textarea id="funs_sapo" name="funs_sapo"  class="form-control" placeholder="Mô tả:" required><?= $info['funs_sapo']?></textarea>
+                            <textarea id="funs_sapo" name="funs_sapo"  class="form-control" placeholder="Mô tả:" required rows="4"><?= $info['funs_sapo']?></textarea>
                         </div>
 
                         <label class="col-form-label" for="funs_tag"><i class="fa fa-pencil"></i> Từ khóa (cách nhau bởi dấu phẩy)</label>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title"><i class="fas fa-edit"></i> Nội dung bài viết</h3>

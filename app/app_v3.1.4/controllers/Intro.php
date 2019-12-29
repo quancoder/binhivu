@@ -5,7 +5,7 @@ class Intro extends MY_Controller{
         parent::__construct();
         $this->_module = trim(strtolower(__class__));
         // model
-        $this->load->model('intro/Intro_model');
+        $this->load->model('Intro_model');
     }
 
     function index()

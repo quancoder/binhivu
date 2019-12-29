@@ -5,10 +5,10 @@ class Funs extends MY_Controller{
         parent::__construct();
         $this->_module = trim(strtolower(__class__));
         // model
-        $this->load->model('news/News_model');
-        $this->load->model('funs/Funs_model');
-        $this->load->model('document/Document_model');
-        $this->load->model('book/Book_model');
+        $this->load->model('News_model');
+        $this->load->model('Funs_model');
+        $this->load->model('Document_model');
+        $this->load->model('Book_model');
     }
 
     function index()
@@ -45,14 +45,17 @@ class Funs extends MY_Controller{
         $status  = 1;
         $start = 0;
         $limit = 12;
-        $search_tt = $this->input->get('search');
-        $funs_list = $this->Funs_model->funs_list_paging(ALL_USER, $status, $search_tt, '', $start, $limit);
+        $search = $this->input->get('search');
+        $tag = $this->input->get('tag');
+        $funs_list = $this->Funs_model->funs_list_paging(ALL_USER, $status, $search, $tag, $start, $limit);
         $doc_top_view = $this->Document_model->document_list_top_view();
         $book_top_view = $this->Book_model->book_list_top_view();
 
         $data['doc_top_view'] = $doc_top_view;
         $data['book_top_view'] = $book_top_view;
         $data['funs_list'] = $funs_list['list'];
+        $data['tag'] = $tag;
+        $data['search'] = $search;
         $this->_loadHeader($header);
         $this->load->view($this->_template_f . 'funs/search_view', $data);
         $this->_loadFooter();
@@ -74,9 +77,9 @@ class Funs extends MY_Controller{
         }
 
         //up view
-        $sessionKey = 'ss_up_view_funs' . $id;
-        if (!isset($_SESSION[$sessionKey])) {
-            $_SESSION[$sessionKey] = 1;
+        $spam = is_ip_address_spam('gtg-'.$id, TIME_SPAM);
+        if ($spam == false)
+        {
             $this->Funs_model->funs_up_view($id);
         }
 

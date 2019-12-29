@@ -72,7 +72,7 @@
                             <h4>Yêu cầu của khách</h4>
                             <div class="post">
                                 <div class="user-block">
-                                    <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg"
+                                    <img class="img-circle img-bordered-sm" src="../../dist/img/default-150x150.png"
                                          alt="user image">
                                     <span class="username">
                                     <a href="#"><?= $info['c_name'] ?></a>
@@ -93,17 +93,19 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
                     <?php if (isset($product)) { ?>
-                        <h3 class="text-primary"> <?= $product['name'] ?></h3>
+                        <a href="<?=site_url($info['c_type'].'/edit/'.$product['id']) ?>">
+                            <h3 class="text-primary"> <?=$info['c_type_name']?>: <?= $product['name'] ?></h3>
+                        </a>
                         <p class="text-muted"><?= $product['des'] ?></p>
                         <div class="text-muted">
                             <p class="text-sm" style="float: left; margin-right:30px">Lượt xem
-                                <b class="d-block"><?= $product['view'] ?></b>
+                                <b class="d-block"><?= number_format($product['view']) ?></b>
                             </p>
                             <p class="text-sm" style="float: left;; margin-right: 30px">Lượt tải
-                                <b class="d-block"><?= $product['download'] ?></b>
+                                <b class="d-block"><?= number_format($product['download']) ?></b>
                             </p>
                             <p class="text-sm" style="float: left">Giá
-                                <b class="d-block"><?= $product['price'] ?> VNĐ</b>
+                                <b class="d-block"><?= number_format($product['price']) ?> VNĐ</b>
                             </p>
                         </div>
                         <img src="<?= $product['image'] ?>" class="img-fluid" style="border: 1px solid #eeeeee">

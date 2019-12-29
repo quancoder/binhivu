@@ -74,22 +74,27 @@
                     </div>
                     <div class="col-xs-4">
                         <div class="ega-item-top-bar">
-                            <form class="ega-form-search-top" role="search" method="get" action="<?=site_url('tim-kiem-tin-tuc.html')?>">
+                            <form class="ega-form-search-top" role="search" method="get" action="<?=site_url('tim-kiem.html')?>">
                                 <div class="ega-div-top-search">
-                                    <input autocomplete="off" name="search" type="search" placeholder="Nhập tên bài viết...">
-                                    <input type="hidden" name="type" value="article">
+                                    <input autocomplete="off" name="search" type="search" placeholder="Nhập nội dung tìm kiếm..."  value="<?=$search?>">
+                                    <select name="type" style="position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
+                                        <option></option>
+                                        <option value="1" <?=$module=='news'?'selected':''?> >Tin tức</option>
+                                        <option value="2" <?=$module=='funs'?'selected':''?> >Giải trí</option>
+                                        <option value="3" <?=$module=='book'?'selected':''?> >Sách</option>
+                                        <option value="4" <?=$module=='document'?'selected':''?> >Tài liệu</option>
+                                    </select>
                                     <button type="submit">
                                         <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                     <div class="col-xs-6 text-right">
                         <div class="ega-item-top-bar">
                             <div class="ega-top-message">
-                                    <i class="glyphicon glyphicon-earphone" style="line-height: 1; font-size: 14px; animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim"></i>
+                                    <i class="glyphicon glyphicon-earphone" style="line-height: 1; font-size: 14px; animation: 1s ease-in-out 0s normal none infinite running"></i>
                                     <a class="ega-phone" href="tel:0926111368">
                                         0926111368
                                     </a>
@@ -157,11 +162,17 @@
                                 <div class="col-xs-12">
 
                                     <form id="ega-search-xs-form" style="display: none" class="ega-form-search-top"
-                                          role="search" method="get" action="<?=site_url('tim-kiem-tin-tuc.html')?>">
+                                          role="search" method="get" action="<?=site_url('tim-kiem.html')?>">
                                         <div class="ega-div-top-search">
-                                            <input autocomplete="off" name="query" type="search"
-                                                   placeholder="Nhập tên bài viết...">
-                                            <input type="hidden" name="type" value="article">
+                                            <input autocomplete="off" name="query" type="search" value="<?=$search?>"
+                                                   placeholder="Nhập nội dung tìm kiếm...">
+                                            <select name="type" style="position: absolute; right: 60px; top: 50%; margin-top: -10px; background: none; border: none">
+                                                <option></option>
+                                                <option value="1" <?=$module=='news'?'selected':''?> >Tin tức</option>
+                                                <option value="2" <?=$module=='funs'?'selected':''?> >Giải trí</option>
+                                                <option value="3" <?=$module=='book'?'selected':''?> >Sách</option>
+                                                <option value="4" <?=$module=='document'?'selected':''?> >Tài liệu</option>
+                                            </select>
                                             <button type="submit"><span class="glyphicon glyphicon-search"></span>
                                             </button>
                                         </div>
@@ -294,7 +305,6 @@
                                 </a>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>

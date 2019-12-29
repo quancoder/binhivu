@@ -21,6 +21,11 @@ class Contact_model extends CI_Model
                 {
                     while($row = $stmt->fetch(PDO::FETCH_ASSOC))
                     {
+                        if($row['c_type']=='document'){
+                            $row['c_type_name'] = 'Tài liệu';
+                        }else{
+                            $row['c_type_name'] = 'Sách';
+                        }
                         $data[] = $row;
                     }
                 }
@@ -43,6 +48,11 @@ class Contact_model extends CI_Model
             if ($stmt->execute()) {
                 if ($stmt->rowCount() > 0) {
                     $data = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if($data['c_type']=='document'){
+                        $data['c_type_name'] = 'Tài liệu';
+                    }else{
+                        $data['c_type_name'] = 'Sách';
+                    }
                 }
                 $stmt->closeCursor();
             }

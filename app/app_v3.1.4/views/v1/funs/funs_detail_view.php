@@ -39,8 +39,16 @@
                                     </div>
                                 </div>
                                 <div style="clear: both"></div>
-                                <div class="content-archive mb-20 mt-10" style="font-size: 1rem">
+                                <div class="content-archive mb-20 mt-10 article" style="font-size: 1rem">
                                     <?php echo ($info['funs_content']) ?>
+                                </div>
+                                <div class="mb-10 pb-10" style="border-bottom: 1px solid #eeeeee;">
+                                    <?php $tag = explode(',', $info['funs_tags']) ?>
+                                    <?php foreach ($tag as $value){?>
+                                        <a href="<?= site_url('tim-kiem-thu-gian.html').'?tag='.$value?>">
+                                            <span class="badge mr-5 mb-5"><i class="glyphicon glyphicon-tag"></i> <?=$value?></span>
+                                        </a>
+                                    <?php } ?>
                                 </div>
                                 <div class="fb-like" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $info['funs_id'])?>" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
                                 <div class="fb-comments" data-href="<?=toURLFriendly($info['funs_title'], 'gtg', $fun['funs_id'])?>" data-width="100%" data-numposts="5"></div>
