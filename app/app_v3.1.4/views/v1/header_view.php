@@ -96,7 +96,7 @@
                     <div class="col-xs-6 text-right">
                         <div class="ega-item-top-bar">
                             <div class="ega-top-message">
-                                    <i class="glyphicon glyphicon-earphone" style="line-height: 1; font-size: 14px; animation: 1s ease-in-out 0s normal none infinite running"></i>
+                                    <i class="glyphicon glyphicon-earphone" style="line-height: 1; font-size: 14px; animation: 1s ease-in-out 0s normal none infinite running suntory-alo-circle-img-anim"></i>
                                     <a class="ega-phone" href="tel:0926111368">
                                         0926111368
                                     </a>

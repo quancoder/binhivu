@@ -103,7 +103,7 @@
                 <div class="col-xs-12 col-sm-6">
                     <div class="ega-cpyright">
                         <div class="inline-dsk">
-                            © Bản quyền thuộc về <a href="https://binhivu.com/" rel="nofollow" target="_blank">binhivu</a>
+                            Copyright © 2020 All Rights Reserved. Bản quyền thuộc về <a href="https://binhivu.com/" rel="nofollow" target="_blank">binhivu</a>
                         </div>
                         <div class="inline-dsk hidden"> |</div>
                         <div class="inline-dsk hidden">

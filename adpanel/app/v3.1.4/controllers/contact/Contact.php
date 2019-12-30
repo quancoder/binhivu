@@ -13,16 +13,26 @@ class Contact extends MY_Controller {
         $this->load->model('book/Book_model');
 	}
 	
-	function index()
+	function index($type)
 	{
-	    $data = array();
-        $data['contact_0'] = $this->Contact_model->contact_list(0);
-        $data['contact_1'] = $this->Contact_model->contact_list(1);
-        $data['contact_2'] = $this->Contact_model->contact_list(2);
-
 		$this->_loadHeader();
-		
-		$this->load->view($this->_template_f . 'contact/contact_view', $data);
+
+        $data = array();
+
+		if($type==1)
+		{
+            $data['contact_0'] = $this->Contact_model->contact_list(0);
+            $data['contact_1'] = $this->Contact_model->contact_list(1);
+            $data['contact_2'] = $this->Contact_model->contact_list(2);
+            $this->load->view($this->_template_f . 'contact/contact_download_view', $data);
+        }
+        elseif ($type==2)
+        {
+            $data['contact_0'] = $this->Contact_model->contact_list(0);
+            $data['contact_1'] = $this->Contact_model->contact_list(1);
+            $data['contact_2'] = $this->Contact_model->contact_list(2);
+            $this->load->view($this->_template_f . 'contact/contact_other_view', $data);
+		}
 
 		$this->_loadFooter();
 	}
