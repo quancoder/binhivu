@@ -6,7 +6,7 @@
         </h2>
 
         <div style="margin-bottom: 20px; margin-top: 20px" class="row">
-            <div class="col-xs-12 col-sm-3 col-sm-3 <?=$type=='' || $id ==''? 'hide': '' ?>">
+            <div class="col-xs-12 col-sm-3 col-sm-3 <?= $id == null ? 'hide': '' ?>">
                 <h3 class="post-title">
                    Sản phẩm
                 </h3>

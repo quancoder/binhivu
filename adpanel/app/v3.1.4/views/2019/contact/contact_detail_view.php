@@ -8,6 +8,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="<?= site_url() ?>">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="<?= site_url('contact/view') ?>">Hòm thư đến</a></li>
                     <li class="breadcrumb-item active">Phản hồi khách hàng</li>
                 </ol>
             </div>

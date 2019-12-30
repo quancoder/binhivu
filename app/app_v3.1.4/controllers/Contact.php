@@ -42,6 +42,8 @@ class Contact extends MY_Controller{
                 redirect(site_url());
                 die;
             }
+        }else{
+            $type = 'suggest';
         }
 
         $data['info'] = $info;

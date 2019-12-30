@@ -55,7 +55,8 @@
                             Đăng ký email để nhận bài viết mới
                             <form id="frm-dang-ky-email" method="post" action="<?=site_url('ajax_add_contact')?>">
                                 <input type="email" name="c_email" style="color: black; width: 80%" placeholder="Nhập email">
-                                <input type="hidden" value="Email nhận bài viết mới" name="c_content">
+                                <input type="hidden" value="Nhận bài viết mới" name="c_content">
+                                <input type="hidden" value="email" name="c_type">
                                 <button type="submit" style="color: black; width: 15%">OK</button>
                             </form>
                         </div>

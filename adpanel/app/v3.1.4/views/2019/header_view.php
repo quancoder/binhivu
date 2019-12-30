@@ -164,29 +164,12 @@
                     <li class="nav-header"> KHÁCH HÀNG</li>
 
                     <li class="nav-item has-treeview <?=$module=='contact' ?' menu-open' : ''?>">
-                        <a href="#" class="nav-link <?=$module=='contact' ?' active' : ''?>" >
+                        <a href="<?=site_url('contact/view')?>" class="nav-link <?=$module=='contact' ?' active' : ''?>" >
                             <i class="nav-icon fas fa-envelope "></i>
                             <p> Hòm thư đến
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="right badge badge-danger <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span>
+                                <span class="right badge badge-warning <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview ml-3">
-                            <li class="nav-item">
-                                <a href="<?php echo site_url("contact/index/1", $langcode) ?>" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Yêu cầu download
-                                        <span class="right badge badge-warning <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span></p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="<?php echo site_url("contact/index/2", $langcode) ?>" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Liên hệ và nhận bài viết
-                                        <span class="right badge badge-info <?=$new_contact > 0?'d-block': 'd-none'?>"><?=$new_contact?></span></p>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
 
                     <li class="nav-header"> QUẢN TRỊ HỆ THỐNG</li>
